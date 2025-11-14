@@ -37,6 +37,7 @@
   position: absolute;
   inset: 0;
   white-space: nowrap;
+  gap: 20px;
 }
 
 .video-cup__title h2,
