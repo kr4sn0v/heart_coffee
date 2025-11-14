@@ -1,10 +1,10 @@
 <template>
-  <header class="header__view">
-    <section class="header__container">
-      <div class="header__logo">
+  <header class="header-cup__view">
+    <section class="header-cup__container">
+      <div class="header-cup__logo">
         <h1>HEART COFFEE</h1>
       </div>
-      <nav class="header__navigation">
+      <nav class="header-cup__navigation">
         <ul>
           <li>меню</li>
           <li>корзина</li>
@@ -16,10 +16,8 @@
   </header>
 </template>
 
-<script setup></script>
-
 <style scoped>
-.header__view {
+.header-cup__view {
   position: fixed;
   top: 0;
   left: 0;
@@ -36,7 +34,7 @@
   padding: 20px 0px;
 }
 
-.header__container {
+.header-cup__container {
   width: 95%;
   margin: 0 auto;
   display: flex;
@@ -44,25 +42,25 @@
   align-items: center;
 }
 
-.header__logo h1 {
+.header-cup__logo h1 {
   font-family: var(--font-heading);
   font-size: 2rem;
   white-space: nowrap;
 }
 
-.header__logo h1:hover {
+.header-cup__logo h1:hover {
   cursor: pointer;
   color: var(--accent-color);
   transition: var(--transition);
 }
 
-.header__navigation {
+.header-cup__navigation {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-.header__navigation ul {
+.header-cup__navigation ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -70,14 +68,14 @@
   gap: 30px;
 }
 
-.header__navigation li {
+.header-cup__navigation li {
   font-family: var(--font-body);
   font-size: 2rem;
   font-weight: 700;
   cursor: pointer;
 }
 
-.header__navigation li:hover {
+.header-cup__navigation li:hover {
   cursor: pointer;
   color: var(--accent-color);
   transition: color var(--transition);
