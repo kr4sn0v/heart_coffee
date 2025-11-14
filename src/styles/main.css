@@ -1,0 +1,31 @@
+@import url('normalize.css');
+
+body {
+  background: #fafafa;
+  color: #252732;
+}
+
+html {
+  font-size: 10px;
+}
+
+:root {
+  --header-bg: rgba(255, 255, 255, 0.6);
+  --header-border: rgba(0, 0, 0, 0.1);
+
+  --accent-color: #334cdb;
+  --accent-color-hover: #2539b3;
+
+  --color-text-light: #fafafa;
+
+  --color-text-dark: #252732;
+  --color-border: #252732;
+
+  --border-radius-lg: 80px;
+  --border-radius-sm: 50px;
+
+  --transition: 0.35s;
+
+  --font-heading: 'Onder', sans-serif;
+  --font-body: 'Unbounded', sans-serif;
+}
