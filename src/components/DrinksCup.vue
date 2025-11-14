@@ -80,6 +80,7 @@ defineProps({
   display: flex;
   flex-direction: column;
   align-items: start;
+  margin: 10px 0 10px 0;
 }
 
 .drinks-cup__info-container:hover {

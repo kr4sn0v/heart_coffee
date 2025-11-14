@@ -42,11 +42,11 @@
 .video-cup__title h2,
 .video-cup__title p {
   font-size: 3.65rem;
-  font-family: 'Onder', sans-serif;
-  color: #fafafa;
+  font-family: var(--font-heading);
+  color: var(--color-text-light);
 }
 
 .video-cup__title span {
-  color: #334cdb;
+  color: var(--accent-color);
 }
 </style>

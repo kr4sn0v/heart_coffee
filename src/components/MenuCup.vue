@@ -58,6 +58,7 @@ onMounted(() => {
 .menu-cup__view {
   display: grid;
   grid-auto-flow: row;
+  margin-top: 30px;
 }
 
 .menu-cup__navigation h2,
