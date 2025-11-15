@@ -31,7 +31,7 @@
       </div>
     </section>
 
-    <button class="sign-up-form-cup__button" type="submit">Подружиться</button>
+    <button class="sign-up-form-cup__button" type="submit">Зарегистрироваться</button>
     <div class="sign-up-form-cup__error-bottom" v-if="error">
       Произошли технические шоколадки: {{ error }}
     </div>
@@ -41,7 +41,7 @@
 <script setup>
 import { Field, Form, ErrorMessage } from 'vee-validate'
 import { signUpSchema } from '../composables/useSchemas.js'
-import { register, error } from '../composables/useSignIn.js'
+import { register, error } from '../composables/useSignUp.js'
 </script>
 
 <style scoped>

@@ -15,4 +15,13 @@ const signUpSchema = yup.object({
     .required('Пароль обязателен для заполнения'),
 })
 
-export { signUpSchema }
+const signInSchema = yup.object({
+  email: yup.string().email('Введите корректный email').required('Email обязателен для заполнения'),
+  password: yup
+    .string()
+    .min(6, 'Пароль должен содержать от 6 до 12 символов')
+    .max(12, 'Пароль должен содержать от 6 до 12 символов')
+    .required('Пароль обязателен для заполнения'),
+})
+
+export { signUpSchema, signInSchema }

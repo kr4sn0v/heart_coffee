@@ -1,27 +1,27 @@
 <template>
-  <section class="sign-up-cup__view">
+  <section class="sign-in-cup__view">
     <HeaderCup />
-    <SignUpHeaderCup />
-    <main class="sign-up-cup__page">
-      <section class="sign-up-cup__section">
-        <p>Введите почту и получите промокод на -30%</p>
-        <p>Спамить не будем, честное слово ^-^</p>
+    <SignInHeaderCup />
+    <main class="sign-in-cup__page">
+      <section class="sign-in-cup__section">
+        <p>С 1 декабря — возвращение легенды :)</p>
+        <p>Тот самый глинтвейн, который все ждут</p>
       </section>
-      <SignUpFormCup />
-      <FooterLogoCup class="sign-up-cup__footer" />
+      <SignInFormCup />
+      <FooterLogoCup class="sign-in-cup__footer" />
     </main>
   </section>
 </template>
 
 <script setup>
-import HeaderCup from './HeaderCup.vue'
 import FooterLogoCup from './FooterLogoCup.vue'
-import SignUpHeaderCup from './SignUpHeaderCup.vue'
-import SignUpFormCup from './SignUpFormCup.vue'
+import HeaderCup from './HeaderCup.vue'
+import SignInHeaderCup from './SignInHeaderCup.vue'
+import SignInFormCup from './SignInFormCup.vue'
 </script>
 
 <style scoped>
-.sign-up-cup__view {
+.sign-in-cup__view {
   display: grid;
   height: 100%;
   grid-auto-flow: row;
@@ -39,7 +39,7 @@ main {
   grid-area: main;
 }
 
-.sign-up-cup__page {
+.sign-in-cup__page {
   display: flex;
   flex-direction: column;
   background: var(--accent-color);
@@ -48,7 +48,7 @@ main {
   border-top-right-radius: 80px;
 }
 
-.sign-up-cup__section {
+.sign-in-cup__section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +60,7 @@ main {
   font-size: 3.35rem;
 }
 
-.sign-up-cup__footer {
+.sign-in-cup__footer {
   margin-top: 100px;
 }
 </style>
