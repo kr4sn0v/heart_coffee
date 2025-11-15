@@ -1,30 +1,30 @@
-<script setup>
-import HeaderCup from './HeaderCup.vue'
-import FooterLogoCup from './FooterLogoCup.vue'
-import SignInHeaderCup from './SignInHeaderCup.vue'
-import SignInFormCup from './SignInFormCup.vue'
-
-import { loading } from '../composables/useSignIn.js'
-</script>
-
 <template>
-  <section class="sign-in-cup__view">
+  <section class="sign-up-cup__view">
     <HeaderCup />
-    <SignInHeaderCup />
-    <main class="sign-in-cup__page">
-      <section class="sign-in-cup__section">
+    <SignUpHeaderCup />
+    <main class="sign-up-cup__page">
+      <section class="sign-up-cup__section">
         <p>Введите почту и получите промокод на -30%</p>
         <p>Спамить не будем, честное слово ^-^</p>
       </section>
-      <SignInFormCup />
-      <div class="sign-in-cup__overlay" v-if="loading">Пожалуйста, подождите, идет загрузка</div>
-      <FooterLogoCup class="sign-in-cup__footer" />
+      <SignUpFormCup />
+      <div class="sign-up-cup__overlay" v-if="loading">Пожалуйста, подождите, идет загрузка</div>
+      <FooterLogoCup class="sign-up-cup__footer" />
     </main>
   </section>
 </template>
 
+<script setup>
+import HeaderCup from './HeaderCup.vue'
+import FooterLogoCup from './FooterLogoCup.vue'
+import SignUpHeaderCup from './SignUpHeaderCup.vue'
+import SignUpFormCup from './SignUpFormCup.vue'
+
+import { loading } from '../composables/useSignIn.js'
+</script>
+
 <style scoped>
-.sign-in-cup__view {
+.sign-up-cup__view {
   display: grid;
   height: 100%;
   grid-auto-flow: row;
@@ -42,7 +42,7 @@ main {
   grid-area: main;
 }
 
-.sign-in-cup__page {
+.sign-up-cup__page {
   display: flex;
   flex-direction: column;
   background: var(--accent-color);
@@ -51,7 +51,7 @@ main {
   border-top-right-radius: 80px;
 }
 
-.sign-in-cup__section {
+.sign-up-cup__section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -63,7 +63,7 @@ main {
   font-size: 3.35rem;
 }
 
-.sign-in-cup__overlay {
+.sign-up-cup__overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -79,7 +79,7 @@ main {
   z-index: 1;
 }
 
-.sign-in-cup__footer {
+.sign-up-cup__footer {
   margin-top: 100px;
 }
 </style>

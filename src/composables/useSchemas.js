@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-const signInSchema = yup.object({
+const signUpSchema = yup.object({
   name: yup.string().required('Имя обязательно для заполнения'),
   email: yup.string().email('Введите корректный email').required('Email обязателен для заполнения'),
   date: yup
@@ -15,4 +15,4 @@ const signInSchema = yup.object({
     .required('Пароль обязателен для заполнения'),
 })
 
-export { signInSchema }
+export { signUpSchema }

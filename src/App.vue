@@ -3,7 +3,7 @@
   <VideoCup />
   <MenuCup />
   <FooterCup /> -->
-  <SignInCup />
+  <SignUpCup />
 </template>
 
 <script setup>
@@ -11,7 +11,7 @@
 // import VideoCup from './components/VideoCup.vue'
 // import MenuCup from './components/MenuCup.vue'
 // import FooterCup from './components/FooterCup.vue'
-import SignInCup from './components/SignInCup.vue'
+import SignUpCup from './components/SignUpCup.vue'
 </script>
 
 <style scoped></style>

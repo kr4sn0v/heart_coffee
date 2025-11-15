@@ -1,6 +1,6 @@
 <template>
-  <section class="sign-in-header-cup__header">
-    <div class="sign-in-header-cup__logo">
+  <section class="sign-up-header-cup__header">
+    <div class="sign-up-header-cup__logo">
       <div>
         <h1>Давайте</h1>
         <h1>дружить;)</h1>
@@ -10,7 +10,7 @@
 </template>
 
 <style scoped>
-.sign-in-header-cup__header {
+.sign-up-header-cup__header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,7 +19,7 @@
   font-size: 2.5rem;
 }
 
-.sign-in-header-cup__logo div {
+.sign-up-header-cup__logo div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,7 +27,7 @@
   gap: 30px;
 }
 
-.sign-in-header-cup__logo > div > h1:hover {
+.sign-up-header-cup__logo > div > h1:hover {
   color: var(--accent-color);
   transition: 0.3s;
   cursor: pointer;

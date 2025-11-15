@@ -1,7 +1,3 @@
-<script setup>
-import FooterLogoCup from './FooterLogoCup.vue'
-</script>
-
 <template>
   <footer>
     <section class="footer-cup__view">
@@ -12,6 +8,10 @@ import FooterLogoCup from './FooterLogoCup.vue'
     <FooterLogoCup />
   </footer>
 </template>
+
+<script setup>
+import FooterLogoCup from './FooterLogoCup.vue'
+</script>
 
 <style scoped>
 footer {
