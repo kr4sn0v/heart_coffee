@@ -2,14 +2,20 @@
   <header class="header-cup__view">
     <section class="header-cup__container">
       <div class="header-cup__logo">
-        <h1>HEART COFFEE</h1>
+        <router-link to="/" class="header-cup__router-link">
+          <h1>HEART COFFEE</h1>
+        </router-link>
       </div>
       <nav class="header-cup__navigation">
         <ul>
           <li>меню</li>
           <li>корзина</li>
-          <li>регистрация</li>
-          <li>войти</li>
+          <router-link to="/sign-up" class="header-cup__router-link">
+            <li>регистрация</li>
+          </router-link>
+          <router-link to="/sign-in" class="header-cup__router-link">
+            <li>войти</li>
+          </router-link>
         </ul>
       </nav>
     </section>
@@ -52,6 +58,11 @@
   cursor: pointer;
   color: var(--accent-color);
   transition: var(--transition);
+}
+
+.header-cup__router-link {
+  color: inherit;
+  text-decoration: none;
 }
 
 .header-cup__navigation {
