@@ -61,6 +61,6 @@ main {
 }
 
 .sign-up-cup__footer {
-  margin-top: 100px;
+  margin-top: 8.5rem;
 }
 </style>

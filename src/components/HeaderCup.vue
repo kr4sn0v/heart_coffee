@@ -8,7 +8,7 @@
       </div>
       <nav class="header-cup__navigation">
         <ul>
-          <li>меню</li>
+          <li @click="scroll">меню</li>
           <li>корзина</li>
           <router-link to="/sign-up" class="header-cup__router-link">
             <li>регистрация</li>
@@ -21,6 +21,8 @@
     </section>
   </header>
 </template>
+
+<script setup></script>
 
 <style scoped>
 .header-cup__view {

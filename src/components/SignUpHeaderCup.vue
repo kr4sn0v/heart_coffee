@@ -29,7 +29,7 @@
 
 .sign-up-header-cup__logo > div > h1:hover {
   color: var(--accent-color);
-  transition: 0.3s;
+  transition: var(--transition);
   cursor: pointer;
 }
 </style>

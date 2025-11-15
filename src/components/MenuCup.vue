@@ -1,12 +1,12 @@
 <template>
-  <section class="menu-cup__view">
-    <nav class="menu-cup__navigation">
+  <section class="menu-cup__view" ref="menu">
+    <nav class="menu-cup__navigation-top">
       <h2>меню</h2>
       <hr />
       <h3>кофе</h3>
     </nav>
     <DrinksCup :get_image="getImage" :drinks="coffeeDrinks" />
-    <nav class="menu-cup__navigation">
+    <nav class="menu-cup__navigation-bottom">
       <h3>не кофе</h3>
     </nav>
     <DrinksCup :get_image="getImage" :drinks="noCoffeeDrinks" />
@@ -58,13 +58,18 @@ onMounted(() => {
 .menu-cup__view {
   display: grid;
   grid-auto-flow: row;
-  margin-top: 30px;
+  margin: 30px;
 }
 
-.menu-cup__navigation h2,
-.menu-cup__navigation h3 {
+.menu-cup__navigation-top h2,
+.menu-cup__navigation-top h3,
+.menu-cup__navigation-bottom h3 {
   font-family: var(--font-heading);
   font-size: 2rem;
+}
+
+.menu-cup__navigation-bottom {
+  margin-top: 30px;
 }
 
 hr {

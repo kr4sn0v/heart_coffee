@@ -24,6 +24,6 @@
 .footer-logo-cup__view h1 {
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 6rem;
+  font-size: 5rem;
 }
 </style>

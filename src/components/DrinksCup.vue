@@ -47,8 +47,8 @@ defineProps({
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
-  gap: 30px;
-  margin: 30px 30px;
+  gap: 3rem;
+  margin-top: 30px;
 }
 
 .drinks-cup__drink {
@@ -70,7 +70,7 @@ defineProps({
 }
 
 .drinks-cup__info-view {
-  gap: 20px;
+  gap: 2rem;
   display: flex;
   width: calc(100% - 25vh / 4);
   justify-content: start;
@@ -80,7 +80,7 @@ defineProps({
   display: flex;
   flex-direction: column;
   align-items: start;
-  margin: 10px 0 10px 0;
+  margin: 1rem 0 1rem 0;
 }
 
 .drinks-cup__info-container:hover {
