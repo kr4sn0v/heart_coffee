@@ -18,12 +18,12 @@
 .footer-logo-cup__view p {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2.15rem;
 }
 
 .footer-logo-cup__view h1 {
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 5rem;
+  font-size: 3.5rem;
 }
 </style>

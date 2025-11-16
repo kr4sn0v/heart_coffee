@@ -30,7 +30,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 65px;
+  padding: 6.5rem;
   white-space: nowrap;
   gap: 0.5rem;
 }
@@ -38,12 +38,12 @@ footer {
 .footer-cup__view p {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .footer-cup__view span {
   font-family: var(--font-body);
   font-weight: 800;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 </style>

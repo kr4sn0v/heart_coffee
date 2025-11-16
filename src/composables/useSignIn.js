@@ -21,13 +21,17 @@ const login = async (values) => {
     if (!exitingUser) {
       throw new Error('Неверный email или пароль')
     } else {
-      alert('Добро пожаловать!')
+      setTimeout(() => {
+        alert('Добро пожаловать!')
+      }, 5000)
     }
   } catch (err) {
     error.value = err.message
   } finally {
-    loading.value = false
+    setTimeout(() => {
+      loading.value = false
+    }, 5000)
   }
 }
 
-export { login, error }
+export { login, error, loading }

@@ -7,7 +7,7 @@
         <p>С 1 декабря — возвращение легенды :)</p>
         <p>Тот самый глинтвейн, который все ждут</p>
       </section>
-      <SignInFormCup />
+      <SignInFormCup class="sign-in-cup__form" />
       <FooterLogoCup class="sign-in-cup__footer" />
     </main>
   </section>
@@ -23,9 +23,9 @@ import SignInFormCup from './SignInFormCup.vue'
 <style scoped>
 .sign-in-cup__view {
   display: grid;
-  height: 100%;
+  height: 100vh;
   grid-auto-flow: row;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr 0.5fr;
   grid-template-areas:
     'section section'
     'main main';
@@ -53,14 +53,18 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 75px;
-  gap: 10px;
+  padding: 7.5rem;
+  gap: 1rem;
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 3.35rem;
+  font-size: 2.55rem;
+}
+
+.sign-in-cup__form {
+  margin-bottom: 5rem;
 }
 
 .sign-in-cup__footer {
-  margin-top: 100px;
+  margin-top: auto;
 }
 </style>

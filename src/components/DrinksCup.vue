@@ -70,7 +70,7 @@ defineProps({
 }
 
 .drinks-cup__info-view {
-  gap: 2rem;
+  gap: 1rem;
   display: flex;
   width: calc(100% - 25vh / 4);
   justify-content: start;

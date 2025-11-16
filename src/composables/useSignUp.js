@@ -28,7 +28,9 @@ const register = async (values) => {
   } catch (err) {
     error.value = err.message
   } finally {
-    loading.value = false
+    setTimeout(() => {
+      loading.value = false
+    }, 5000)
   }
 }
 

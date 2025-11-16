@@ -16,7 +16,7 @@
   justify-content: center;
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 2.5rem;
+  font-size: 1.85rem;
 }
 
 .sign-in-header-cup__logo div {
@@ -24,12 +24,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 3rem;
 }
 
 .sign-in-header-cup__logo > div > h1:hover {
   color: var(--accent-color);
-  transition: 0.3s;
+  transition: var(--transition);
   cursor: pointer;
 }
 </style>

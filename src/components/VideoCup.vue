@@ -37,7 +37,7 @@
   position: absolute;
   inset: 0;
   white-space: nowrap;
-  gap: 20px;
+  gap: 2rem;
 }
 
 .video-cup__title h2,
