@@ -40,14 +40,26 @@ p {
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1499px) {
+@media (min-width: 1200px) and (max-width: 1499px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
   html {
     font-size: 7px;
   }
 }
 
-@media (min-width: 700px) and (max-width: 1000px) {
+@media (min-width: 300px) and (max-width: 599px) {
   html {
-    font-size: 6.5px;
+    font-size: 6px;
   }
 }

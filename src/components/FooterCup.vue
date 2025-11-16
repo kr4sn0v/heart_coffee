@@ -32,7 +32,7 @@ footer {
   align-items: center;
   padding: 65px;
   white-space: nowrap;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 .footer-cup__view p {

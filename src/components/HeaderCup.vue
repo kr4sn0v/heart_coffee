@@ -39,7 +39,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0px;
+  padding: 2.5rem 0;
 }
 
 .header-cup__container {
@@ -54,6 +54,7 @@
   font-family: var(--font-heading);
   font-size: 2rem;
   white-space: nowrap;
+  margin-right: 3rem;
 }
 
 .header-cup__logo h1:hover {
@@ -70,7 +71,7 @@
 .header-cup__navigation {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 3rem;
 }
 
 .header-cup__navigation ul {
@@ -78,7 +79,7 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 30px;
+  gap: 3rem;
 }
 
 .header-cup__navigation li {

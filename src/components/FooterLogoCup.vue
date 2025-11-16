@@ -12,7 +12,7 @@
   justify-content: end;
   align-items: start;
   white-space: nowrap;
-  gap: 10px;
+  gap: 1.5rem;
 }
 
 .footer-logo-cup__view p {

@@ -48,21 +48,21 @@ defineProps({
   grid-template-columns: repeat(4, 1fr);
   align-items: center;
   gap: 3rem;
-  margin-top: 30px;
 }
 
 .drinks-cup__drink {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: center;
 }
 
 .drinks-cup__name {
   font-family: var(--font-body);
   font-weight: 600;
   width: calc(100% - 25vh / 4);
-  font-size: 2rem;
+  font-size: 1.75rem;
   text-align: start;
+  white-space: nowrap;
 }
 
 .drinks-cup__image {
@@ -94,25 +94,25 @@ defineProps({
   display: flex;
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.65rem;
 }
 
 .drinks-cup__volume {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 1.65rem;
+  font-size: 1.45rem;
 }
 
 .drinks-cup__button {
   width: calc(100% - 25vh / 4);
-  height: 55px;
+  height: 4.5rem;
   background: var(--accent-color);
   border: none;
   border-radius: 50px;
   color: var(--color-text-light);
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 1.65rem;
   cursor: pointer;
   white-space: nowrap;
 }

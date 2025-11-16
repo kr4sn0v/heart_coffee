@@ -1,15 +1,17 @@
 <template>
   <section class="menu-cup__view" ref="menu">
-    <nav class="menu-cup__navigation-top">
+    <nav class="menu-cup__navigation">
       <h2>меню</h2>
       <hr />
+    </nav>
+    <section class="menu-cup__drinks-view">
       <h3>кофе</h3>
-    </nav>
-    <DrinksCup :get_image="getImage" :drinks="coffeeDrinks" />
-    <nav class="menu-cup__navigation-bottom">
+      <DrinksCup class="menu-cup__drinks" :get_image="getImage" :drinks="coffeeDrinks" />
+    </section>
+    <section class="menu-cup__drinks-view">
       <h3>не кофе</h3>
-    </nav>
-    <DrinksCup :get_image="getImage" :drinks="noCoffeeDrinks" />
+      <DrinksCup :get_image="getImage" :drinks="noCoffeeDrinks" />
+    </section>
   </section>
 </template>
 
@@ -58,23 +60,35 @@ onMounted(() => {
 .menu-cup__view {
   display: grid;
   grid-auto-flow: row;
-  margin: 30px;
+  margin: 3rem;
 }
 
-.menu-cup__navigation-top h2,
-.menu-cup__navigation-top h3,
-.menu-cup__navigation-bottom h3 {
+.menu-cup__navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0 4.5rem 0 4.5rem;
+}
+
+.menu-cup__navigation h2 {
   font-family: var(--font-heading);
   font-size: 2rem;
 }
 
-.menu-cup__navigation-bottom {
-  margin-top: 30px;
-}
-
 hr {
+  width: 100%;
   border: 2px solid var(--color-border);
   border-radius: 4px;
-  margin-bottom: 30px;
+}
+
+.menu-cup__drinks-view {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-cup__drinks-view h3 {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  margin: 2.5rem 0 2.5rem 4.5rem;
 }
 </style>
