@@ -1,36 +1,38 @@
 <template>
   <section class="drinks-cup__view">
-    <div class="drinks-cup__drink" v-for="drink in drinks" :key="drink.id">
-      <img class="drinks-cup__image" :src="get_image(drink.id)" alt="Icon Drink" />
-      <h3 class="drinks-cup__name">{{ drink.name }}</h3>
+    <div class="drinks-cup__drinks" v-for="drink in drinks" :key="drink.id">
+      <div class="drinks-cup__drink">
+        <img class="drinks-cup__image" :src="get_image(drink.id)" alt="Icon Drink" />
+        <h3 class="drinks-cup__name">{{ drink.name }}</h3>
 
-      <section class="drinks-cup__info-view">
-        <div class="drinks-cup__info-container">
-          <p class="drinks-cup__price">
-            {{ drink.price_one }}
-            <span>₽</span>
-          </p>
-          <p class="drinks-cup__volume">{{ drink.volume_one }} мл</p>
-        </div>
+        <section class="drinks-cup__info-view">
+          <div class="drinks-cup__info-container">
+            <p class="drinks-cup__price">
+              {{ drink.price_one }}
+              <span>₽</span>
+            </p>
+            <p class="drinks-cup__volume">{{ drink.volume_one }} мл</p>
+          </div>
 
-        <div class="drinks-cup__info-container" v-if="drink.price_two && drink.volume_two">
-          <p class="drinks-cup__price">
-            {{ drink.price_two }}
-            <span>₽</span>
-          </p>
-          <p class="drinks-cup__volume">{{ drink.volume_two }} мл</p>
-        </div>
+          <div class="drinks-cup__info-container" v-if="drink.price_two && drink.volume_two">
+            <p class="drinks-cup__price">
+              {{ drink.price_two }}
+              <span>₽</span>
+            </p>
+            <p class="drinks-cup__volume">{{ drink.volume_two }} мл</p>
+          </div>
 
-        <div class="drinks-cup__info-container" v-if="drink.price_three && drink.volume_three">
-          <p class="drinks-cup__price">
-            {{ drink.price_three }}
-            <span>₽</span>
-          </p>
-          <p class="drinks-cup__volume">{{ drink.volume_three }} мл</p>
-        </div>
-      </section>
+          <div class="drinks-cup__info-container" v-if="drink.price_three && drink.volume_three">
+            <p class="drinks-cup__price">
+              {{ drink.price_three }}
+              <span>₽</span>
+            </p>
+            <p class="drinks-cup__volume">{{ drink.volume_three }} мл</p>
+          </div>
+        </section>
 
-      <button class="drinks-cup__button">В корзину</button>
+        <button class="drinks-cup__button">В корзину</button>
+      </div>
     </div>
   </section>
 </template>
@@ -45,34 +47,46 @@ defineProps({
 <style scoped>
 .drinks-cup__view {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: row;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5rem 10rem;
   align-items: center;
-  gap: 3rem;
+  width: 100%;
+}
+
+.drinks-cup__drinks {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 .drinks-cup__drink {
   display: flex;
+  width: 100%;
+  min-width: 200px;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
 }
 
 .drinks-cup__name {
   font-family: var(--font-body);
   font-weight: 600;
-  width: calc(100% - 25vh / 4);
+  width: 100%;
   font-size: 1.75rem;
   text-align: start;
-  white-space: nowrap;
 }
 
 .drinks-cup__image {
-  width: calc(100% - 25vh / 4);
+  width: 100%;
+  max-width: 200px;
+  min-width: 150px;
+  height: auto;
 }
 
 .drinks-cup__info-view {
   gap: 1rem;
   display: flex;
-  width: calc(100% - 25vh / 4);
+  width: 100%;
   justify-content: start;
 }
 
@@ -104,7 +118,8 @@ defineProps({
 }
 
 .drinks-cup__button {
-  width: calc(100% - 25vh / 4);
+  width: 100%;
+  max-width: 200px;
   height: 4.5rem;
   background: var(--accent-color);
   border: none;

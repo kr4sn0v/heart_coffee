@@ -43,8 +43,8 @@
 }
 
 .header-cup__container {
-  width: 95%;
-  margin: 0 auto;
+  width: 100%;
+  margin-inline: 5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,6 +79,7 @@
   padding: 0;
   margin: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
 }
 

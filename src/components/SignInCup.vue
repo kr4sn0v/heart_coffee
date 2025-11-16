@@ -1,7 +1,7 @@
 <template>
   <section class="sign-in-cup__view">
     <HeaderCup />
-    <SignInHeaderCup />
+    <SignInHeaderCup class="sign-in-cup__header" />
     <main class="sign-in-cup__page">
       <section class="sign-in-cup__section">
         <p>С 1 декабря — возвращение легенды :)</p>
@@ -22,21 +22,13 @@ import SignInFormCup from './SignInFormCup.vue'
 
 <style scoped>
 .sign-in-cup__view {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  grid-auto-flow: row;
-  grid-template-rows: 1fr 0.5fr;
-  grid-template-areas:
-    'section section'
-    'main main';
 }
 
-section {
-  grid-area: section;
-}
-
-main {
-  grid-area: main;
+.sign-in-cup__header {
+  height: 100vh;
 }
 
 .sign-in-cup__page {
@@ -53,7 +45,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 7.5rem;
+  padding: 6rem;
   gap: 1rem;
   font-family: var(--font-body);
   font-weight: 600;

@@ -6,7 +6,7 @@
     </nav>
     <section class="menu-cup__drinks-view">
       <h3>кофе</h3>
-      <DrinksCup class="menu-cup__drinks" :get_image="getImage" :drinks="coffeeDrinks" />
+      <DrinksCup :get_image="getImage" :drinks="coffeeDrinks" />
     </section>
     <section class="menu-cup__drinks-view">
       <h3>не кофе</h3>
@@ -67,7 +67,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  margin: 0 4.5rem 0 4.5rem;
 }
 
 .menu-cup__navigation h2 {
@@ -89,6 +88,6 @@ hr {
 .menu-cup__drinks-view h3 {
   font-family: var(--font-heading);
   font-size: 1.65rem;
-  margin: 2.5rem 0 2.5rem 4.5rem;
+  margin: 2.5rem 0 2.5rem 0;
 }
 </style>

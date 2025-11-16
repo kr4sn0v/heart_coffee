@@ -1,7 +1,7 @@
 <template>
   <section class="sign-up-cup__view">
     <HeaderCup />
-    <SignUpHeaderCup />
+    <SignUpHeaderCup class="sign-up-cup__header" />
     <main class="sign-up-cup__page">
       <section class="sign-up-cup__section">
         <p>Введите почту и получите промокод на -30%</p>
@@ -22,26 +22,19 @@ import SignUpFormCup from './SignUpFormCup.vue'
 
 <style scoped>
 .sign-up-cup__view {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  grid-auto-flow: row;
-  grid-template-rows: 1fr 0.75fr;
-  grid-template-areas:
-    'section section'
-    'main main';
 }
 
-section {
-  grid-area: section;
-}
-
-main {
-  grid-area: main;
+.sign-up-cup__header {
+  height: 100vh;
 }
 
 .sign-up-cup__page {
   display: flex;
   flex-direction: column;
+  margin-top: auto;
   background: var(--accent-color);
   color: var(--color-text-light);
   border-top-left-radius: 80px;
@@ -53,7 +46,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 7.5rem;
+  padding: 6rem;
   gap: 1rem;
   font-family: var(--font-body);
   font-weight: 600;
