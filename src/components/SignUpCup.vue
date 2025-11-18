@@ -74,10 +74,17 @@ main {
   color: inherit;
   text-decoration: none;
   opacity: 0.5;
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-text-light), var(--color-text-light));
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 0% 2px;
+  transition: background-size 0.4s ease;
 }
 
 .sign-up__router-link:hover {
   opacity: 1;
+  background-size: 100% 2px;
   transition: var(--transition);
 }
 

@@ -41,10 +41,13 @@
           class="sign-up-form-cup__checkbox"
         />
         <label>
-          Согласен с <router-link class="sign-up-form-cup__router-link">условиями</router-link>
+          Согласен с
+          <router-link to="/terms" class="sign-up-form-cup__router-link">условиями</router-link>
           использования сервиса и
-          <router-link class="sign-up-form-cup__router-link">обработки</router-link> персональных
-          данных
+          <router-link to="/processing" class="sign-up-form-cup__router-link"
+            >обработки</router-link
+          >
+          персональных данных
         </label>
       </div>
       <ErrorMessage class="sign-up-form-cup__error" name="checkbox" />
@@ -139,7 +142,7 @@ import { register, error, loading } from '../composables/useSignUp.js'
 }
 
 input[type='checkbox'] {
-  transform: scale(1.25);
+  transform: scale(1.45);
 }
 
 .sign-up-form-cup__checkbox-container label {
@@ -153,10 +156,17 @@ input[type='checkbox'] {
   color: inherit;
   text-decoration: none;
   opacity: 0.5;
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-text-light), var(--color-text-light));
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 0% 2px;
+  transition: background-size 0.4s ease;
 }
 
 .sign-up-form-cup__router-link:hover {
   opacity: 1;
+  background-size: 100% 2px;
   transition: var(--transition);
 }
 

@@ -3,6 +3,8 @@ import MainCup from './components/MainCup.vue'
 import SignInCup from './components/SignInCup.vue'
 import SignUpCup from './components/SignUpCup.vue'
 import DrinkInfoCup from './components/DrinkInfoCup.vue'
+import TermsCup from './components/TermsCup.vue'
+import ProcessingCup from './components/ProcessingCup.vue'
 
 const routes = [
   {
@@ -20,6 +22,14 @@ const routes = [
   {
     path: '/drink',
     component: DrinkInfoCup,
+  },
+  {
+    path: '/terms',
+    component: TermsCup,
+  },
+  {
+    path: '/processing',
+    component: ProcessingCup,
   },
 ]
 

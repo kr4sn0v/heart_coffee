@@ -3,7 +3,7 @@
     <section class="footer-cup__view">
       <p>Если у вас есть вопросы, предложения или</p>
       <p>что-либо ещё — обращаться к нам по адресу:</p>
-      <span>franchise_heart_coffee@heart_group.io</span>
+      <a>franchise_heart_coffee@heart_group.io</a>
     </section>
     <FooterLogoCup />
   </footer>
@@ -41,9 +41,22 @@ footer {
   font-size: 2.5rem;
 }
 
-.footer-cup__view span {
+.footer-cup__view a {
   font-family: var(--font-body);
   font-weight: 800;
   font-size: 2.5rem;
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-text-light), var(--color-text-light));
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 0% 2px;
+  transition: background-size 0.4s ease;
+  cursor: pointer;
+}
+
+.footer-cup__view a:hover {
+  opacity: 1;
+  background-size: 100% 2px;
+  transition: var(--transition);
 }
 </style>
