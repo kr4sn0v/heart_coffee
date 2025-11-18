@@ -21,8 +21,8 @@ footer {
   color: var(--color-text-light);
   font-family: var(--font-body);
   font-weight: 400;
-  border-top-left-radius: 80px;
-  border-top-right-radius: 80px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
 }
 
 .footer-cup__view {

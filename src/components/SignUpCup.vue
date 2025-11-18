@@ -1,10 +1,15 @@
 <template>
   <section class="sign-up-cup__view">
     <HeaderCup />
-    <SignUpHeaderCup class="sign-up-cup__header" />
+    <section class="sign-up-cup__header">
+      <SignUpHeaderCup />
+    </section>
     <main class="sign-up-cup__page">
       <section class="sign-up-cup__section">
-        <p>Введите почту и получите промокод на -30%</p>
+        <p>
+          Введите почту и получите
+          <router-link class="sign-up__router-link">промокод на -30%</router-link>
+        </p>
         <p>Спамить не будем, честное слово ^-^</p>
       </section>
       <SignUpFormCup class="sign-up-cup__form" />
@@ -22,13 +27,19 @@ import SignUpFormCup from './SignUpFormCup.vue'
 
 <style scoped>
 .sign-up-cup__view {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  display: grid;
+  grid-auto-flow: column;
+  height: 100%;
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-areas: 'section' 'main';
 }
 
-.sign-up-cup__header {
-  height: 100vh;
+section {
+  grid-area: 'section';
+}
+
+main {
+  grid-area: 'main';
 }
 
 .sign-up-cup__page {
@@ -37,8 +48,14 @@ import SignUpFormCup from './SignUpFormCup.vue'
   margin-top: auto;
   background: var(--accent-color);
   color: var(--color-text-light);
-  border-top-left-radius: 80px;
-  border-top-right-radius: 80px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+}
+
+.sign-up-cup__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .sign-up-cup__section {
@@ -51,6 +68,15 @@ import SignUpFormCup from './SignUpFormCup.vue'
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 2.55rem;
+}
+
+.sign-up__router-link {
+  color: inherit;
+}
+
+.sign-up__router-link:hover {
+  opacity: 0.5;
+  transition: var(--transition);
 }
 
 .sign-up-cup__form {

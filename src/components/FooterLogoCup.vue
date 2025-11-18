@@ -12,7 +12,7 @@
   justify-content: end;
   align-items: start;
   white-space: nowrap;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
 
 .footer-logo-cup__view p {
@@ -22,8 +22,8 @@
 }
 
 .footer-logo-cup__view h1 {
-  font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: 3.5rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 6.5rem;
 }
 </style>

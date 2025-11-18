@@ -2,6 +2,7 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 import MainCup from './components/MainCup.vue'
 import SignInCup from './components/SignInCup.vue'
 import SignUpCup from './components/SignUpCup.vue'
+import DrinkInfoCup from './components/DrinkInfoCup.vue'
 
 const routes = [
   {
@@ -15,6 +16,10 @@ const routes = [
   {
     path: '/sign-up',
     component: SignUpCup,
+  },
+  {
+    path: '/drink',
+    component: DrinkInfoCup,
   },
 ]
 

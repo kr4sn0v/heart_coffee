@@ -1,6 +1,6 @@
 <template>
   <section class="video-cup__view">
-    <video class="video-cup__video" autoplay muted loop>
+    <video class="video-cup__video" playsinline muted loop autoplay>
       <source src="../../public/main_video.mp4" type="video/mp4" />
     </video>
     <section class="video-cup__title">
@@ -20,13 +20,10 @@
 
 .video-cup__video {
   overflow: hidden;
-  height: 100vh;
+  height: auto;
   width: 100vw;
-  object-fit: cover;
   border: none;
   outline: none;
-  border-bottom-left-radius: 80px;
-  border-bottom-right-radius: 80px;
 }
 
 .video-cup__title {
@@ -37,13 +34,13 @@
   position: absolute;
   inset: 0;
   white-space: nowrap;
-  gap: 2rem;
 }
 
 .video-cup__title h2,
 .video-cup__title p {
-  font-size: 3.65rem;
-  font-family: var(--font-heading);
+  font-size: 5.5rem;
+  font-family: var(--font-body);
+  font-weight: 800;
   color: var(--color-text-light);
 }
 

@@ -3,7 +3,7 @@
     <div class="sign-in-header-cup__logo">
       <div>
         <h1>Рады вас</h1>
-        <h1>видеть^-^</h1>
+        <h1>видеть ^-^</h1>
       </div>
     </div>
   </section>
@@ -14,9 +14,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-weight: 800;
-  font-size: 1.85rem;
+  font-size: 2.85rem;
 }
 
 .sign-in-header-cup__logo div {

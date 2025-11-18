@@ -70,6 +70,7 @@ import { register, error, loading } from '../composables/useSignUp.js'
 .sign-up-form-cup__input-container {
   display: flex;
   flex-direction: column;
+  max-width: 400px;
 }
 
 .sign-up-form-cup__label {
@@ -81,7 +82,7 @@ import { register, error, loading } from '../composables/useSignUp.js'
   background: transparent;
   font-family: var(--font-body);
   font-weight: 600;
-  border: 2px solid var(--color-text-light);
+  border: 2px solid rgba(250, 250, 250, 0.5);
   border-radius: 25px;
   font-size: 2rem;
   color: var(--color-text-light);
@@ -90,6 +91,8 @@ import { register, error, loading } from '../composables/useSignUp.js'
 
 .sign-up-form-cup__input:focus {
   outline: none;
+  transition: var(--transition);
+  border: 2px solid var(--color-text-light);
 }
 
 .sign-up-form-cup__error {
@@ -116,6 +119,7 @@ import { register, error, loading } from '../composables/useSignUp.js'
   border: none;
   border-radius: 50px;
   color: var(--accent-color);
+  background: var(--color-text-light);
   font-family: var(--font-body);
   font-weight: 500;
   font-size: 2.15rem;

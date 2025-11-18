@@ -39,7 +39,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2.5rem 0;
+  padding: 1.85rem 0;
 }
 
 .header-cup__container {
@@ -51,8 +51,9 @@
 }
 
 .header-cup__logo h1 {
-  font-family: var(--font-heading);
-  font-size: 2rem;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 2.5rem;
   white-space: nowrap;
   margin-right: 3rem;
 }
