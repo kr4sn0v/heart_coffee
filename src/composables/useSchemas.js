@@ -13,6 +13,7 @@ const signUpSchema = yup.object({
     .min(6, 'Пароль должен содержать от 6 до 12 символов')
     .max(12, 'Пароль должен содержать от 6 до 12 символов')
     .required('Пароль обязателен для заполнения'),
+  checkbox: yup.boolean(true).required('Для использования сервиса необходимо дать согласие'),
 })
 
 const signInSchema = yup.object({

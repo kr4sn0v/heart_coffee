@@ -71,11 +71,13 @@ main {
 }
 
 .sign-in__router-link {
+  text-decoration: none;
+  opacity: 0.5;
   color: inherit;
 }
 
 .sign-in__router-link:hover {
-  opacity: 0.5;
+  opacity: 1;
   transition: var(--transition);
 }
 

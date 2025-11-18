@@ -72,10 +72,12 @@ main {
 
 .sign-up__router-link {
   color: inherit;
+  text-decoration: none;
+  opacity: 0.5;
 }
 
 .sign-up__router-link:hover {
-  opacity: 0.5;
+  opacity: 1;
   transition: var(--transition);
 }
 

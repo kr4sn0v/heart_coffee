@@ -31,6 +31,25 @@
       </div>
     </section>
 
+    <section class="sign-in-form-cup__checkbox-view">
+      <div class="sign-up-form-cup__checkbox-container">
+        <Field
+          name="checkbox"
+          type="checkbox"
+          id="checkbox"
+          :value="true"
+          class="sign-up-form-cup__checkbox"
+        />
+        <label>
+          Согласен с <router-link class="sign-up-form-cup__router-link">условиями</router-link>
+          использования сервиса и
+          <router-link class="sign-up-form-cup__router-link">обработки</router-link> персональных
+          данных
+        </label>
+      </div>
+      <ErrorMessage class="sign-up-form-cup__error" name="checkbox" />
+    </section>
+
     <button
       class="sign-up-form-cup__button"
       :class="{ loader, 'sign-up-form-cup__button': loading }"
@@ -64,7 +83,7 @@ import { register, error, loading } from '../composables/useSignUp.js'
   font-weight: 600;
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem 10rem;
-  margin-bottom: 6.5rem;
+  margin-bottom: 3.5rem;
 }
 
 .sign-up-form-cup__input-container {
@@ -97,9 +116,48 @@ import { register, error, loading } from '../composables/useSignUp.js'
 
 .sign-up-form-cup__error {
   font-size: 1.85rem;
+  font-family: var(--font-body);
   color: var(--color-text-light);
   opacity: 0.7;
+  font-weight: 600;
   padding: 1rem;
+}
+
+.sign-in-form-cup__checkbox-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3.5rem;
+}
+
+.sign-up-form-cup__checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+input[type='checkbox'] {
+  transform: scale(1.25);
+}
+
+.sign-up-form-cup__checkbox-container label {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1.65rem;
+  color: var(--color-text-light);
+}
+
+.sign-up-form-cup__router-link {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.sign-up-form-cup__router-link:hover {
+  opacity: 1;
+  transition: var(--transition);
 }
 
 .sign-up-form-cup__error-bottom {
