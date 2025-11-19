@@ -42,10 +42,12 @@
         />
         <label>
           Согласен с
-          <router-link to="/terms" class="sign-up-form-cup__router-link">условиями</router-link>
+          <router-link to="/documents/terms" class="sign-up-form-cup__router-link">
+            условиями</router-link
+          >
           использования сервиса и
-          <router-link to="/processing" class="sign-up-form-cup__router-link"
-            >обработки</router-link
+          <router-link to="/documents/processing" class="sign-up-form-cup__router-link">
+            обработки</router-link
           >
           персональных данных
         </label>
@@ -53,12 +55,9 @@
       <ErrorMessage class="sign-up-form-cup__error" name="checkbox" />
     </section>
 
-    <button
-      class="sign-up-form-cup__button"
-      :class="{ loader, 'sign-up-form-cup__button': loading }"
-      type="submit"
-    >
+    <button class="sign-up-form-cup__button" type="submit" v-show="!loading">
       Зарегистрироваться
+      <div v-show="loading" class="loader"></div>
     </button>
     <div class="sign-up-form-cup__error-bottom" v-if="error">
       Произошли технические шоколадки: {{ error }}

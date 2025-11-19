@@ -8,8 +8,9 @@
       <section class="sign-in-cup__section">
         <p>С 1 декабря — возвращение легенды :)</p>
         <p>
-          Тот самый <router-link class="sign-in__router-link">глинтвейн</router-link>, который все
-          ждут
+          Тот самый
+          <router-link to="/mulled-wine" class="sign-in__router-link">глинтвейн</router-link>,
+          который все ждут
         </p>
       </section>
       <SignInFormCup class="sign-in-cup__form" />

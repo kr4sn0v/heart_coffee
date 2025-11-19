@@ -86,7 +86,7 @@
 
 .header-cup__navigation li {
   font-family: var(--font-body);
-  font-size: 2rem;
+  font-size: 1.85rem;
   font-weight: 700;
   cursor: pointer;
 }

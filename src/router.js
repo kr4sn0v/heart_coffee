@@ -3,8 +3,9 @@ import MainCup from './components/MainCup.vue'
 import SignInCup from './components/SignInCup.vue'
 import SignUpCup from './components/SignUpCup.vue'
 import DrinkInfoCup from './components/DrinkInfoCup.vue'
-import TermsCup from './components/TermsCup.vue'
-import ProcessingCup from './components/ProcessingCup.vue'
+import DocumentsCup from './components/DocumentsCup.vue'
+import MulledWineCup from './components/MulledWineCup.vue'
+import PromoCodeCup from './components/PromoCodeCup.vue'
 
 const routes = [
   {
@@ -24,12 +25,17 @@ const routes = [
     component: DrinkInfoCup,
   },
   {
-    path: '/terms',
-    component: TermsCup,
+    path: '/documents/:type',
+    component: DocumentsCup,
+    props: true,
   },
   {
-    path: '/processing',
-    component: ProcessingCup,
+    path: '/mulled-wine',
+    component: MulledWineCup,
+  },
+  {
+    path: '/promo',
+    component: PromoCodeCup,
   },
 ]
 

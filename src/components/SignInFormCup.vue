@@ -21,7 +21,7 @@
 
     <button class="sign-in-form-cup__button" type="submit">
       <p v-show="!loading">Войти</p>
-      <div v-show="loading" :class="{ loader: loading }"></div>
+      <div v-show="loading" class="loader"></div>
     </button>
 
     <div class="sign-in-form-cup__error-bottom" v-if="error">
@@ -121,6 +121,7 @@ import { login, error, loading } from '@/composables/useSignIn'
   clip-path: inset(0 100% 0 0);
   animation: l1 1s steps(4) infinite;
 }
+
 @keyframes l1 {
   to {
     clip-path: inset(0 -34% 0 0);

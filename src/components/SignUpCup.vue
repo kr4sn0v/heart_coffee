@@ -8,7 +8,7 @@
       <section class="sign-up-cup__section">
         <p>
           Введите почту и получите
-          <router-link class="sign-up__router-link">промокод на -30%</router-link>
+          <router-link to="/promo" class="sign-up__router-link">промокод на -30%</router-link>
         </p>
         <p>Спамить не будем, честное слово ^-^</p>
       </section>
