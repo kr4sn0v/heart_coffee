@@ -12,6 +12,11 @@
       <h1>персональных данных</h1>
     </section>
 
+    <section class="documents-cup__header" v-if="currentType === 'promo'">
+      <h1>Условия проведения</h1>
+      <h1>акции</h1>
+    </section>
+
     <main class="documents-cup__container" v-if="!loading">
       <div v-for="document in currentDocument" :key="document.num">
         <h2 class="documents-cup__header-section">{{ document.num }}. {{ document.title }}</h2>

@@ -5,7 +5,6 @@ import SignUpCup from './components/SignUpCup.vue'
 import DrinkInfoCup from './components/DrinkInfoCup.vue'
 import DocumentsCup from './components/DocumentsCup.vue'
 import MulledWineCup from './components/MulledWineCup.vue'
-import PromoCodeCup from './components/PromoCodeCup.vue'
 
 const routes = [
   {
@@ -32,10 +31,6 @@ const routes = [
   {
     path: '/mulled-wine',
     component: MulledWineCup,
-  },
-  {
-    path: '/promo',
-    component: PromoCodeCup,
   },
 ]
 
