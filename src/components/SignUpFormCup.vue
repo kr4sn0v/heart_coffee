@@ -42,11 +42,11 @@
         />
         <label>
           Согласен с
-          <router-link to="/documents/terms" class="sign-up-form-cup__router-link">
+          <router-link to="/sign-up/documents/terms" class="sign-up-form-cup__router-link">
             условиями</router-link
           >
           использования сервиса и
-          <router-link to="/documents/processing" class="sign-up-form-cup__router-link">
+          <router-link to="/sign-up/documents/processing" class="sign-up-form-cup__router-link">
             обработки</router-link
           >
           персональных данных

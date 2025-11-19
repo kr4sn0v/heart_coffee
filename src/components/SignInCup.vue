@@ -1,5 +1,5 @@
 <template>
-  <section class="sign-in-cup__view">
+  <section class="sign-in-cup__view" v-if="!$route.meta.isHideChild">
     <HeaderCup />
     <section class="sign-in-cup__header">
       <SignInHeaderCup />
@@ -17,6 +17,7 @@
       <FooterLogoCup class="sign-in-cup__footer" />
     </main>
   </section>
+  <router-view></router-view>
 </template>
 
 <script setup>

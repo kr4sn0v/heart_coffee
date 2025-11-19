@@ -1,10 +1,11 @@
 <template>
-  <main>
+  <main v-if="!$route.meta.isHide">
     <HeaderCup />
     <VideoCup />
     <MenuCup />
     <FooterCup />
   </main>
+  <router-view></router-view>
 </template>
 
 <script setup>

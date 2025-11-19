@@ -10,27 +10,38 @@ const routes = [
   {
     path: '/',
     component: MainCup,
-  },
-  {
-    path: '/sign-in',
-    component: SignInCup,
-  },
-  {
-    path: '/sign-up',
-    component: SignUpCup,
-  },
-  {
-    path: '/drink',
-    component: DrinkInfoCup,
-  },
-  {
-    path: '/documents/:type',
-    component: DocumentsCup,
-    props: true,
-  },
-  {
-    path: '/mulled-wine',
-    component: MulledWineCup,
+    children: [
+      {
+        path: 'sign-in',
+        component: SignInCup,
+        meta: { isHide: true },
+        children: [
+          {
+            path: 'mulled-wine',
+            component: MulledWineCup,
+            meta: { isHideChild: true },
+          },
+        ],
+      },
+      {
+        path: 'sign-up',
+        component: SignUpCup,
+        meta: { isHide: true },
+        children: [
+          {
+            path: 'documents/:type',
+            component: DocumentsCup,
+            meta: { isHideChild: true },
+            props: true,
+          },
+        ],
+      },
+      {
+        path: 'drink',
+        component: DrinkInfoCup,
+        meta: { isHide: true },
+      },
+    ],
   },
 ]
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="sign-up-cup__view">
+  <section class="sign-up-cup__view" v-if="!$route.meta.isHideChild">
     <HeaderCup />
     <section class="sign-up-cup__header">
       <SignUpHeaderCup />
@@ -8,7 +8,7 @@
       <section class="sign-up-cup__section">
         <p>
           Введите почту и получите
-          <router-link to="/documents/promo" class="sign-up__router-link"
+          <router-link to="/sign-up/documents/promo" class="sign-up__router-link"
             >промокод на -30%</router-link
           >
         </p>
@@ -18,6 +18,7 @@
       <FooterLogoCup class="sign-up-cup__footer" />
     </main>
   </section>
+  <router-view></router-view>
 </template>
 
 <script setup>
