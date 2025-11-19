@@ -2,7 +2,9 @@
   <section class="drink-cup__view">
     <img class="drink-cup__image" :src="getImage" alt="Icon Drink" />
     <h3 class="drink-cup__name">
-      <router-link to="drink" class="drink-cup__router-link">{{ drink.name }}</router-link>
+      <router-link :to="'/drink-info/' + drink.id" class="drink-cup__router-link">{{
+        drink.name
+      }}</router-link>
     </h3>
 
     <section class="drink-cup__info-view">

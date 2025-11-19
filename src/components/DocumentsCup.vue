@@ -2,19 +2,19 @@
   <section class="documents-cup__view">
     <HeaderCup />
 
-    <section class="documents-cup__header" v-if="currentType === 'terms'">
-      <h1>Условия использования</h1>
-      <h1>сервиса HEART COFFEE</h1>
-    </section>
-
-    <section class="documents-cup__header" v-if="currentType === 'processing'">
-      <h1>Условия обработки</h1>
-      <h1>персональных данных</h1>
-    </section>
-
-    <section class="documents-cup__header" v-if="currentType === 'promo'">
-      <h1>Условия проведения</h1>
-      <h1>акции</h1>
+    <section class="documents-cup__header">
+      <template v-if="currentType === 'terms'">
+        <h1>Условия использования</h1>
+        <h1>сервиса HEART COFFEE</h1>
+      </template>
+      <template v-if="currentType === 'processing'">
+        <h1>Условия обработки</h1>
+        <h1>персональных данных</h1>
+      </template>
+      <template v-if="currentType === 'promo'">
+        <h1>Условия проведения</h1>
+        <h1>акции</h1>
+      </template>
     </section>
 
     <main class="documents-cup__container" v-if="!loading">
@@ -51,6 +51,7 @@
 import HeaderCup from './HeaderCup.vue'
 import FooterCup from './FooterCup.vue'
 import { useFetch } from '../composables/useFetch.js'
+
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 

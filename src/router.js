@@ -1,23 +1,27 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
-import MainCup from './components/MainCup.vue'
-import SignInCup from './components/SignInCup.vue'
-import SignUpCup from './components/SignUpCup.vue'
-import DrinkInfoCup from './components/DrinkInfoCup.vue'
-import DocumentsCup from './components/DocumentsCup.vue'
-import MulledWineCup from './components/MulledWineCup.vue'
+
+const MainCup = () => import('./components/MainCup.vue')
+const SignInCup = () => import('./components/SignInCup.vue')
+const SignUpCup = () => import('./components/SignUpCup.vue')
+const DrinkInfoCup = () => import('./components/DrinkInfoCup.vue')
+const DocumentsCup = () => import('./components/DocumentsCup.vue')
+const MulledWineCup = () => import('./components/MulledWineCup.vue')
 
 const routes = [
   {
     path: '/',
+    name: '',
     component: MainCup,
     children: [
       {
         path: 'sign-in',
+        name: 'sign-in',
         component: SignInCup,
         meta: { isHide: true },
         children: [
           {
             path: 'mulled-wine',
+            name: 'mulled-wine',
             component: MulledWineCup,
             meta: { isHideChild: true },
           },
@@ -25,11 +29,13 @@ const routes = [
       },
       {
         path: 'sign-up',
+        name: 'sign-up',
         component: SignUpCup,
         meta: { isHide: true },
         children: [
           {
             path: 'documents/:type',
+            name: 'documents',
             component: DocumentsCup,
             meta: { isHideChild: true },
             props: true,
@@ -37,7 +43,8 @@ const routes = [
         ],
       },
       {
-        path: 'drink',
+        path: 'drink-info/:id',
+        name: 'drink-info',
         component: DrinkInfoCup,
         meta: { isHide: true },
       },
