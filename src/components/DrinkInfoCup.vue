@@ -36,7 +36,7 @@
               activeDrinkKey === `${drinkInfo.id}-${drinkInfo.prices.medium?.price}`,
           }"
           v-if="drinkInfo.prices.medium?.price"
-          @click="selectDrink(drinkInfo.id, drinkInfo.medium.small?.price)"
+          @click="selectDrink(drinkInfo.id, drinkInfo.prices.medium?.price)"
         >
           <p class="drink-info-cup__price">
             {{ drinkInfo.prices.medium.price }}
@@ -52,7 +52,7 @@
               activeDrinkKey === `${drinkInfo.id}-${drinkInfo.prices.large?.price}`,
           }"
           v-if="drinkInfo.prices.large?.price"
-          @click="selectDrink(drinkInfo.id, drinkInfo.large.small?.price)"
+          @click="selectDrink(drinkInfo.id, drinkInfo.prices.large?.price)"
         >
           <p class="drink-info-cup__price">
             {{ drinkInfo.prices.large.price }}

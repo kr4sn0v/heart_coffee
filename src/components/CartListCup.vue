@@ -1,16 +1,16 @@
 <template>
   <section class="cart-list-cup__form" :validation-schema="cartListShema" autocomplete="off">
     <main class="cart-list-cup__page">
-      <section class="cart-list-cup__view" v-for="(item, index) in items" :key="item.id">
-        <img class="cart-list-cup__image" :src="getImage(index + 1)" alt="Icon Drink" />
+      <section class="cart-list-cup__view" v-for="item in items" :key="item.id">
+        <img class="cart-list-cup__image" :src="getImage(item.callsign)" alt="Icon Drink" />
 
         <section class="cart-list-cup__info-view">
           <section class="cart-list-cup__name-container">
-            <h3 class="cart-list-cup__name">
-              <router-link class="cart-list-cup__router-link" :to="'/drink-info/' + item.id">{{
-                item.name
-              }}</router-link>
-            </h3>
+            <p class="cart-list-cup__name">
+              <router-link class="cart-list-cup__router-link" :to="'/drink-info/' + item.callsign">
+                {{ item.name }}</router-link
+              >
+            </p>
           </section>
 
           <div class="card-list-cup__info-container">
@@ -124,14 +124,24 @@ const { items, totalItems, totalPrice, removeItem, updateQuantity, clearCart } =
   font-size: 1.75rem;
 }
 
-.cart-list-cup__name:hover {
-  transform: scale(1.05);
-  transition: var(--transition);
-}
-
 .cart-list-cup__router-link {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  font-weight: 600;
+  font-size: 1.75rem;
   color: inherit;
   text-decoration: none;
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-text-dark), var(--color-text-dark));
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 0% 2px;
+  transition: background-size 0.4s ease;
+}
+
+.cart-list-cup__router-link:hover {
+  background-size: 100% 2px;
+  transition: var(--transition);
 }
 
 .cart-list-cup__info-view {

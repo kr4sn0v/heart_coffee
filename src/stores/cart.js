@@ -22,6 +22,7 @@ export const useCartStore = defineStore('cart', () => {
 
     const newItem = {
       id: drink.id + activeDrinkKey,
+      callsign: drink.id,
       name: drink.name,
       activeDrinkKey: activeDrinkKey,
       price: price,
