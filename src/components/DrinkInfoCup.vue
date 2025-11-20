@@ -1,7 +1,6 @@
 <template>
+  <HeaderCup />
   <section class="drink-info-cup__view">
-    <HeaderCup />
-
     <section class="drink-info-cup__header">
       <img class="drink-info-cup__image" :src="getImage(drinkId)" alt="Icon Drink" />
       <h1>{{ drinkInfo.name }}</h1>
@@ -66,11 +65,11 @@
         В корзину
       </button>
     </main>
-  </section>
 
-  <footer class="drink-info-cup__footer">
-    <FooterCup />
-  </footer>
+    <footer class="drink-info-cup__footer">
+      <FooterCup />
+    </footer>
+  </section>
 </template>
 
 <script setup>
@@ -94,10 +93,23 @@ const { addItem: addToCart } = useCart()
 
 <style scoped>
 .drink-info-cup__view {
+  height: 100vh;
   display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: 1.5fr 1fr 1fr;
   grid-template-areas: 'section' 'main' 'footer';
+}
+
+section {
+  grid-area: 'section';
+}
+
+main {
+  grid-area: 'main';
+  align-self: end;
+}
+
+footer {
+  grid-area: 'footer';
 }
 
 .drink-info-cup__header {
@@ -224,6 +236,6 @@ const { addItem: addToCart } = useCart()
 }
 
 .drink-info-cup__footer {
-  margin-top: 4.5rem;
+  margin-top: auto;
 }
 </style>

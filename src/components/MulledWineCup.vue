@@ -1,7 +1,6 @@
 <template>
+  <HeaderCup />
   <section class="mulled-wine-cup__view">
-    <HeaderCup />
-
     <section class="mulled-wine-cup__header">
       <img class="mulled-wine-cup__image" src="/public/mulled-wine.svg" alt="Icon Drink" />
       <h1>Глинтвейн</h1>
@@ -42,11 +41,11 @@
         </div>
       </section>
     </main>
-  </section>
 
-  <footer class="mulled-wine-cup__footer">
-    <FooterCup />
-  </footer>
+    <footer class="mulled-wine-cup__footer">
+      <FooterCup />
+    </footer>
+  </section>
 </template>
 
 <script setup>
@@ -56,10 +55,23 @@ import FooterCup from './FooterCup.vue'
 
 <style scoped>
 .mulled-wine-cup__view {
+  height: 100vh;
   display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: 1.5fr 1fr 1fr;
   grid-template-areas: 'section' 'main' 'footer';
+}
+
+section {
+  grid-area: 'section';
+}
+
+main {
+  grid-area: 'main';
+  align-self: end;
+}
+
+footer {
+  grid-area: 'footer';
 }
 
 .mulled-wine-cup__header {
@@ -165,6 +177,6 @@ import FooterCup from './FooterCup.vue'
 }
 
 .mulled-wine-cup__footer {
-  margin-top: 4.5rem;
+  margin-top: auto;
 }
 </style>

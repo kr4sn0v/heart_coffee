@@ -7,7 +7,7 @@ export const useCartStore = defineStore('cart', () => {
   const totalItems = computed(() => items.value.reduce((sum, i) => (sum += i.quantity), 0))
 
   const totalPrice = computed(() =>
-    Number(items.value.reduce((sum, i) => (sum += i.price * i.quantity), 0)).toFixed(2),
+    Number(items.value.reduce((sum, i) => (sum += i.price * i.quantity), 0)),
   )
 
   const addItem = (drink, activeDrinkKey) => {
