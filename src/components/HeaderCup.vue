@@ -9,7 +9,9 @@
       <nav class="header-cup__navigation">
         <ul>
           <li @click="scroll">меню</li>
-          <li>корзина</li>
+          <router-link to="/cart" class="header-cup__router-link">
+            <li>корзина</li>
+          </router-link>
           <router-link to="/sign-up" class="header-cup__router-link">
             <li>регистрация</li>
           </router-link>

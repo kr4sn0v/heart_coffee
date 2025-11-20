@@ -8,36 +8,67 @@
     </h3>
 
     <section class="drink-cup__info-view">
-      <div class="drink-cup__info-container">
+      <div
+        class="drink-cup__info-container"
+        v-if="$props.drink.prices.small?.price"
+        :class="{
+          'drink-cup__info-container--active':
+            activeDrinkKey === `${$props.drink.id}-${$props.drink.prices.small?.price}`,
+        }"
+        @click="selectDrink($props.drink.id, $props.drink.prices.small?.price)"
+      >
         <p class="drink-cup__price">
-          {{ drink.price_one }}
+          {{ $props.drink.prices.small?.price }}
           <span>₽</span>
         </p>
-        <p class="drink-cup__volume">{{ drink.volume_one }} мл</p>
+        <p class="drink-cup__volume">{{ $props.drink.prices.small?.volume }} мл</p>
       </div>
 
-      <div class="drink-cup__info-container" v-if="drink.price_two && drink.volume_two">
+      <div
+        class="drink-cup__info-container"
+        v-if="$props.drink.prices.medium?.price"
+        :class="{
+          'drink-cup__info-container--active':
+            activeDrinkKey === `${$props.drink.id}-${$props.drink.prices.medium?.price}`,
+        }"
+        @click="selectDrink($props.drink.id, $props.drink.prices.medium?.price)"
+      >
         <p class="drink-cup__price">
-          {{ drink.price_two }}
+          {{ $props.drink.prices.medium.price }}
           <span>₽</span>
         </p>
-        <p class="drink-cup__volume">{{ drink.volume_two }} мл</p>
+        <p class="drink-cup__volume">{{ $props.drink.prices.medium?.volume }} мл</p>
       </div>
 
-      <div class="drink-cup__info-container" v-if="drink.price_three && drink.volume_three">
+      <div
+        class="drink-cup__info-container"
+        v-if="$props.drink.prices.large?.price"
+        :class="{
+          'drink-cup__info-container--active':
+            activeDrinkKey === `${$props.drink.id}-${$props.drink.prices.large?.price}`,
+        }"
+        @click="selectDrink($props.drink.id, $props.drink.prices.large?.price)"
+      >
         <p class="drink-cup__price">
-          {{ drink.price_three }}
+          {{ $props.drink.prices.large?.price }}
           <span>₽</span>
         </p>
-        <p class="drink-cup__volume">{{ drink.volume_three }} мл</p>
+        <p class="drink-cup__volume">{{ $props.drink.prices.large?.volume }} мл</p>
       </div>
     </section>
 
-    <button class="drink-cup__button">В корзину</button>
+    <button class="drink-cup__button" @click="addToCart($props.drink, activeDrinkKey)">
+      В корзину
+    </button>
   </section>
 </template>
 
 <script setup>
+import { useCart } from '@/composables/useCart'
+import { activeDrinkKey, selectDrink } from '@/composables/useSelectDrink'
+
+const { addItem: addToCart } = useCart()
+
 defineProps({
   drink: Object,
   getImage: String,
@@ -102,6 +133,11 @@ defineProps({
 .drink-cup__info-container:hover {
   transform: scale(1.05);
   transition: var(--transition);
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.drink-cup__info-container--active {
   cursor: pointer;
   color: var(--accent-color);
 }

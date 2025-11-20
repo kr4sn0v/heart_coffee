@@ -6,6 +6,7 @@ const SignUpCup = () => import('./components/SignUpCup.vue')
 const DrinkInfoCup = () => import('./components/DrinkInfoCup.vue')
 const DocumentsCup = () => import('./components/DocumentsCup.vue')
 const MulledWineCup = () => import('./components/MulledWineCup.vue')
+const CartCup = () => import('./components/CartCup.vue')
 
 const routes = [
   {
@@ -46,6 +47,12 @@ const routes = [
         path: 'drink-info/:id',
         name: 'drink-info',
         component: DrinkInfoCup,
+        meta: { isHide: true },
+      },
+      {
+        path: 'cart',
+        name: 'cart',
+        component: CartCup,
         meta: { isHide: true },
       },
     ],

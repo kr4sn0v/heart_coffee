@@ -4,47 +4,67 @@
 
     <section class="drink-info-cup__header">
       <img class="drink-info-cup__image" :src="getImage(drinkId)" alt="Icon Drink" />
-      <h1>{{ drinkInfo['name'] }}</h1>
+      <h1>{{ drinkInfo.name }}</h1>
     </section>
 
     <main class="drink-info-cup__info-page">
       <section class="drink-info-cup__info-description">
-        <p>{{ drinkInfo['description'] }}</p>
+        <p>{{ drinkInfo.description }}</p>
       </section>
 
       <section class="drink-info-cup__info-view">
-        <div class="drink-info-cup__info-container">
+        <div
+          class="drink-info-cup__info-container"
+          :class="{
+            'drink-info-cup__info--active':
+              activeDrinkKey === `${drinkInfo.id}-${drinkInfo.prices.small?.price}`,
+          }"
+          v-if="drinkInfo.prices.small?.price"
+          @click="selectDrink(drinkInfo.id, drinkInfo.prices.small?.price)"
+        >
           <p class="drink-info-cup__price">
-            {{ drinkInfo['price_one'] }}
+            {{ drinkInfo.prices.small.price }}
             <span>₽</span>
           </p>
-          <p class="drink-info-cup__volume">{{ drinkInfo['volume_one'] }} мл</p>
+          <p class="drink-info-cup__volume">{{ drinkInfo.prices.small.volume }} мл</p>
         </div>
 
         <div
           class="drink-info-cup__info-container"
-          v-if="drinkInfo['price_two'] && drinkInfo['volume_two']"
+          :class="{
+            'drink-info-cup__info--active':
+              activeDrinkKey === `${drinkInfo.id}-${drinkInfo.prices.medium?.price}`,
+          }"
+          v-if="drinkInfo.prices.medium?.price"
+          @click="selectDrink(drinkInfo.id, drinkInfo.medium.small?.price)"
         >
           <p class="drink-info-cup__price">
-            {{ drinkInfo['price_two'] }}
+            {{ drinkInfo.prices.medium.price }}
             <span>₽</span>
           </p>
-          <p class="drink-info-cup__volume">{{ drinkInfo['volume_two'] }} мл</p>
+          <p class="drink-info-cup__volume">{{ drinkInfo.prices.medium.volume }} мл</p>
         </div>
 
         <div
           class="drink-info-cup__info-container"
-          v-if="drinkInfo['price_three'] && drinkInfo['volume_three']"
+          :class="{
+            'drink-info-cup__info--active':
+              activeDrinkKey === `${drinkInfo.id}-${drinkInfo.prices.large?.price}`,
+          }"
+          v-if="drinkInfo.prices.large?.price"
+          @click="selectDrink(drinkInfo.id, drinkInfo.large.small?.price)"
         >
           <p class="drink-info-cup__price">
-            {{ drinkInfo['price_three'] }}
+            {{ drinkInfo.prices.large.price }}
             <span>₽</span>
           </p>
-          <p class="drink-info-cup__volume">{{ drinkInfo['volume_three'] }} мл</p>
+          <p class="drink-info-cup__volume">{{ drinkInfo.prices.large.volume }} мл</p>
         </div>
       </section>
 
-      <button class="drink-info-cup__button">В корзину</button>
+      <button class="drink-info-cup__button" @click="addToCart(drinkInfo, activeDrinkKey)">
+        В корзину
+      </button>
     </main>
   </section>
 
@@ -54,16 +74,22 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useRoute } from 'vue-router'
+
 import HeaderCup from './HeaderCup.vue'
 import FooterCup from './FooterCup.vue'
-import { computed } from 'vue'
+
+import { useCart } from '@/composables/useCart'
 import { drinks } from '@/composables/useDrinks'
 import { getImage } from '@/composables/useGetImage'
+import { activeDrinkKey, selectDrink } from '@/composables/useSelectDrink'
 
 const route = useRoute()
 const drinkId = computed(() => route.params.id)
 const drinkInfo = computed(() => drinks.value[drinkId.value - 1])
+
+const { addItem: addToCart } = useCart()
 </script>
 
 <style scoped>
@@ -154,6 +180,11 @@ const drinkInfo = computed(() => drinks.value[drinkId.value - 1])
 .drink-info-cup__info-container:hover {
   transform: scale(1.05);
   transition: var(--transition);
+  cursor: pointer;
+  color: var(--accent-color);
+}
+
+.drink-info-cup__info--active {
   cursor: pointer;
   color: var(--accent-color);
 }
