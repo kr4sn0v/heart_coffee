@@ -1,8 +1,8 @@
 <template>
   <section class="cart-list-cup__form" :validation-schema="cartListShema" autocomplete="off">
     <main class="cart-list-cup__page">
-      <section class="cart-list-cup__view" v-for="item in items" :key="item.id">
-        <img class="cart-list-cup__image" :src="getImage(item.id)" alt="Icon Drink" />
+      <section class="cart-list-cup__view" v-for="(item, index) in items" :key="item.id">
+        <img class="cart-list-cup__image" :src="getImage(index + 1)" alt="Icon Drink" />
 
         <section class="cart-list-cup__info-view">
           <section class="cart-list-cup__name-container">

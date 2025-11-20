@@ -21,7 +21,7 @@ export const useCartStore = defineStore('cart', () => {
       ((price = drink.prices.large.price), (volume = drink.prices.large.volume))
 
     const newItem = {
-      id: drink.id,
+      id: drink.id + activeDrinkKey,
       name: drink.name,
       activeDrinkKey: activeDrinkKey,
       price: price,
