@@ -9,8 +9,8 @@
         <p>С 1 декабря — возвращение легенды :)</p>
         <p>
           Тот самый
-          <router-link to="/mulled-wine" class="sign-in__router-link">глинтвейн</router-link>,
-          который все ждут
+          <router-link to="/sign-in/mulled-wine" class="sign-in__router-link">глинтвейн</router-link
+          >, который все ждут
         </p>
       </section>
       <SignInFormCup class="sign-in-cup__form" />
