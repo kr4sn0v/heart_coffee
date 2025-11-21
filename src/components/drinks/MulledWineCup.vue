@@ -2,7 +2,11 @@
   <HeaderCup />
   <section class="mulled-wine-cup__view">
     <section class="mulled-wine-cup__header">
-      <img class="mulled-wine-cup__image" src="/public/mulled-wine.svg" alt="Icon Drink" />
+      <img
+        class="mulled-wine-cup__image"
+        src="../../../public/svg/mulled-wine.svg"
+        alt="Icon Drink"
+      />
       <h1>Глинтвейн</h1>
     </section>
 

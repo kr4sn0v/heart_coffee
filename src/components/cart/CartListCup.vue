@@ -30,12 +30,17 @@
                 class="cart-list-cup__input"
                 type="number"
                 v-model.number="item.quantity"
-                @input="(event) => updateQuantity(item.id, +event.target.value, activeDrinkKey)"
+                @input="
+                  (event) => $emit('update-quantity', item.id, +event.target.value, activeDrinkKey)
+                "
               />
             </div>
           </div>
 
-          <button class="cart-list-cup__button" @click="removeItem(item.id, activeDrinkKey)">
+          <button
+            class="cart-list-cup__button"
+            @click="$emit('remove-item', item.id, item.activeDrinkKey)"
+          >
             Удалить
           </button>
         </section>
@@ -52,20 +57,40 @@
       </section>
 
       <section class="cart-list-cup__bottom-section">
-        <button class="cart-list-cup__button-bottom" @click="clearCart">Оплатить заказ</button>
-        <button class="cart-list-cup__button-bottom" @click="clearCart">Удалить все</button>
+        <button class="cart-list-cup__button-bottom" @click="$emit('clear-cart')">
+          Оплатить заказ
+        </button>
+        <button class="cart-list-cup__button-bottom" @click="$emit('clear-cart')">
+          Удалить все
+        </button>
       </section>
     </footer>
   </section>
 </template>
 
 <script setup>
-import { useCart } from '@/composables/useCart'
-
-import { getImage } from '@/composables/useGetImage'
-import { activeDrinkKey } from '@/composables/useSelectDrink'
-
-const { items, totalItems, totalPrice, removeItem, updateQuantity, clearCart } = useCart()
+defineProps({
+  items: {
+    type: Object,
+    required: true,
+  },
+  totalItems: {
+    type: Number,
+    required: true,
+  },
+  totalPrice: {
+    type: Number,
+    required: true,
+  },
+  getImage: {
+    type: Function,
+    required: true,
+  },
+  activeDrinkKey: {
+    type: String,
+    required: true,
+  },
+})
 </script>
 
 <style scoped>

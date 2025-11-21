@@ -6,7 +6,17 @@
     </section>
     <main class="cart-cup__main">
       <section class="cart-cup__section">
-        <CartListCup class="cart-cup__page" />
+        <CartListCup
+          class="cart-cup__page"
+          :items="items"
+          :total-items="totalItems"
+          :total-price="totalPrice"
+          :get-image="getImage"
+          :active-drink-key="activeDrinkKey"
+          @update-quantity="updateQuantity"
+          @remove-item="removeItem"
+          @clear-cart="clearCart"
+        />
       </section>
     </main>
   </section>
@@ -16,6 +26,13 @@
 import HeaderCup from '../main/HeaderCup.vue'
 import CartListCup from './CartListCup.vue'
 import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
+
+import { getImage } from '@/composables/useGetImage'
+import { activeDrinkKey } from '@/composables/useSelectDrink'
+
+import { useCart } from '@/composables/useCart'
+
+const { items, totalItems, totalPrice, removeItem, updateQuantity, clearCart } = useCart()
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 
-const activeDrinkKey = ref(null)
+const activeDrinkKey = ref('')
 
 const selectDrink = (id, price) => {
   if (activeDrinkKey.value === `${id}-${price}`) {
