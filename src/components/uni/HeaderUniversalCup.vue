@@ -28,14 +28,10 @@ const header = computed(() =>
 }
 
 .header-universal-cup__logo div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 3rem;
 }
 
-.header-universal-cup__logo > div > h1:hover {
+.header-universal-cup__logo > h1:hover {
   color: var(--accent-color);
   transition: var(--transition);
   cursor: pointer;

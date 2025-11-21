@@ -57,7 +57,7 @@ const currentDocument = computed(() => documents.value[currentType.value])
 .documents-cup__view {
   display: grid;
   grid-auto-flow: column;
-  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
   grid-template-areas: 'section' 'main' 'footer';
 }
 
@@ -84,7 +84,7 @@ footer {
 .documents-cup__header h1 {
   font-family: var(--font-body);
   font-weight: 800;
-  font-size: 2.85rem;
+  font-size: 1rem;
 }
 
 .documents-cup__header h1:hover {

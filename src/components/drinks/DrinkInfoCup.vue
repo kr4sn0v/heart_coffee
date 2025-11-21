@@ -11,6 +11,7 @@
       :active-drink-key="activeDrinkKey"
       @selectDrink="selectDrink"
       @add-to-cart="addToCart"
+      class="drink-info-cup__main"
     />
 
     <footer class="drink-info-cup__footer">
@@ -43,7 +44,7 @@ const { addItem: addToCart } = useCart()
 .drink-info-cup__view {
   height: 100vh;
   display: grid;
-  grid-template-rows: 1.5fr 1fr 1fr;
+  grid-template-rows: auto 1fr auto;
   grid-template-areas: 'section' 'main' 'footer';
 }
 
@@ -53,7 +54,6 @@ section {
 
 main {
   grid-area: 'main';
-  align-self: end;
 }
 
 footer {
@@ -86,6 +86,10 @@ footer {
   max-width: 300px;
   min-width: 150px;
   height: auto;
+}
+
+.drink-info-cup__main {
+  margin-bottom: 3.5rem;
 }
 
 .drink-info-cup__footer {
