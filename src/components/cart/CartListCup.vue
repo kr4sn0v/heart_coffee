@@ -1,5 +1,5 @@
 <template>
-  <section class="cart-list-cup__form" :validation-schema="cartListShema" autocomplete="off">
+  <section class="cart-list-cup__form">
     <main class="cart-list-cup__page">
       <section class="cart-list-cup__view" v-for="item in items" :key="item.id">
         <img class="cart-list-cup__image" :src="getImage(item.callsign)" alt="Icon Drink" />
@@ -30,7 +30,6 @@
                 class="cart-list-cup__input"
                 type="number"
                 v-model.number="item.quantity"
-                name="quantity"
                 @input="(event) => updateQuantity(item.id, +event.target.value, activeDrinkKey)"
               />
             </div>

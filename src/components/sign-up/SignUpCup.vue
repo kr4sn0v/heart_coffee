@@ -2,7 +2,7 @@
   <section class="sign-up-cup__view" v-if="!$route.meta.isHideChild">
     <HeaderCup />
     <section class="sign-up-cup__header">
-      <SignUpHeaderCup />
+      <HeaderUniversalCup />
     </section>
     <main class="sign-up-cup__page">
       <section class="sign-up-cup__section">
@@ -24,7 +24,7 @@
 <script setup>
 import HeaderCup from '../main/HeaderCup.vue'
 import FooterLogoCup from '../main/FooterLogoCup.vue'
-import SignUpHeaderCup from './SignUpHeaderCup.vue'
+import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
 import SignUpFormCup from './SignUpFormCup.vue'
 </script>
 

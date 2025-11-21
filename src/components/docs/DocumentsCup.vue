@@ -3,18 +3,7 @@
     <HeaderCup />
 
     <section class="documents-cup__header">
-      <template v-if="currentType === 'terms'">
-        <h1>Условия использования</h1>
-        <h1>сервиса HEART COFFEE</h1>
-      </template>
-      <template v-if="currentType === 'processing'">
-        <h1>Условия обработки</h1>
-        <h1>персональных данных</h1>
-      </template>
-      <template v-if="currentType === 'promo'">
-        <h1>Условия проведения</h1>
-        <h1>акции</h1>
-      </template>
+      <HeaderUniversalCup />
     </section>
 
     <main class="documents-cup__container" v-if="!loading">
@@ -50,6 +39,7 @@
 <script setup>
 import HeaderCup from '../main/HeaderCup.vue'
 import FooterCup from '../main/FooterCup.vue'
+import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
 import { useFetch } from '../../composables/useFetch.js'
 
 import { computed, ref } from 'vue'

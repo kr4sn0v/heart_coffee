@@ -2,7 +2,7 @@
   <section class="cart-cup__view">
     <HeaderCup />
     <section class="cart-cup__header">
-      <CartListHeaderCup />
+      <HeaderUniversalCup />
     </section>
     <main class="cart-cup__main">
       <section class="cart-cup__section">
@@ -15,7 +15,7 @@
 <script setup>
 import HeaderCup from '../main/HeaderCup.vue'
 import CartListCup from './CartListCup.vue'
-import CartListHeaderCup from './CartListHeaderCup.vue'
+import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
 </script>
 
 <style scoped>
