@@ -67,8 +67,8 @@
 
 <script setup>
 import { Field, Form, ErrorMessage } from 'vee-validate'
-import { signUpSchema } from '../composables/useSchemas.js'
-import { register, error, loading } from '../composables/useSignUp.js'
+import { signUpSchema } from '../../composables/useSchemas'
+import { register, error, loading } from '../../composables/useSignUp.js'
 </script>
 
 <style scoped>

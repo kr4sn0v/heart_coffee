@@ -1,7 +1,7 @@
 <template>
   <section class="video-cup__view">
     <video class="video-cup__video" playsinline muted loop autoplay>
-      <source src="../../public/main_video.mp4" type="video/mp4" />
+      <source src="../../../public/main_video.mp4" type="video/mp4" />
     </video>
     <section class="video-cup__title">
       <h2>HEART COFFEE</h2>

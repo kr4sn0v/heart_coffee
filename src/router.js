@@ -1,12 +1,12 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
 
-const MainCup = () => import('./components/MainCup.vue')
-const SignInCup = () => import('./components/SignInCup.vue')
-const SignUpCup = () => import('./components/SignUpCup.vue')
-const DrinkInfoCup = () => import('./components/DrinkInfoCup.vue')
-const DocumentsCup = () => import('./components/DocumentsCup.vue')
-const MulledWineCup = () => import('./components/MulledWineCup.vue')
-const CartCup = () => import('./components/CartCup.vue')
+const MainCup = () => import('./components/main/MainCup.vue')
+const SignInCup = () => import('./components/sign-in/SignInCup.vue')
+const SignUpCup = () => import('./components/sign-up/SignUpCup.vue')
+const DrinkInfoCup = () => import('./components/drinks/DrinkInfoCup.vue')
+const DocumentsCup = () => import('./components/docs/DocumentsCup.vue')
+const MulledWineCup = () => import('./components/drinks/MulledWineCup.vue')
+const CartCup = () => import('./components/cart/CartCup.vue')
 
 const routes = [
   {

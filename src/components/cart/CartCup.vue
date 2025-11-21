@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import HeaderCup from './HeaderCup.vue'
+import HeaderCup from '../main/HeaderCup.vue'
 import CartListCup from './CartListCup.vue'
 import CartListHeaderCup from './CartListHeaderCup.vue'
 </script>

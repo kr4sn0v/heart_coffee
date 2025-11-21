@@ -1,39 +1,38 @@
 <template>
-  <section class="sign-up-cup__view" v-if="!$route.meta.isHideChild">
+  <section class="sign-in-cup__view" v-if="!$route.meta.isHideChild">
     <HeaderCup />
-    <section class="sign-up-cup__header">
-      <SignUpHeaderCup />
+    <section class="sign-in-cup__header">
+      <SignInHeaderCup />
     </section>
-    <main class="sign-up-cup__page">
-      <section class="sign-up-cup__section">
+    <main class="sign-in-cup__page">
+      <section class="sign-in-cup__section">
+        <p>С 1 декабря — возвращение легенды :)</p>
         <p>
-          Введите почту и получите
-          <router-link to="/sign-up/documents/promo" class="sign-up__router-link"
-            >промокод на -30%</router-link
-          >
+          Тот самый
+          <router-link to="/sign-in/mulled-wine" class="sign-in__router-link">глинтвейн</router-link
+          >, который все ждут
         </p>
-        <p>Спамить не будем, честное слово ^-^</p>
       </section>
-      <SignUpFormCup class="sign-up-cup__form" />
-      <FooterLogoCup class="sign-up-cup__footer" />
+      <SignInFormCup class="sign-in-cup__form" />
+      <FooterLogoCup class="sign-in-cup__footer" />
     </main>
   </section>
   <router-view></router-view>
 </template>
 
 <script setup>
-import HeaderCup from './HeaderCup.vue'
-import FooterLogoCup from './FooterLogoCup.vue'
-import SignUpHeaderCup from './SignUpHeaderCup.vue'
-import SignUpFormCup from './SignUpFormCup.vue'
+import FooterLogoCup from '../main/FooterLogoCup.vue'
+import HeaderCup from '../main/HeaderCup.vue'
+import SignInHeaderCup from './SignInHeaderCup.vue'
+import SignInFormCup from './SignInFormCup.vue'
 </script>
 
 <style scoped>
-.sign-up-cup__view {
+.sign-in-cup__view {
   display: grid;
   grid-auto-flow: column;
   height: 100%;
-  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-areas: 'section' 'main';
 }
 
@@ -45,7 +44,13 @@ main {
   grid-area: 'main';
 }
 
-.sign-up-cup__page {
+.sign-in-cup__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-in-cup__page {
   display: flex;
   flex-direction: column;
   margin-top: auto;
@@ -55,13 +60,7 @@ main {
   border-top-right-radius: 50px;
 }
 
-.sign-up-cup__header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sign-up-cup__section {
+.sign-in-cup__section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,7 +72,7 @@ main {
   font-size: 2.55rem;
 }
 
-.sign-up__router-link {
+.sign-in__router-link {
   color: inherit;
   text-decoration: none;
   opacity: 0.5;
@@ -85,17 +84,17 @@ main {
   transition: background-size 0.4s ease;
 }
 
-.sign-up__router-link:hover {
+.sign-in__router-link:hover {
   opacity: 1;
   background-size: 100% 2px;
   transition: var(--transition);
 }
 
-.sign-up-cup__form {
+.sign-in-cup__form {
   margin-bottom: 5rem;
 }
 
-.sign-up-cup__footer {
+.sign-in-cup__footer {
   margin-top: auto;
 }
 </style>

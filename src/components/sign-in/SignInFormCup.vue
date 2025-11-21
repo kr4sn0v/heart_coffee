@@ -32,8 +32,8 @@
 
 <script setup>
 import { Field, Form, ErrorMessage } from 'vee-validate'
-import { signInSchema } from '@/composables/useSchemas'
-import { login, error, loading } from '@/composables/useSignIn'
+import { signInSchema } from '../../composables/useSchemas.js'
+import { login, error, loading } from '../../composables/useSignIn.js'
 </script>
 
 <style scoped>

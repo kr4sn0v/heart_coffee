@@ -76,13 +76,13 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
-import HeaderCup from './HeaderCup.vue'
-import FooterCup from './FooterCup.vue'
+import HeaderCup from '../main/HeaderCup.vue'
+import FooterCup from '../main/FooterCup.vue'
 
-import { useCart } from '@/composables/useCart'
-import { drinks } from '@/composables/useDrinks'
-import { getImage } from '@/composables/useGetImage'
-import { activeDrinkKey, selectDrink } from '@/composables/useSelectDrink'
+import { useCart } from '../../composables/useCart'
+import { drinks } from '../../composables/useDrinks'
+import { getImage } from '../../composables/useGetImage'
+import { activeDrinkKey, selectDrink } from '../../composables/useSelectDrink'
 
 const route = useRoute()
 const drinkId = computed(() => route.params.id)

@@ -64,8 +64,8 @@
 </template>
 
 <script setup>
-import { useCart } from '@/composables/useCart'
-import { activeDrinkKey, selectDrink } from '@/composables/useSelectDrink'
+import { useCart } from '../../composables/useCart'
+import { activeDrinkKey, selectDrink } from '../../composables/useSelectDrink'
 
 const { addItem: addToCart } = useCart()
 

@@ -49,8 +49,8 @@
 </template>
 
 <script setup>
-import HeaderCup from './HeaderCup.vue'
-import FooterCup from './FooterCup.vue'
+import HeaderCup from '../main/HeaderCup.vue'
+import FooterCup from '../main/FooterCup.vue'
 </script>
 
 <style scoped>

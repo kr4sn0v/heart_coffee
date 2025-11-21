@@ -48,9 +48,9 @@
 </template>
 
 <script setup>
-import HeaderCup from './HeaderCup.vue'
-import FooterCup from './FooterCup.vue'
-import { useFetch } from '../composables/useFetch.js'
+import HeaderCup from '../main/HeaderCup.vue'
+import FooterCup from '../main/FooterCup.vue'
+import { useFetch } from '../../composables/useFetch.js'
 
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'

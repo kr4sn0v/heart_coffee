@@ -18,8 +18,8 @@
 <script setup>
 import { computed, onMounted } from 'vue'
 import DrinksCup from './DrinksCup.vue'
-import { drinks, fetchDrinks } from '../composables/useDrinks'
-import { getImage } from '@/composables/useGetImage'
+import { drinks, fetchDrinks } from '../../composables/useDrinks'
+import { getImage } from '../../composables/useGetImage'
 
 const coffeeDrinks = computed(() => {
   return drinks.value.slice(0, 8)

@@ -25,11 +25,4 @@ const signInSchema = yup.object({
     .required('Пароль обязателен для заполнения'),
 })
 
-const cartListShema = yup.object({
-  quantity: yup
-    .number('Введите корректное число')
-    .min(1, 'Количество напитков не может быть меньше 1')
-    .required('Количество напитков обязательно для заполнения'),
-})
-
-export { signUpSchema, signInSchema, cartListShema }
+export { signUpSchema, signInSchema }

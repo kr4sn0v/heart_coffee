@@ -11,6 +11,6 @@
 <script setup>
 import HeaderCup from './HeaderCup.vue'
 import VideoCup from './VideoCup.vue'
-import MenuCup from './MenuCup.vue'
+import MenuCup from '../menu/MenuCup.vue'
 import FooterCup from './FooterCup.vue'
 </script>

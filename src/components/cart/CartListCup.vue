@@ -61,7 +61,6 @@
 </template>
 
 <script setup>
-import { cartListShema } from '@/composables/useSchemas'
 import { useCart } from '@/composables/useCart'
 
 import { getImage } from '@/composables/useGetImage'
