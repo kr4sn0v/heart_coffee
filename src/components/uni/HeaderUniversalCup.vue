@@ -27,8 +27,10 @@ const header = computed(() =>
   font-size: 2.85rem;
 }
 
-.header-universal-cup__logo div {
-  gap: 3rem;
+.header-universal-cup__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .header-universal-cup__logo > h1:hover {

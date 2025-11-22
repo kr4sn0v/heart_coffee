@@ -10,45 +10,45 @@
       <h1>Глинтвейн</h1>
     </section>
 
-    <main class="mulled-wine-cup__info-page">
-      <section class="mulled-wine-cup__info-description">
-        <p>
-          Ароматное сочетание красного вина, пряностей и цитрусовых согревает душу и поднимает
-          настроение. Насладитесь нежными нотками корицы, гвоздики и апельсина в каждом глотке –
-          маленький зимний праздник в вашей чашке.
-        </p>
+    <main class="mulled-wine-cup__main">
+      <section class="mulled-wine-cup__info-page">
+        <section class="mulled-wine-cup__info-description">
+          <p>
+            Ароматное сочетание красного вина, пряностей и цитрусовых согревает душу и поднимает
+            настроение. Насладитесь нежными нотками корицы, гвоздики и апельсина в каждом глотке –
+            маленький зимний праздник в вашей чашке.
+          </p>
+        </section>
+
+        <section class="mulled-wine-cup__info-view">
+          <div class="mulled-wine-cup__info-container">
+            <p class="mulled-wine-cup__price">
+              230
+              <span>₽</span>
+            </p>
+            <p class="mulled-wine-cup__volume">200 мл</p>
+          </div>
+
+          <div class="mulled-wine-cup__info-container">
+            <p class="mulled-wine-cup__price">
+              250
+              <span>₽</span>
+            </p>
+            <p class="mulled-wine-cup__volume">300 мл</p>
+          </div>
+
+          <div class="mulled-wine-cup__info-container">
+            <p class="mulled-wine-cup__price">
+              270
+              <span>₽</span>
+            </p>
+            <p class="mulled-wine-cup__volume">500 мл</p>
+          </div>
+        </section>
       </section>
 
-      <section class="mulled-wine-cup__info-view">
-        <div class="mulled-wine-cup__info-container">
-          <p class="mulled-wine-cup__price">
-            230
-            <span>₽</span>
-          </p>
-          <p class="mulled-wine-cup__volume">200 мл</p>
-        </div>
-
-        <div class="mulled-wine-cup__info-container">
-          <p class="mulled-wine-cup__price">
-            250
-            <span>₽</span>
-          </p>
-          <p class="mulled-wine-cup__volume">300 мл</p>
-        </div>
-
-        <div class="mulled-wine-cup__info-container">
-          <p class="mulled-wine-cup__price">
-            270
-            <span>₽</span>
-          </p>
-          <p class="mulled-wine-cup__volume">500 мл</p>
-        </div>
-      </section>
+      <FooterCup class="mulled-wine-cup__footer" />
     </main>
-
-    <footer class="mulled-wine-cup__footer">
-      <FooterCup />
-    </footer>
   </section>
 </template>
 
@@ -59,10 +59,10 @@ import FooterCup from '../main/FooterCup.vue'
 
 <style scoped>
 .mulled-wine-cup__view {
-  height: 100vh;
+  height: 100dvh;
   display: grid;
-  grid-template-rows: 1.5fr 1fr 1fr;
-  grid-template-areas: 'section' 'main' 'footer';
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 'section' 'main';
 }
 
 section {
@@ -71,11 +71,6 @@ section {
 
 main {
   grid-area: 'main';
-  align-self: end;
-}
-
-footer {
-  grid-area: 'footer';
 }
 
 .mulled-wine-cup__header {
@@ -85,6 +80,7 @@ footer {
   justify-content: center;
   border-bottom: 1px solid var(--header-border);
   gap: 1.5rem;
+  height: 20dvh;
 }
 
 .mulled-wine-cup__header h1 {
@@ -104,6 +100,12 @@ footer {
   max-width: 300px;
   min-width: 150px;
   height: auto;
+}
+
+.mulled-wine-cup__main {
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
 }
 
 .mulled-wine-cup__info-page {
@@ -141,7 +143,6 @@ footer {
 
 .mulled-wine-cup__info-view {
   display: flex;
-  width: 100%;
   justify-content: center;
   align-items: center;
 }

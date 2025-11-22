@@ -104,14 +104,14 @@ footer {
 
 .documents-cup__header-section {
   font-family: var(--font-body);
-  font-size: 2.25rem;
+  font-size: 2.35rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .documents-cup__subtitle-text {
   font-family: var(--font-body);
-  font-size: 1.45rem;
+  font-size: 1.85rem;
   font-weight: 300;
   margin-bottom: 1rem;
 }
