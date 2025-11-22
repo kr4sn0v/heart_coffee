@@ -68,7 +68,11 @@ main {
   align-items: center;
   padding: 6rem;
   gap: 1rem;
+}
+
+.sign-up-cup__section p {
   font-family: var(--font-body);
+  color: var(--color-text-light);
   font-weight: 600;
   font-size: 2.55rem;
 }

@@ -80,12 +80,14 @@ defineProps({
   display: flex;
   flex-direction: column;
   align-items: start;
+  width: 100%;
+  max-width: 30rem;
+  min-width: 15rem;
 }
 
 .drink-cup__drink {
   display: flex;
   width: 100%;
-  min-width: 200px;
   flex-direction: column;
   align-items: start;
 }
@@ -93,7 +95,6 @@ defineProps({
 .drink-cup__name {
   font-family: var(--font-body);
   font-weight: 600;
-  width: 100%;
   font-size: 1.75rem;
   text-align: start;
 }
@@ -111,8 +112,6 @@ defineProps({
 
 .drink-cup__image {
   width: 100%;
-  max-width: 200px;
-  min-width: 150px;
   height: auto;
 }
 
@@ -157,7 +156,6 @@ defineProps({
 
 .drink-cup__button {
   width: 100%;
-  max-width: 200px;
   height: 4.5rem;
   background: var(--accent-color);
   border: none;

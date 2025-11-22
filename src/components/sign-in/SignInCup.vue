@@ -32,7 +32,7 @@ import SignInFormCup from './SignInFormCup.vue'
   display: grid;
   grid-auto-flow: column;
   height: 100%;
-  grid-template-rows: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-areas: 'section' 'main';
 }
 
@@ -67,6 +67,9 @@ main {
   align-items: center;
   padding: 6rem;
   gap: 1rem;
+}
+
+.sign-in-cup__section p {
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 2.55rem;

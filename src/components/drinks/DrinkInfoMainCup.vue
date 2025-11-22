@@ -112,7 +112,6 @@ defineProps({
 
 .drink-info-main-cup__info-view {
   display: flex;
-  width: 100%;
   justify-content: center;
   align-items: center;
 }
@@ -152,8 +151,8 @@ defineProps({
 }
 
 .drink-info-main-cup__button {
-  width: 100%;
-  max-width: 200px;
+  max-width: 40rem;
+  min-width: 30rem;
   height: 4.5rem;
   background: var(--accent-color);
   border: none;

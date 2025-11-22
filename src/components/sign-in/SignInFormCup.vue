@@ -41,7 +41,7 @@ import { login, error, loading } from '../../composables/useSignIn.js'
   display: grid;
   align-items: center;
   justify-content: center;
-  margin-inline: 4rem;
+  gap: 3.5rem;
 }
 
 .sign-in-form-cup__view {
@@ -50,7 +50,6 @@ import { login, error, loading } from '../../composables/useSignIn.js'
   font-weight: 600;
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem 10rem;
-  margin-bottom: 6.5rem;
 }
 
 .sign-in-form-cup__input-container {
@@ -90,10 +89,10 @@ import { login, error, loading } from '../../composables/useSignIn.js'
 
 .sign-in-form-cup__error-bottom {
   font-family: var(--font-body);
-  font-size: 1.95rem;
+  font-size: 1.85rem;
   color: var(--color-text-light);
   opacity: 0.7;
-  padding: 10px;
+  padding: 1rem;
   text-align: center;
 }
 

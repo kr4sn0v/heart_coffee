@@ -29,16 +29,16 @@ p {
   --accent-color-hover: #2539b3;
 
   --color-text-light: #fafafa;
-
   --color-text-dark: #252732;
-  --color-border: #252732;
 
+  --color-border: #252732;
   --border-radius-lg: 80px;
   --border-radius-sm: 50px;
 
   --transition: 0.35s;
 
   --font-body: 'Unbounded', sans-serif;
+  --color-body: #fafafa;
 }
 
 @media (min-width: 1500px) {

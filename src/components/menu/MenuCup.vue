@@ -1,5 +1,5 @@
 <template>
-  <section class="menu-cup__view" ref="menu">
+  <section class="menu-cup__view" id="menu">
     <nav class="menu-cup__navigation">
       <h2>меню</h2>
       <hr />

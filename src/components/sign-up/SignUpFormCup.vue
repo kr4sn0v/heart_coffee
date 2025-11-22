@@ -76,7 +76,7 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   display: grid;
   align-items: center;
   justify-content: center;
-  margin-inline: 4rem;
+  gap: 3.5rem;
 }
 
 .sign-up-form-cup__view {
@@ -85,7 +85,6 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   font-weight: 600;
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem 10rem;
-  margin-bottom: 3.5rem;
 }
 
 .sign-up-form-cup__input-container {
@@ -130,21 +129,20 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 3.5rem;
 }
 
 .sign-up-form-cup__checkbox-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .sign-up-form-cup__checkbox {
   appearance: none;
-  width: 1.75rem;
-  height: 1.75rem;
-  border: 1.5px solid #fafafa;
+  width: 1.85rem;
+  height: 1.85rem;
+  border: 1.85px solid #fafafa;
   border-radius: 0.25rem;
   background-color: transparent;
   cursor: pointer;
@@ -161,15 +159,11 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23334cdb' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
 }
 
-.sign-up-form-cup__checkbox:disabled ~ .checkbox-label {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
 .sign-up-form-cup__checkbox-container label {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 1.65rem;
+  font-size: 1.85rem;
+  flex-wrap: wrap;
   color: var(--color-text-light);
 }
 
@@ -193,7 +187,7 @@ import { register, error, loading } from '../../composables/useSignUp.js'
 
 .sign-up-form-cup__error-bottom {
   font-family: var(--font-body);
-  font-size: 1.95rem;
+  font-size: 1.85rem;
   color: var(--color-text-light);
   opacity: 0.7;
   padding: 1rem;

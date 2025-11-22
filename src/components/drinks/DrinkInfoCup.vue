@@ -6,17 +6,16 @@
       <h1>{{ drinkInfo.name }}</h1>
     </section>
 
-    <DrinkInfoMainCup
-      :drink-info="drinkInfo"
-      :active-drink-key="activeDrinkKey"
-      @selectDrink="selectDrink"
-      @add-to-cart="addToCart"
-      class="drink-info-cup__main"
-    />
+    <main class="drink-info-cup__main">
+      <DrinkInfoMainCup
+        :drink-info="drinkInfo"
+        :active-drink-key="activeDrinkKey"
+        @selectDrink="selectDrink"
+        @add-to-cart="addToCart"
+      />
 
-    <footer class="drink-info-cup__footer">
-      <FooterCup />
-    </footer>
+      <FooterCup class="drink-info-cup__footer" />
+    </main>
   </section>
 </template>
 
@@ -42,10 +41,10 @@ const { addItem: addToCart } = useCart()
 
 <style scoped>
 .drink-info-cup__view {
-  height: 100vh;
+  height: 100dvh;
   display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-areas: 'section' 'main' 'footer';
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 'section' 'main';
 }
 
 section {
@@ -56,10 +55,6 @@ main {
   grid-area: 'main';
 }
 
-footer {
-  grid-area: 'footer';
-}
-
 .drink-info-cup__header {
   display: flex;
   flex-direction: column;
@@ -67,6 +62,7 @@ footer {
   justify-content: center;
   border-bottom: 1px solid var(--header-border);
   gap: 1.5rem;
+  height: 20dvh;
 }
 
 .drink-info-cup__header h1 {
@@ -89,7 +85,9 @@ footer {
 }
 
 .drink-info-cup__main {
-  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
 }
 
 .drink-info-cup__footer {

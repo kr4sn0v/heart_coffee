@@ -123,16 +123,16 @@ defineProps({
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 200px;
+  max-width: 30rem;
+  min-width: 15rem;
   padding: 3.5rem;
+  gap: 1.25rem;
   border-radius: 20px;
   background: var(--color-text-light);
 }
 
 .cart-list-cup__image {
-  width: 100%;
-  max-width: 210px;
-  min-width: 150px;
+  width: auto;
   height: auto;
 }
 
@@ -168,7 +168,7 @@ defineProps({
 }
 
 .cart-list-cup__info-view {
-  gap: 1.5rem;
+  gap: 1.25rem;
   display: flex;
   flex-direction: column;
 }
@@ -212,8 +212,7 @@ defineProps({
   border: 2px solid var(--color-border);
   border-radius: 25px;
   font-size: 1.5rem;
-  width: 100%;
-  max-width: 100px;
+  max-width: 12.5rem;
   height: 3.5rem;
 }
 
@@ -222,19 +221,8 @@ defineProps({
   transition: var(--transition);
 }
 
-.cart-list-cup__error {
-  font-size: 1.25rem;
-  text-align: start;
-  width: 100%;
-  max-width: 200px;
-  font-family: var(--font-body);
-  color: var(--color-text-dark);
-  opacity: 0.7;
-}
-
 .cart-list-cup__button {
   width: 100%;
-  max-width: 200px;
   height: 4.5rem;
   background: var(--accent-color);
   border: none;
@@ -281,7 +269,7 @@ defineProps({
 
 .cart-list-cup__button-bottom {
   width: 30rem;
-  height: 4.5rem;
+  height: 5.5rem;
   background: var(--color-text-light);
   border: none;
   border-radius: 50px;

@@ -39,7 +39,7 @@ const { items, totalItems, totalPrice, removeItem, updateQuantity, clearCart } =
 .cart-cup__view {
   display: grid;
   grid-auto-flow: column;
-  height: 100%;
+  height: 100dvh;
   grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-areas: 'section' 'main';
 }
