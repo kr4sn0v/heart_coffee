@@ -1,21 +1,29 @@
 <template>
   <section class="menu-cup__view" id="menu">
-    <nav class="menu-cup__navigation">
-      <h2>меню</h2>
-      <hr />
-    </nav>
-    <section class="menu-cup__drinks-view">
-      <h3>кофе</h3>
-      <DrinksCup :get-image="getImage" :drinks="coffeeDrinks" />
+    <HeaderCup />
+    <section class="menu-cup__header">
+      <HeaderUniversalCup />
     </section>
-    <section class="menu-cup__drinks-view">
-      <h3>не кофе</h3>
-      <DrinksCup :get-image="getImage" :drinks="noCoffeeDrinks" />
-    </section>
+    <main class="menu-cup__page">
+      <section>
+        <section class="menu-cup__drinks-view">
+          <h3>кофе</h3>
+          <DrinksCup :get-image="getImage" :drinks="coffeeDrinks" />
+        </section>
+        <section class="menu-cup__drinks-view">
+          <h3>не кофе</h3>
+          <DrinksCup :get-image="getImage" :drinks="noCoffeeDrinks" />
+        </section>
+      </section>
+      <FooterLogoCup />
+    </main>
   </section>
 </template>
 
 <script setup>
+import HeaderCup from '../main/HeaderCup.vue'
+import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
+import FooterLogoCup from '../main/FooterLogoCup.vue'
 import { computed, onMounted } from 'vue'
 import DrinksCup from './DrinksCup.vue'
 import { drinks, fetchDrinks } from '../../composables/useDrinks'
@@ -37,25 +45,31 @@ onMounted(() => {
 <style scoped>
 .menu-cup__view {
   display: grid;
-  grid-auto-flow: row;
-  margin: 3rem;
+  grid-auto-flow: column;
+  height: 100%;
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-areas: 'section' 'main';
 }
 
-.menu-cup__navigation {
+section {
+  grid-area: 'section';
+}
+
+.ain {
+  grid-area: 'main';
+}
+
+.menu-cup__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--header-border);
+}
+
+.menu-cup__page {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-}
-
-.menu-cup__navigation h2 {
-  font-family: var(--font-body);
-  font-size: 3.25rem;
-}
-
-hr {
-  width: 100%;
-  border: 2px solid var(--color-border);
-  border-radius: 4px;
+  gap: 4.5rem;
 }
 
 .menu-cup__drinks-view {

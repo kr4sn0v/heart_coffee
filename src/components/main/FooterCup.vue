@@ -30,7 +30,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6.5rem;
+  padding: 5.5rem;
   white-space: nowrap;
   gap: 0.5rem;
 }
@@ -38,13 +38,13 @@ footer {
 .footer-cup__view p {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 
 .footer-cup__view a {
   font-family: var(--font-body);
   font-weight: 800;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   text-decoration: none;
   background-image: linear-gradient(var(--color-text-light), var(--color-text-light));
   background-repeat: no-repeat;

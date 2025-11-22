@@ -1,6 +1,7 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
 
 const MainCup = () => import('./components/main/MainCup.vue')
+const MenuCup = () => import('./components/menu/MenuCup.vue')
 const SignInCup = () => import('./components/sign-in/SignInCup.vue')
 const SignUpCup = () => import('./components/sign-up/SignUpCup.vue')
 const DrinkInfoCup = () => import('./components/drinks/DrinkInfoCup.vue')
@@ -14,6 +15,12 @@ const routes = [
     name: '',
     component: MainCup,
     children: [
+      {
+        path: 'menu',
+        name: 'menu',
+        component: MenuCup,
+        meta: { isHide: true },
+      },
       {
         path: 'sign-in',
         name: 'sign-in',

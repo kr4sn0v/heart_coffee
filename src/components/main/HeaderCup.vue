@@ -8,7 +8,9 @@
       </div>
       <nav class="header-cup__navigation">
         <ul>
-          <li @click="scrollTo">меню</li>
+          <router-link to="/menu" class="header-cup__router-link">
+            <li>меню</li>
+          </router-link>
           <router-link to="/cart" class="header-cup__router-link">
             <li>корзина</li>
           </router-link>
@@ -23,15 +25,6 @@
     </section>
   </header>
 </template>
-
-<script setup>
-const scrollTo = () => {
-  const el = document.getElementById('menu')
-  if (el) {
-    el.scrollIntoView({ behavior: 'smooth' })
-  }
-}
-</script>
 
 <style scoped>
 .header-cup__view {

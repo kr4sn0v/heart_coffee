@@ -1,5 +1,6 @@
 const getHeader = (route) => {
   let headers = {
+    menu: ['Меню'],
     'sign-in': ['Рады вас', 'видеть ^-^'],
     'sign-up': ['Давайте', 'дружить ;)'],
     cart: ['Корзина'],
