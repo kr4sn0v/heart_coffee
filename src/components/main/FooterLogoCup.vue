@@ -18,7 +18,7 @@
 .footer-logo-cup__view p {
   font-family: var(--font-body);
   font-weight: 500;
-  font-size: 2.15rem;
+  font-size: 2.25rem;
 }
 
 .footer-logo-cup__view h1 {

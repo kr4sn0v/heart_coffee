@@ -19,10 +19,10 @@ footer {
   flex-direction: column;
   background: var(--accent-color);
   color: var(--color-text-light);
-  font-family: var(--font-body);
+
   font-weight: 400;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
 .footer-cup__view {
@@ -36,21 +36,19 @@ footer {
 }
 
 .footer-cup__view p {
-  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 2.25rem;
+  font-size: 2.5rem;
 }
 
 .footer-cup__view a {
-  font-family: var(--font-body);
   font-weight: 800;
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   text-decoration: none;
-  background-image: linear-gradient(var(--color-text-light), var(--color-text-light));
+  background-image: linear-gradient(var(--light-color), var(--light-color));
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: 0% 2px;
-  transition: background-size 0.4s ease;
+  transition: background-size var(--transition) ease;
   cursor: pointer;
 }
 

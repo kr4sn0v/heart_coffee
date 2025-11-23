@@ -81,12 +81,6 @@ footer {
   border-bottom: 1px solid var(--header-border);
 }
 
-.documents-cup__header h1 {
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 1rem;
-}
-
 .documents-cup__header h1:hover {
   color: var(--accent-color);
   transition: var(--transition);
@@ -100,18 +94,17 @@ footer {
   justify-content: center;
   margin: 8.5rem;
   gap: 3.5rem;
+  color: var(--dark-color);
 }
 
 .documents-cup__header-section {
-  font-family: var(--font-body);
-  font-size: 2.35rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .documents-cup__subtitle-text {
-  font-family: var(--font-body);
-  font-size: 1.85rem;
+  font-size: 2rem;
   font-weight: 300;
   margin-bottom: 1rem;
 }
@@ -124,8 +117,7 @@ footer {
 }
 
 .documents-cup__subtitle-section {
-  font-family: var(--font-body);
-  font-size: 1.85rem;
+  font-size: 2rem;
   font-weight: 500;
 }
 </style>

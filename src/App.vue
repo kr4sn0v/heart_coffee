@@ -4,10 +4,8 @@
   </div>
 </template>
 
-<script setup></script>
-
 <style scoped>
 #root {
-  height: 100vh;
+  height: 100dvh;
 }
 </style>

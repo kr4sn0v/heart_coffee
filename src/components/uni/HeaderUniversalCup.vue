@@ -22,7 +22,6 @@ const header = computed(() =>
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-body);
   font-weight: 800;
   font-size: 2.85rem;
 }
@@ -31,6 +30,7 @@ const header = computed(() =>
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: var(--dark-color);
 }
 
 .header-universal-cup__logo > h1:hover {

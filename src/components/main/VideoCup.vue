@@ -27,6 +27,7 @@
 }
 
 .video-cup__title {
+  font-family: var(--font-header);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,9 +40,8 @@
 .video-cup__title h2,
 .video-cup__title p {
   font-size: 5.5rem;
-  font-family: var(--font-body);
   font-weight: 800;
-  color: var(--color-text-light);
+  color: var(--light-color);
 }
 
 .video-cup__title span {

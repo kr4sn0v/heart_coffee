@@ -50,7 +50,7 @@ main {
   flex-direction: column;
   margin-top: auto;
   background: var(--accent-color);
-  color: var(--color-text-light);
+  color: var(--light-color);
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
 }
@@ -71,8 +71,6 @@ main {
 }
 
 .sign-up-cup__section p {
-  font-family: var(--font-body);
-  color: var(--color-text-light);
   font-weight: 600;
   font-size: 2.55rem;
 }
@@ -82,11 +80,11 @@ main {
   text-decoration: none;
   opacity: 0.5;
   text-decoration: none;
-  background-image: linear-gradient(var(--color-text-light), var(--color-text-light));
+  background-image: linear-gradient(var(--light-color), var(--light-color));
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: 0% 2px;
-  transition: background-size 0.4s ease;
+  transition: background-size var(--transition) ease;
 }
 
 .sign-up__router-link:hover {

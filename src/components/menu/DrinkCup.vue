@@ -83,6 +83,7 @@ defineProps({
   width: 100%;
   max-width: 30rem;
   min-width: 15rem;
+  color: var(--dark-color);
 }
 
 .drink-cup__drink {
@@ -93,7 +94,6 @@ defineProps({
 }
 
 .drink-cup__name {
-  font-family: var(--font-body);
   font-weight: 600;
   font-size: 1.75rem;
   text-align: start;
@@ -143,13 +143,11 @@ defineProps({
 
 .drink-cup__price {
   display: flex;
-  font-family: var(--font-body);
   font-weight: 600;
   font-size: 1.65rem;
 }
 
 .drink-cup__volume {
-  font-family: var(--font-body);
   font-weight: 300;
   font-size: 1.45rem;
 }
@@ -158,10 +156,9 @@ defineProps({
   width: 100%;
   height: 4.5rem;
   background: var(--accent-color);
+  color: var(--light-color);
   border: none;
   border-radius: 50px;
-  color: var(--color-text-light);
-  font-family: var(--font-body);
   font-weight: 500;
   font-size: 1.65rem;
   cursor: pointer;

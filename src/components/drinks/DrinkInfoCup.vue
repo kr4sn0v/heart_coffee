@@ -63,10 +63,10 @@ main {
   border-bottom: 1px solid var(--header-border);
   gap: 1.5rem;
   height: 20dvh;
+  color: var(--dark-color);
 }
 
 .drink-info-cup__header h1 {
-  font-family: var(--font-body);
   font-weight: 800;
   font-size: 2.85rem;
 }

@@ -81,17 +81,15 @@ defineProps({
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 7.5rem 0 0 0;
 }
 
 .drink-info-main-cup__info-description {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   background: var(--accent-color);
   width: 45%;
   padding: 2.15rem;
   border-radius: 20px;
-  margin: 10.5rem 0 7.5rem 0;
   border-radius: 20px;
   box-shadow:
     0 0 0 10px var(--accent-color),
@@ -102,8 +100,7 @@ defineProps({
 }
 
 .drink-info-main-cup__info-description p {
-  font-family: var(--font-body);
-  color: var(--color-text-light);
+  color: var(--light-color);
   font-weight: 400;
   font-size: 1.75rem;
 
@@ -114,6 +111,7 @@ defineProps({
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--dark-color);
 }
 
 .drink-info-main-cup__info-container {
@@ -139,13 +137,11 @@ defineProps({
 
 .drink-info-main-cup__price {
   display: flex;
-  font-family: var(--font-body);
   font-weight: 600;
   font-size: 1.65rem;
 }
 
 .drink-info-main-cup__volume {
-  font-family: var(--font-body);
   font-weight: 300;
   font-size: 1.45rem;
 }
@@ -157,8 +153,7 @@ defineProps({
   background: var(--accent-color);
   border: none;
   border-radius: 50px;
-  color: var(--color-text-light);
-  font-family: var(--font-body);
+  color: var(--light-color);
   font-weight: 500;
   font-size: 1.65rem;
   cursor: pointer;

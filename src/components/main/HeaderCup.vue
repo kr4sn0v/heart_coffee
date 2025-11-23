@@ -42,6 +42,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.85rem 0;
+  color: var(--dark-color);
 }
 
 .header-cup__container {
@@ -53,7 +54,6 @@
 }
 
 .header-cup__logo h1 {
-  font-family: var(--font-body);
   font-weight: 800;
   font-size: 2.5rem;
   white-space: nowrap;
@@ -87,7 +87,6 @@
 }
 
 .header-cup__navigation li {
-  font-family: var(--font-body);
   font-size: 1.85rem;
   font-weight: 700;
   cursor: pointer;

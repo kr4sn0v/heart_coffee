@@ -81,7 +81,6 @@ import { register, error, loading } from '../../composables/useSignUp.js'
 
 .sign-up-form-cup__view {
   display: grid;
-  font-family: var(--font-body);
   font-weight: 600;
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem 10rem;
@@ -94,31 +93,28 @@ import { register, error, loading } from '../../composables/useSignUp.js'
 }
 
 .sign-up-form-cup__label {
-  font-size: 1.85rem;
+  font-size: 2rem;
   padding: 1rem;
 }
 
 .sign-up-form-cup__input {
   background: transparent;
-  font-family: var(--font-body);
   font-weight: 600;
   border: 2px solid rgba(250, 250, 250, 0.5);
-  border-radius: 25px;
+  border-radius: var(--border-radius);
   font-size: 2rem;
-  color: var(--color-text-light);
+  color: var(--light-color);
   padding: 2rem;
 }
 
 .sign-up-form-cup__input:focus {
   outline: none;
   transition: var(--transition);
-  border: 2px solid var(--color-text-light);
+  border: 2px solid var(--light-color);
 }
 
 .sign-up-form-cup__error {
-  font-size: 1.85rem;
-  font-family: var(--font-body);
-  color: var(--color-text-light);
+  font-size: 2rem;
   opacity: 0.7;
   font-weight: 600;
   padding: 1rem;
@@ -142,7 +138,7 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   appearance: none;
   width: 1.85rem;
   height: 1.85rem;
-  border: 1.85px solid #fafafa;
+  border: 1.85px solid var(--light-color);
   border-radius: 0.25rem;
   background-color: transparent;
   cursor: pointer;
@@ -155,16 +151,14 @@ import { register, error, loading } from '../../composables/useSignUp.js'
 }
 
 .sign-up-form-cup__checkbox:checked {
-  background-color: #fafafa;
+  background-color: var(--light-color);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23334cdb' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
 }
 
 .sign-up-form-cup__checkbox-container label {
-  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 1.85rem;
+  font-size: 2rem;
   flex-wrap: wrap;
-  color: var(--color-text-light);
 }
 
 .sign-up-form-cup__router-link {
@@ -172,11 +166,11 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   text-decoration: none;
   opacity: 0.5;
   text-decoration: none;
-  background-image: linear-gradient(var(--color-text-light), var(--color-text-light));
+  background-image: linear-gradient(var(--light-color), var(--light-color));
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: 0% 2px;
-  transition: background-size 0.4s ease;
+  transition: background-size var(--transition) ease;
 }
 
 .sign-up-form-cup__router-link:hover {
@@ -186,9 +180,7 @@ import { register, error, loading } from '../../composables/useSignUp.js'
 }
 
 .sign-up-form-cup__error-bottom {
-  font-family: var(--font-body);
-  font-size: 1.85rem;
-  color: var(--color-text-light);
+  font-size: 2rem;
   opacity: 0.7;
   padding: 1rem;
   text-align: center;
@@ -200,12 +192,11 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   justify-content: center;
   height: 6.75rem;
   border: none;
-  border-radius: 50px;
+  border-radius: var(--border-radius);
+  background: var(--light-color);
   color: var(--accent-color);
-  background: var(--color-text-light);
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 2.15rem;
+  font-weight: 700;
+  font-size: 2.25rem;
   cursor: pointer;
   white-space: nowrap;
 }

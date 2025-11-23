@@ -64,8 +64,8 @@ main {
   margin-top: auto;
   background: var(--accent-color);
   color: var(--color-text-light);
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
 .cart-cup__section {

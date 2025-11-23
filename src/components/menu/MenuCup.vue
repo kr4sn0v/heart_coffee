@@ -15,7 +15,7 @@
           <DrinksCup :get-image="getImage" :drinks="noCoffeeDrinks" />
         </section>
       </section>
-      <FooterLogoCup />
+      <FooterLogoCup class="menu-cup__footer" />
     </main>
   </section>
 </template>
@@ -78,9 +78,13 @@ section {
 }
 
 .menu-cup__drinks-view h3 {
-  font-family: var(--font-body);
+  color: var(--dark-color);
   font-size: 2.65rem;
   font-weight: 800;
   margin: 2.5rem 0 2.5rem 0;
+}
+
+.menu-cup__footer {
+  color: var(--dark-color);
 }
 </style>

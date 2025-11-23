@@ -105,8 +105,7 @@ defineProps({
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 10px;
-  font-family: var(--font-body);
+  border-radius: var(--border-radius);
   font-weight: 600;
   font-size: 2.55rem;
 }
@@ -127,8 +126,8 @@ defineProps({
   min-width: 15rem;
   padding: 3.5rem;
   gap: 1.25rem;
-  border-radius: 20px;
-  background: var(--color-text-light);
+  border-radius: var(--border-radius);
+  background: var(--light-color);
 }
 
 .cart-list-cup__image {
@@ -141,21 +140,19 @@ defineProps({
 }
 
 .cart-list-cup__name {
-  font-family: var(--font-body);
-  color: var(--color-text-dark);
+  color: var(--dark-color);
   font-weight: 600;
   font-size: 1.75rem;
 }
 
 .cart-list-cup__router-link {
-  font-family: var(--font-body);
-  color: var(--color-text-dark);
+  color: var(--dark-color);
   font-weight: 600;
   font-size: 1.75rem;
   color: inherit;
   text-decoration: none;
   text-decoration: none;
-  background-image: linear-gradient(var(--color-text-dark), var(--color-text-dark));
+  background-image: linear-gradient(var(--dark-color), var(--dark-color));
   background-repeat: no-repeat;
   background-position: bottom left;
   background-size: 0% 2px;
@@ -185,15 +182,13 @@ defineProps({
 
 .cart-list-cup__price {
   display: flex;
-  font-family: var(--font-body);
-  color: var(--color-text-dark);
+  color: var(--dark-color);
   font-weight: 600;
   font-size: 1.65rem;
 }
 
 .cart-list-cup__volume {
-  font-family: var(--font-body);
-  color: var(--color-text-dark);
+  color: var(--dark-color);
   font-weight: 300;
   font-size: 1.45rem;
 }
@@ -207,10 +202,9 @@ defineProps({
 .cart-list-cup__input {
   text-align: center;
   background: transparent;
-  font-family: var(--font-body);
   font-weight: 600;
-  border: 2px solid var(--color-border);
-  border-radius: 25px;
+  border: 2px solid var(--dark-color);
+  border-radius: var(--border-radius);
   font-size: 1.5rem;
   max-width: 12.5rem;
   height: 3.5rem;
@@ -226,9 +220,8 @@ defineProps({
   height: 4.5rem;
   background: var(--accent-color);
   border: none;
-  border-radius: 50px;
-  color: var(--color-text-light);
-  font-family: var(--font-body);
+  border-radius: var(--border-radius);
+  color: var(--light-color);
   font-weight: 500;
   font-size: 1.65rem;
   cursor: pointer;
@@ -241,8 +234,8 @@ defineProps({
 }
 
 .cart-list-cup__footer {
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -261,8 +254,7 @@ defineProps({
 
 .cart-list-cup__info-bottom {
   display: flex;
-  color: var(--color-text-light);
-  font-family: var(--font-body);
+  color: var(--light-color);
   font-weight: 400;
   font-size: 2rem;
 }
@@ -270,11 +262,10 @@ defineProps({
 .cart-list-cup__button-bottom {
   width: 30rem;
   height: 5.5rem;
-  background: var(--color-text-light);
+  background: var(--light-color);
   border: none;
   border-radius: 50px;
   color: var(--accent-color);
-  font-family: var(--font-body);
   font-weight: 500;
   font-size: 1.65rem;
   cursor: pointer;

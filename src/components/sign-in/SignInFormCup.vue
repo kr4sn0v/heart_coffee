@@ -46,7 +46,6 @@ import { login, error, loading } from '../../composables/useSignIn.js'
 
 .sign-in-form-cup__view {
   display: grid;
-  font-family: var(--font-body);
   font-weight: 600;
   grid-template-columns: repeat(2, 1fr);
   gap: 5rem 10rem;
@@ -65,32 +64,27 @@ import { login, error, loading } from '../../composables/useSignIn.js'
 
 .sign-in-form-cup__input {
   background: transparent;
-  font-family: var(--font-body);
   font-weight: 600;
   border: 2px solid rgba(250, 250, 250, 0.5);
-  border-radius: 25px;
+  border-radius: var(--border-radius);
   font-size: 2rem;
-  color: var(--color-text-light);
   padding: 2rem;
 }
 
 .sign-in-form-cup__input:focus {
   outline: none;
   transition: var(--transition);
-  border: 2px solid var(--color-text-light);
+  border: 2px solid var(--light-color);
 }
 
 .sign-in-form-cup__error {
-  font-size: 1.85rem;
-  color: var(--color-text-light);
+  font-size: 2rem;
   opacity: 0.7;
   padding: 1rem;
 }
 
 .sign-in-form-cup__error-bottom {
-  font-family: var(--font-body);
-  font-size: 1.85rem;
-  color: var(--color-text-light);
+  font-size: 2rem;
   opacity: 0.7;
   padding: 1rem;
   text-align: center;
@@ -104,10 +98,9 @@ import { login, error, loading } from '../../composables/useSignIn.js'
   border: none;
   border-radius: 50px;
   color: var(--accent-color);
-  background: var(--color-text-light);
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 2.15rem;
+  background: var(--light-color);
+  font-weight: 700;
+  font-size: 2.25rem;
   cursor: pointer;
   white-space: nowrap;
 }

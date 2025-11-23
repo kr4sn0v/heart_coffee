@@ -1,7 +1,7 @@
 <template>
   <main class="about-us-cup__view" v-if="!loading">
     <div v-for="line in currentLines" :key="line" class="about-us-cup__container">
-      <h2 class="about-us-cup__header">{{ line.title }}</h2>
+      <h1 class="about-us-cup__header">{{ line.title }}</h1>
 
       <div v-for="item in line.items" :key="item">
         <p class="about-us-cup__subtitle-text">{{ item }}</p>
@@ -23,6 +23,9 @@ const currentLines = computed(() => lines.value['about-us'])
 <style scoped>
 .about-us-cup__view {
   margin: 5.5rem;
+  font-size: 2.85rem;
+  font-weight: 800;
+  color: var(--dark-color);
 }
 
 .about-us-cup__container {
@@ -32,9 +35,6 @@ const currentLines = computed(() => lines.value['about-us'])
 }
 
 .about-us-cup__header {
-  font-family: var(--font-body);
-  font-size: 5.5rem;
-  font-weight: 700;
   text-align: center;
 }
 
@@ -45,9 +45,7 @@ const currentLines = computed(() => lines.value['about-us'])
 }
 
 .about-us-cup__subtitle-text {
-  font-family: var(--font-body);
-  font-size: 1.85rem;
+  font-size: 2rem;
   font-weight: 300;
-  margin: 0 15rem 0rem 15rem;
 }
 </style>

@@ -84,9 +84,9 @@ main {
 }
 
 .mulled-wine-cup__header h1 {
-  font-family: var(--font-body);
   font-weight: 800;
   font-size: 2.85rem;
+  color: var(--dark-color);
 }
 
 .mulled-wine-cup__header h1:hover {
@@ -133,7 +133,6 @@ main {
 }
 
 .mulled-wine-cup__info-description p {
-  font-family: var(--font-body);
   color: var(--color-text-light);
   font-weight: 400;
   font-size: 1.75rem;
@@ -145,6 +144,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: var(--dark-color);
 }
 
 .mulled-wine-cup__info-container {
@@ -170,13 +170,12 @@ main {
 
 .mulled-wine-cup__price {
   display: flex;
-  font-family: var(--font-body);
+
   font-weight: 600;
   font-size: 1.65rem;
 }
 
 .mulled-wine-cup__volume {
-  font-family: var(--font-body);
   font-weight: 300;
   font-size: 1.45rem;
 }
