@@ -1,23 +1,13 @@
 <template>
   <section class="cart-drink-cup__view">
-    <img
-      class="cart-drink-cup__image"
-      :src="props.getImage(props.item.callsign)"
-      alt="Icon Drink"
-    />
+    <img class="cart-drink-cup__image" :src="props.getImage" alt="Icon Drink" />
+    <h3 class="cart-drink-cup__name">
+      <router-link class="cart-drink-cup__router-link" :to="'/drink-info/' + props.item.callsign">
+        {{ props.item.name }}</router-link
+      >
+    </h3>
 
     <section class="cart-drink-cup__info-view">
-      <section class="cart-drink-cup__name-container">
-        <h3 class="cart-drink-cup__name">
-          <router-link
-            class="cart-drink-cup__router-link"
-            :to="'/drink-info/' + props.item.callsign"
-          >
-            {{ props.item.name }}</router-link
-          >
-        </h3>
-      </section>
-
       <div class="card-drink-cup__info-container">
         <div class="cart-drink-cup__info">
           <p class="cart-drink-cup__price">
@@ -40,14 +30,14 @@
           />
         </div>
       </div>
-
-      <button
-        class="cart-drink-cup__button"
-        @click="emit('remove-item', props.item.id, props.item.activeDrinkKey)"
-      >
-        Удалить
-      </button>
     </section>
+
+    <button
+      class="cart-drink-cup__button"
+      @click="emit('remove-item', props.item.id, props.item.activeDrinkKey)"
+    >
+      Удалить
+    </button>
   </section>
 </template>
 
@@ -60,7 +50,7 @@ const props = defineProps({
     required: true,
   },
   getImage: {
-    type: Function,
+    type: String,
     required: true,
   },
   activeDrinkKey: {
@@ -81,19 +71,15 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
 
 <style scoped>
 .cart-drink-cup__view {
-  display: flex;
-  flex-direction: column;
+  font-size: 1.5rem;
   width: 100%;
   max-width: 20em;
   min-width: 15em;
-  padding: 2.5em;
-  gap: 1.25rem;
-  border-radius: var(--border-radius);
-  background: var(--light-color);
+  color: var(--dark-color);
 }
 
 .cart-drink-cup__image {
-  width: auto;
+  width: 100%;
   height: auto;
 }
 
@@ -102,13 +88,12 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
 }
 
 .cart-drink-cup__name {
-  color: var(--dark-color);
+  font-weight: 600;
+  font-size: 1.35em;
+  text-align: start;
 }
 
 .cart-drink-cup__router-link {
-  color: var(--dark-color);
-  font-weight: 600;
-  font-size: 1.35em;
   color: inherit;
   text-decoration: none;
   text-decoration: none;
@@ -125,14 +110,17 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
 }
 
 .cart-drink-cup__info-view {
-  gap: 1.25em;
+  gap: 1em;
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  justify-content: start;
 }
 
 .card-drink-cup__info-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: start;
+  margin: 1em 0 1em 0;
 }
 
 .cart-drink-cup__info {
@@ -142,15 +130,13 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
 
 .cart-drink-cup__price {
   display: flex;
-  color: var(--dark-color);
   font-weight: 600;
   font-size: 1.25em;
 }
 
 .cart-drink-cup__volume {
-  color: var(--dark-color);
   font-weight: 300;
-  font-size: 1.15em;
+  font-size: 1em;
 }
 
 .cart-drink-cup__input-container {
@@ -166,7 +152,7 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
   border: 2px solid var(--dark-color);
   border-radius: var(--border-radius);
   font-size: 1em;
-  max-width: 10em;
+  max-width: 8.5em;
   height: 2.5em;
 }
 
@@ -177,18 +163,19 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
 
 .cart-drink-cup__button {
   width: 100%;
-  height: 3.5em;
+  height: 3.25em;
   background: var(--accent-color);
-  border: none;
-  border-radius: var(--border-radius);
   color: var(--light-color);
-  font-weight: 500;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
   font-size: 1.15em;
   cursor: pointer;
   white-space: nowrap;
 }
 
 .cart-drink-cup__button:hover {
+  background: var(--accent-color-hover);
   transform: scale(1.05);
   transition: var(--transition);
 }

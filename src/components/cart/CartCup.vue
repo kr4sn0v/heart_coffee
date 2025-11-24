@@ -4,10 +4,9 @@
     <section class="cart-cup__header">
       <HeaderUniversalCup />
     </section>
-    <main class="cart-cup__main">
-      <section class="cart-cup__section">
+    <main class="cart-cup__page">
+      <section class="cart-cup__drinks-view">
         <CartListCup
-          class="cart-cup__page"
           :get-image="getImage"
           :active-drink-key="activeDrinkKey"
           :items="items"
@@ -18,6 +17,12 @@
           @clear-cart="clearCart"
         />
       </section>
+      <CartFooterCup
+        :items="items"
+        :total-items="totalItems"
+        :total-price="totalPrice"
+        @clear-cart="clearCart"
+      />
     </main>
   </section>
 </template>
@@ -26,6 +31,7 @@
 import HeaderCup from '../main/HeaderCup.vue'
 import CartListCup from './CartListCup.vue'
 import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
+import CartFooterCup from './CartFooterCup.vue'
 
 import { getImage } from '@/composables/useGetImage'
 import { activeDrinkKey } from '@/composables/useSelectDrink'
@@ -56,30 +62,17 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.cart-cup__main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 3em 0 0 0;
-  margin-top: auto;
-  background: var(--accent-color);
-  color: var(--color-text-light);
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-}
-
-.cart-cup__section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  border-bottom: 1px solid var(--header-border);
 }
 
 .cart-cup__page {
   display: flex;
-  margin-top: auto;
   flex-direction: column;
+  width: 100%;
+}
+
+.cart-cup__drinks-view {
+  display: flex;
+  margin: 3em 0;
 }
 </style>

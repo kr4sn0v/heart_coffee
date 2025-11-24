@@ -68,7 +68,7 @@ section {
   grid-area: 'section';
 }
 
-.ain {
+main {
   grid-area: 'main';
 }
 
