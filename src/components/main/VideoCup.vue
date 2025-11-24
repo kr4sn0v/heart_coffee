@@ -12,6 +12,7 @@
 
 <style scoped>
 .video-cup__view {
+  font-size: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,7 +40,7 @@
 
 .video-cup__title h2,
 .video-cup__title p {
-  font-size: 5.5rem;
+  font-size: 3em;
   font-weight: 800;
   color: var(--light-color);
 }

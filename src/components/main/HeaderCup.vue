@@ -29,6 +29,7 @@
 <style scoped>
 .header-cup__view {
   position: fixed;
+  font-size: 1.5rem;
   top: 0;
   left: 0;
   width: 100%;
@@ -47,7 +48,7 @@
 
 .header-cup__container {
   width: 100%;
-  margin-inline: 5rem;
+  margin-inline: 2.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,9 +56,9 @@
 
 .header-cup__logo h1 {
   font-weight: 800;
-  font-size: 2.5rem;
+  font-size: 2em;
   white-space: nowrap;
-  margin-right: 3rem;
+  margin-right: 3em;
 }
 
 .header-cup__logo h1:hover {
@@ -74,7 +75,6 @@
 .header-cup__navigation {
   display: flex;
   align-items: center;
-  gap: 3rem;
 }
 
 .header-cup__navigation ul {
@@ -83,11 +83,11 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 3em;
 }
 
 .header-cup__navigation li {
-  font-size: 1.85rem;
+  font-size: 1.25em;
   font-weight: 700;
   cursor: pointer;
 }

@@ -1,62 +1,59 @@
 <template>
   <main class="drink-info-main-cup__info-page">
     <section class="drink-info-main-cup__info-description">
-      <p>{{ drinkInfo.description }}</p>
+      <p>{{ props.drink.description }}</p>
     </section>
 
     <section class="drink-info-main-cup__info-view">
       <div
         class="drink-info-main-cup__info-container"
         :class="{
-          'drink-info-main-cup__info--active':
-            activeDrinkKey === `${drinkInfo.id}-${drinkInfo.prices.small?.price}`,
+          'drink-info-main-cup__info--active': activeDrinkKey === `${drink.id}-${smallPrice}`,
         }"
-        v-if="drinkInfo.prices.small?.price"
-        @click="$emit('select-drink', drinkInfo.id, drinkInfo.prices.small?.price)"
+        v-if="smallPrice > 0"
+        @click="$emit('select-drink', drink.id, smallPrice)"
       >
         <p class="drink-info-main-cup__price">
-          {{ drinkInfo.prices.small.price }}
+          {{ smallPrice }}
           <span>₽</span>
         </p>
-        <p class="drink-info-main-cup__volume">{{ drinkInfo.prices.small.volume }} мл</p>
+        <p class="drink-info-main-cup__volume">{{ smallVolume }} мл</p>
       </div>
 
       <div
         class="drink-info-main-cup__info-container"
         :class="{
-          'drink-info-main-cup__info--active':
-            activeDrinkKey === `${drinkInfo.id}-${drinkInfo.prices.medium?.price}`,
+          'drink-info-main-cup__info--active': activeDrinkKey === `${drink.id}-${mediumPrice}`,
         }"
-        v-if="drinkInfo.prices.medium?.price"
-        @click="$emit('select-drink', drinkInfo.id, drinkInfo.prices.medium?.price)"
+        v-if="mediumPrice > 0"
+        @click="$emit('select-drink', drink.id, mediumPrice)"
       >
         <p class="drink-info-main-cup__price">
-          {{ drinkInfo.prices.medium.price }}
+          {{ mediumPrice }}
           <span>₽</span>
         </p>
-        <p class="drink-info-main-cup__volume">{{ drinkInfo.prices.medium.volume }} мл</p>
+        <p class="drink-info-main-cup__volume">{{ mediumVolume }} мл</p>
       </div>
 
       <div
         class="drink-info-main-cup__info-container"
         :class="{
-          'drink-info-main-cup__info--active':
-            activeDrinkKey === `${drinkInfo.id}-${drinkInfo.prices.large?.price}`,
+          'drink-info-main-cup__info--active': activeDrinkKey === `${drink.id}-${largePrice}`,
         }"
-        v-if="drinkInfo.prices.large?.price"
-        @click="$emit('select-drink', drinkInfo.id, drinkInfo.prices.large?.price)"
+        v-if="largePrice > 0"
+        @click="$emit('select-drink', drinkInfo.id, largePrice)"
       >
         <p class="drink-info-main-cup__price">
-          {{ drinkInfo.prices.large.price }}
+          {{ largePrice }}
           <span>₽</span>
         </p>
-        <p class="drink-info-main-cup__volume">{{ drinkInfo.prices.large.volume }} мл</p>
+        <p class="drink-info-main-cup__volume">{{ largeVolume }} мл</p>
       </div>
     </section>
 
     <button
       class="drink-info-main-cup__button"
-      @click="$emit('add-to-cart', drinkInfo, activeDrinkKey)"
+      @click="$emit('add-to-cart', drink, activeDrinkKey)"
     >
       В корзину
     </button>
@@ -64,8 +61,10 @@
 </template>
 
 <script setup>
-defineProps({
-  drinkInfo: {
+import { computed } from 'vue'
+
+const props = defineProps({
+  drink: {
     type: Object,
     required: true,
   },
@@ -74,10 +73,22 @@ defineProps({
     required: true,
   },
 })
+
+defineEmits(['select-drink', 'add-to-cart'])
+
+const smallPrice = computed(() => props.drink?.prices?.small?.price ?? 0)
+const smallVolume = computed(() => props.drink?.prices?.small?.volume ?? 0)
+
+const mediumPrice = computed(() => props.drink?.prices?.medium?.price ?? 0)
+const mediumVolume = computed(() => props.drink?.prices?.medium?.volume ?? 0)
+
+const largePrice = computed(() => props.drink?.prices?.large?.price ?? 0)
+const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
 </script>
 
 <style scoped>
 .drink-info-main-cup__info-page {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,17 +96,18 @@ defineProps({
 }
 
 .drink-info-main-cup__info-description {
+  margin: 5em 0 6.5em 0;
   text-align: center;
   background: var(--accent-color);
   width: 45%;
-  padding: 2.15rem;
-  border-radius: 20px;
-  border-radius: 20px;
+  padding: 2em;
+  border-radius: var(--border-radius);
+  border-radius: var(--border-radius);
   box-shadow:
     0 0 0 10px var(--accent-color),
-    0 0 0 20px var(--color-text-light),
+    0 0 0 20px var(--light-color),
     0 0 0 30px var(--accent-color),
-    0 0 0 40px var(--color-text-light),
+    0 0 0 40px var(--light-color),
     0 0 0 50px var(--accent-color);
 }
 

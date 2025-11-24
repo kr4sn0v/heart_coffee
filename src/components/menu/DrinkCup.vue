@@ -1,101 +1,121 @@
 <template>
-  <section class="drink-cup__view">
-    <img class="drink-cup__image" :src="getImage" alt="Icon Drink" />
+  <section class="drink-cup__view" v-if="drink">
+    <img class="drink-cup__image" :src="props.getImage" alt="Icon Drink" />
     <h3 class="drink-cup__name">
-      <router-link :to="'/drink-info/' + drink.id" class="drink-cup__router-link">{{
-        drink.name
+      <router-link :to="'/drink-info/' + props.drink.id" class="drink-cup__router-link">{{
+        props.drink.name
       }}</router-link>
     </h3>
 
     <section class="drink-cup__info-view">
       <div
         class="drink-cup__info-container"
-        v-if="$props.drink.prices.small?.price"
+        v-if="smallPrice > 0"
         :class="{
           'drink-cup__info-container--active':
-            activeDrinkKey === `${$props.drink.id}-${$props.drink.prices.small?.price}`,
+            props.activeDrinkKey === `${props.drink?.id}-${smallPrice}`,
         }"
-        @click="selectDrink($props.drink.id, $props.drink.prices.small?.price)"
+        @click="emit('select-drink', props.drink.id, smallPrice)"
       >
         <p class="drink-cup__price">
-          {{ $props.drink.prices.small?.price }}
+          {{ smallPrice }}
           <span>₽</span>
         </p>
-        <p class="drink-cup__volume">{{ $props.drink.prices.small?.volume }} мл</p>
+        <p class="drink-cup__volume">{{ smallVolume }} мл</p>
       </div>
 
       <div
         class="drink-cup__info-container"
-        v-if="$props.drink.prices.medium?.price"
+        v-if="mediumPrice > 0"
         :class="{
           'drink-cup__info-container--active':
-            activeDrinkKey === `${$props.drink.id}-${$props.drink.prices.medium?.price}`,
+            props.activeDrinkKey === `${props.drink?.id}-${mediumPrice}`,
         }"
-        @click="selectDrink($props.drink.id, $props.drink.prices.medium?.price)"
+        @click="emit('select-drink', props.drink.id, mediumPrice)"
       >
         <p class="drink-cup__price">
-          {{ $props.drink.prices.medium.price }}
+          {{ mediumPrice }}
           <span>₽</span>
         </p>
-        <p class="drink-cup__volume">{{ $props.drink.prices.medium?.volume }} мл</p>
+        <p class="drink-cup__volume">{{ mediumVolume }} мл</p>
       </div>
 
       <div
         class="drink-cup__info-container"
-        v-if="$props.drink.prices.large?.price"
+        v-if="largePrice > 0"
         :class="{
           'drink-cup__info-container--active':
-            activeDrinkKey === `${$props.drink.id}-${$props.drink.prices.large?.price}`,
+            props.activeDrinkKey === `${props.drink?.id}-${largePrice}`,
         }"
-        @click="selectDrink($props.drink.id, $props.drink.prices.large?.price)"
+        @click="emit('select-drink', props.drink.id, largePrice)"
       >
         <p class="drink-cup__price">
-          {{ $props.drink.prices.large?.price }}
+          {{ largePrice }}
           <span>₽</span>
         </p>
-        <p class="drink-cup__volume">{{ $props.drink.prices.large?.volume }} мл</p>
+        <p class="drink-cup__volume">{{ largeVolume }} мл</p>
       </div>
     </section>
 
-    <button class="drink-cup__button" @click="addToCart($props.drink, activeDrinkKey)">
+    <button
+      class="drink-cup__button"
+      @click="() => emit('add-to-cart', props.drink, props.activeDrinkKey)"
+    >
       В корзину
     </button>
   </section>
 </template>
 
 <script setup>
-import { useCart } from '../../composables/useCart'
-import { activeDrinkKey, selectDrink } from '../../composables/useSelectDrink'
+import { computed } from 'vue'
 
-const { addItem: addToCart } = useCart()
-
-defineProps({
-  drink: Object,
-  getImage: String,
+const props = defineProps({
+  drink: {
+    type: Object,
+    required: true,
+  },
+  getImage: {
+    type: String,
+    required: true,
+  },
+  activeDrinkKey: {
+    type: String,
+    required: true,
+  },
 })
+
+const emit = defineEmits(['select-drink', 'add-to-cart'])
+
+const smallPrice = computed(() => props.drink?.prices?.small?.price ?? 0)
+const smallVolume = computed(() => props.drink?.prices?.small?.volume ?? 0)
+
+const mediumPrice = computed(() => props.drink?.prices?.medium?.price ?? 0)
+const mediumVolume = computed(() => props.drink?.prices?.medium?.volume ?? 0)
+
+const largePrice = computed(() => props.drink?.prices?.large?.price ?? 0)
+const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
 </script>
 
 <style scoped>
 .drink-cup__view {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: start;
   width: 100%;
-  max-width: 30rem;
-  min-width: 15rem;
+  max-width: 20em;
+  min-width: 15em;
   color: var(--dark-color);
 }
 
-.drink-cup__drink {
-  display: flex;
+.drink-cup__image {
   width: 100%;
-  flex-direction: column;
-  align-items: start;
+  height: auto;
 }
 
 .drink-cup__name {
   font-weight: 600;
-  font-size: 1.75rem;
+  font-size: 1.35em;
   text-align: start;
 }
 
@@ -110,13 +130,8 @@ defineProps({
   text-decoration: none;
 }
 
-.drink-cup__image {
-  width: 100%;
-  height: auto;
-}
-
 .drink-cup__info-view {
-  gap: 1rem;
+  gap: 1em;
   display: flex;
   width: 100%;
   justify-content: start;
@@ -126,7 +141,7 @@ defineProps({
   display: flex;
   flex-direction: column;
   align-items: start;
-  margin: 1rem 0 1rem 0;
+  margin: 1em 0 1em 0;
 }
 
 .drink-cup__info-container:hover {
@@ -144,23 +159,23 @@ defineProps({
 .drink-cup__price {
   display: flex;
   font-weight: 600;
-  font-size: 1.65rem;
+  font-size: 1.25em;
 }
 
 .drink-cup__volume {
   font-weight: 300;
-  font-size: 1.45rem;
+  font-size: 1em;
 }
 
 .drink-cup__button {
   width: 100%;
-  height: 4.5rem;
+  height: 3.25em;
   background: var(--accent-color);
   color: var(--light-color);
   border: none;
   border-radius: 50px;
-  font-weight: 500;
-  font-size: 1.65rem;
+  font-weight: 600;
+  font-size: 1.15em;
   cursor: pointer;
   white-space: nowrap;
 }

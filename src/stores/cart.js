@@ -10,7 +10,7 @@ export const useCartStore = defineStore('cart', () => {
     Number(items.value.reduce((sum, i) => (sum += i.price * i.quantity), 0)),
   )
 
-  const addItem = (drink, activeDrinkKey) => {
+  const addItem = ([drink, activeDrinkKey]) => {
     let price
     let volume
     if (activeDrinkKey === `${drink.id}-${drink.prices.small?.price}`)
@@ -41,11 +41,11 @@ export const useCartStore = defineStore('cart', () => {
     }
   }
 
-  const removeItem = (id, activeDrinkKey) => {
+  const removeItem = ([id, activeDrinkKey]) => {
     items.value = items.value.filter((i) => !(i.id === id && i.activeDrinkKey === activeDrinkKey))
   }
 
-  const updateQuantity = (id, quantity, activeDrinkKey) => {
+  const updateQuantity = ([id, quantity, activeDrinkKey]) => {
     const item = items.value.find((i) => i.id === id && i.activeDrinkKey === activeDrinkKey)
     if (item) {
       if (quantity > 0) item.quantity = quantity

@@ -15,6 +15,7 @@ import FooterLogoCup from './FooterLogoCup.vue'
 
 <style scoped>
 footer {
+  font-size: 1.5rem;
   display: flex;
   flex-direction: column;
   background: var(--accent-color);
@@ -30,19 +31,19 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 5.5rem;
+  padding: 3.5em;
   white-space: nowrap;
   gap: 0.5rem;
 }
 
 .footer-cup__view p {
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 1.55em;
 }
 
 .footer-cup__view a {
   font-weight: 800;
-  font-size: 2.5rem;
+  font-size: 1.55em;
   text-decoration: none;
   background-image: linear-gradient(var(--light-color), var(--light-color));
   background-repeat: no-repeat;

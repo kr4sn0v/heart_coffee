@@ -8,11 +8,11 @@
       <section class="cart-cup__section">
         <CartListCup
           class="cart-cup__page"
+          :get-image="getImage"
+          :active-drink-key="activeDrinkKey"
           :items="items"
           :total-items="totalItems"
           :total-price="totalPrice"
-          :get-image="getImage"
-          :active-drink-key="activeDrinkKey"
           @update-quantity="updateQuantity"
           @remove-item="removeItem"
           @clear-cart="clearCart"
@@ -29,7 +29,6 @@ import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
 
 import { getImage } from '@/composables/useGetImage'
 import { activeDrinkKey } from '@/composables/useSelectDrink'
-
 import { useCart } from '@/composables/useCart'
 
 const { items, totalItems, totalPrice, removeItem, updateQuantity, clearCart } = useCart()
@@ -37,6 +36,7 @@ const { items, totalItems, totalPrice, removeItem, updateQuantity, clearCart } =
 
 <style scoped>
 .cart-cup__view {
+  font-size: 1.5rem;
   display: grid;
   grid-auto-flow: column;
   height: 100dvh;
@@ -61,6 +61,8 @@ main {
 .cart-cup__main {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  padding: 3em 0 0 0;
   margin-top: auto;
   background: var(--accent-color);
   color: var(--color-text-light);
@@ -73,7 +75,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
 }
 
 .cart-cup__page {

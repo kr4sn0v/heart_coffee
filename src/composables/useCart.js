@@ -7,7 +7,7 @@ export const useCart = () => {
 
   const { addItem, removeItem, updateQuantity, clearCart } = store
 
-  const safeAddItem = (drink, activeDrinkKey) => {
+  const safeAddItem = ([drink, activeDrinkKey]) => {
     if (
       (activeDrinkKey === `${drink.id}-${drink.prices.small?.price}` && !drink?.id) ||
       !drink?.name ||
@@ -35,7 +35,7 @@ export const useCart = () => {
       alert('Ошибка в свойствах товара, пожалуйста напишите нам на почту')
       return
     }
-    addItem(drink, activeDrinkKey)
+    addItem([drink, activeDrinkKey])
   }
 
   return {

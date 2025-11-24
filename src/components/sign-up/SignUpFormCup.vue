@@ -73,28 +73,30 @@ import { register, error, loading } from '../../composables/useSignUp.js'
 
 <style scoped>
 .sign-up-form-cup__form {
+  font-size: 1.5rem;
   display: grid;
   align-items: center;
   justify-content: center;
-  gap: 3.5rem;
+  gap: 3em;
+  margin-inline: 1.5em;
 }
 
 .sign-up-form-cup__view {
   display: grid;
   font-weight: 600;
   grid-template-columns: repeat(2, 1fr);
-  gap: 5rem 10rem;
+  gap: 2.5em 5em;
 }
 
 .sign-up-form-cup__input-container {
   display: flex;
   flex-direction: column;
-  max-width: 400px;
+  max-width: 40em;
 }
 
 .sign-up-form-cup__label {
-  font-size: 2rem;
-  padding: 1rem;
+  font-size: 1.35em;
+  padding: 0.5em;
 }
 
 .sign-up-form-cup__input {
@@ -102,9 +104,9 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   font-weight: 600;
   border: 2px solid rgba(250, 250, 250, 0.5);
   border-radius: var(--border-radius);
-  font-size: 2rem;
+  font-size: 1.35em;
   color: var(--light-color);
-  padding: 2rem;
+  padding: 1em;
 }
 
 .sign-up-form-cup__input:focus {
@@ -114,10 +116,10 @@ import { register, error, loading } from '../../composables/useSignUp.js'
 }
 
 .sign-up-form-cup__error {
-  font-size: 2rem;
+  font-size: 1.35em;
   opacity: 0.7;
   font-weight: 600;
-  padding: 1rem;
+  padding: 0.5em;
 }
 
 .sign-in-form-cup__checkbox-view {
@@ -131,15 +133,15 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1.25em;
 }
 
 .sign-up-form-cup__checkbox {
   appearance: none;
-  width: 1.85rem;
-  height: 1.85rem;
+  width: 1.5em;
+  height: 1.5em;
   border: 1.85px solid var(--light-color);
-  border-radius: 0.25rem;
+  border-radius: 0.25em;
   background-color: transparent;
   cursor: pointer;
   transition:
@@ -147,7 +149,6 @@ import { register, error, loading } from '../../composables/useSignUp.js'
     background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
-  margin: 0;
 }
 
 .sign-up-form-cup__checkbox:checked {
@@ -180,9 +181,9 @@ import { register, error, loading } from '../../composables/useSignUp.js'
 }
 
 .sign-up-form-cup__error-bottom {
-  font-size: 2rem;
+  font-size: 1.35em;
   opacity: 0.7;
-  padding: 1rem;
+  padding: 0.5em;
   text-align: center;
 }
 
@@ -190,13 +191,13 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 6.75rem;
+  height: 3.35em;
   border: none;
   border-radius: var(--border-radius);
   background: var(--light-color);
   color: var(--accent-color);
   font-weight: 700;
-  font-size: 2.25rem;
+  font-size: 1.55em;
   cursor: pointer;
   white-space: nowrap;
 }

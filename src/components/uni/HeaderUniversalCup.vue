@@ -23,13 +23,14 @@ const header = computed(() =>
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 2.85rem;
+  font-size: 1.5rem;
 }
 
 .header-universal-cup__logo {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.25em;
   color: var(--dark-color);
 }
 

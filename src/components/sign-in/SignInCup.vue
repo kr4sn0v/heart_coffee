@@ -29,9 +29,10 @@ import SignInFormCup from './SignInFormCup.vue'
 
 <style scoped>
 .sign-in-cup__view {
+  font-size: 1.5rem;
   display: grid;
   grid-auto-flow: column;
-  height: 100%;
+  height: 100dvh;
   grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-areas: 'section' 'main';
 }
@@ -55,8 +56,8 @@ main {
   flex-direction: column;
   margin-top: auto;
   background: var(--accent-color);
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
 }
 
 .sign-in-cup__section {
@@ -64,13 +65,13 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 6rem;
-  gap: 1rem;
+  padding: 4.5em;
+  gap: 1em;
 }
 
 .sign-in-cup__section p {
   font-weight: 600;
-  font-size: 2.55rem;
+  font-size: 1.55em;
 }
 
 .sign-in__router-link {
@@ -92,7 +93,7 @@ main {
 }
 
 .sign-in-cup__form {
-  margin-bottom: 5rem;
+  margin-bottom: 2.5em;
 }
 
 .sign-in-cup__footer {

@@ -22,8 +22,8 @@ const currentLines = computed(() => lines.value['about-us'])
 
 <style scoped>
 .about-us-cup__view {
-  margin: 5.5rem;
-  font-size: 2.85rem;
+  font-size: 1.5rem;
+  margin: 7.5em;
   font-weight: 800;
   color: var(--dark-color);
 }
@@ -36,6 +36,7 @@ const currentLines = computed(() => lines.value['about-us'])
 
 .about-us-cup__header {
   text-align: center;
+  font-size: 2em;
 }
 
 .about-us-cup__header:hover {
@@ -45,7 +46,7 @@ const currentLines = computed(() => lines.value['about-us'])
 }
 
 .about-us-cup__subtitle-text {
-  font-size: 2rem;
+  font-size: 1.25em;
   font-weight: 300;
 }
 </style>

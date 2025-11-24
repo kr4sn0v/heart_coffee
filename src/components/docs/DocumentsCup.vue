@@ -55,6 +55,7 @@ const currentDocument = computed(() => documents.value[currentType.value])
 
 <style scoped>
 .documents-cup__view {
+  font-size: 1.5rem;
   display: grid;
   grid-auto-flow: column;
   grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
@@ -92,21 +93,21 @@ footer {
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  margin: 8.5rem;
-  gap: 3.5rem;
+  margin: 5em;
+  gap: 2.5em;
   color: var(--dark-color);
 }
 
 .documents-cup__header-section {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: 1.85em;
+  font-weight: 600;
+  margin-bottom: 0.85em;
 }
 
 .documents-cup__subtitle-text {
-  font-size: 2rem;
+  font-size: 1.25em;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5em;
 }
 
 .documents-cup__subtitles-container {
@@ -117,7 +118,7 @@ footer {
 }
 
 .documents-cup__subtitle-section {
-  font-size: 2rem;
-  font-weight: 500;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 </style>

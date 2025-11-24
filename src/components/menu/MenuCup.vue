@@ -8,11 +8,23 @@
       <section>
         <section class="menu-cup__drinks-view">
           <h3>кофе</h3>
-          <DrinksCup :get-image="getImage" :drinks="coffeeDrinks" />
+          <DrinksCup
+            :get-image="getImage"
+            :drinks="coffeeDrinks"
+            :active-drink-key="activeDrinkKey"
+            @select-drink="selectDrink"
+            @add-to-cart="addToCart"
+          />
         </section>
         <section class="menu-cup__drinks-view">
           <h3>не кофе</h3>
-          <DrinksCup :get-image="getImage" :drinks="noCoffeeDrinks" />
+          <DrinksCup
+            :get-image="getImage"
+            :drinks="noCoffeeDrinks"
+            :active-drink-key="activeDrinkKey"
+            @select-drink="selectDrink"
+            @add-to-cart="addToCart"
+          />
         </section>
       </section>
       <FooterLogoCup class="menu-cup__footer" />
@@ -23,19 +35,19 @@
 <script setup>
 import HeaderCup from '../main/HeaderCup.vue'
 import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
-import FooterLogoCup from '../main/FooterLogoCup.vue'
-import { computed, onMounted } from 'vue'
 import DrinksCup from './DrinksCup.vue'
-import { drinks, fetchDrinks } from '../../composables/useDrinks'
-import { getImage } from '../../composables/useGetImage'
+import FooterLogoCup from '../main/FooterLogoCup.vue'
 
-const coffeeDrinks = computed(() => {
-  return drinks.value.slice(0, 8)
-})
+import { computed, onMounted } from 'vue'
+import { useCart } from '../../composables/useCart.js'
+import { getImage } from '../../composables/useGetImage.js'
+import { drinks, fetchDrinks } from '../../composables/useDrinks.js'
+import { activeDrinkKey, selectDrink } from '../../composables/useSelectDrink.js'
 
-const noCoffeeDrinks = computed(() => {
-  return drinks.value.slice(8)
-})
+const { addItem: addToCart } = useCart()
+
+const coffeeDrinks = computed(() => drinks.value.slice(0, 8))
+const noCoffeeDrinks = computed(() => drinks.value.slice(8))
 
 onMounted(() => {
   fetchDrinks()
@@ -44,9 +56,10 @@ onMounted(() => {
 
 <style scoped>
 .menu-cup__view {
+  font-size: 1.5rem;
   display: grid;
   grid-auto-flow: column;
-  height: 100%;
+  height: 100dvh;
   grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-areas: 'section' 'main';
 }
@@ -69,7 +82,7 @@ section {
 .menu-cup__page {
   display: flex;
   flex-direction: column;
-  gap: 4.5rem;
+  gap: 4.5em;
 }
 
 .menu-cup__drinks-view {
@@ -79,9 +92,9 @@ section {
 
 .menu-cup__drinks-view h3 {
   color: var(--dark-color);
-  font-size: 2.65rem;
+  font-size: 2.15em;
   font-weight: 800;
-  margin: 2.5rem 0 2.5rem 0;
+  margin: 1em 0 1em 0;
 }
 
 .menu-cup__footer {
