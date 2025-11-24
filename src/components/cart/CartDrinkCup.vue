@@ -34,11 +34,9 @@
           <input
             class="cart-drink-cup__input"
             type="number"
-            v-model.number="props.item.quantity"
-            @input="
-              (event) =>
-                emit('update-quantity', props.item.id, +event.target.value, props.activeDrinkKey)
-            "
+            :value="localeQuantity"
+            @input="localeInput"
+            min="1"
           />
         </div>
       </div>
@@ -54,6 +52,8 @@
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
 const props = defineProps({
   item: {
     type: Object,
@@ -69,7 +69,12 @@ const props = defineProps({
   },
 })
 
-console.log(props.activeDrinkKey)
+const localeQuantity = ref(props.item.quantity)
+const localeInput = (event) => {
+  const value = +event.target.value
+  localeQuantity.value = value
+  emit('update-quantity', props.item.id, value, props.item.activeDrinkKey)
+}
 
 const emit = defineEmits(['update-quantity', 'remove-item'])
 </script>

@@ -8,7 +8,6 @@ const selectDrink = ([id, price]) => {
   } else {
     activeDrinkKey.value = `${id}-${price}`
   }
-  console.log(activeDrinkKey.value)
 }
 
 export { activeDrinkKey, selectDrink }
