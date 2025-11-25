@@ -63,7 +63,7 @@
 
 .header-cup__logo h1:hover {
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--accent-color-light);
   transition: var(--transition);
 }
 
@@ -94,7 +94,7 @@
 
 .header-cup__navigation li:hover {
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--accent-color-light);
   transition: color var(--transition);
 }
 </style>

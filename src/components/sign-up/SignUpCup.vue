@@ -50,7 +50,7 @@ main {
   display: flex;
   flex-direction: column;
   margin-top: auto;
-  background: var(--accent-color);
+  background: var(--accent-color-light);
   color: var(--light-color);
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);

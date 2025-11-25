@@ -98,17 +98,17 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
 .drink-info-main-cup__info-description {
   margin: 5em 0 6.5em 0;
   text-align: center;
-  background: var(--accent-color);
+  background: var(--accent-color-light);
   width: 45%;
   padding: 2em;
   border-radius: var(--border-radius);
   border-radius: var(--border-radius);
   box-shadow:
-    0 0 0 10px var(--accent-color),
+    0 0 0 10px var(--accent-color-light),
     0 0 0 20px var(--light-color),
-    0 0 0 30px var(--accent-color),
+    0 0 0 30px var(--accent-color-light),
     0 0 0 40px var(--light-color),
-    0 0 0 50px var(--accent-color);
+    0 0 0 50px var(--accent-color-light);
 }
 
 .drink-info-main-cup__info-description p {
@@ -139,12 +139,12 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
   transform: scale(1.05);
   transition: var(--transition);
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--accent-color-light);
 }
 
 .drink-info-main-cup__info--active {
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--accent-color-light);
 }
 
 .drink-info-main-cup__price {
@@ -162,7 +162,7 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
   max-width: 40rem;
   min-width: 30rem;
   height: 4.5rem;
-  background: var(--accent-color);
+  background: var(--accent-color-light);
   border: none;
   border-radius: 50px;
   color: var(--light-color);
@@ -173,7 +173,7 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
 }
 
 .drink-info-main-cup__button:hover {
-  background: var(--accent-color-hover);
+  background: var(--accent-color-dark);
   transform: scale(1.05);
   transition: var(--transition);
 }

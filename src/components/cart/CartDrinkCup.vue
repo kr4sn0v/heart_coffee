@@ -164,7 +164,7 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
 .cart-drink-cup__button {
   width: 100%;
   height: 3.25em;
-  background: var(--accent-color);
+  background: var(--accent-color-light);
   color: var(--light-color);
   border: none;
   border-radius: 50px;

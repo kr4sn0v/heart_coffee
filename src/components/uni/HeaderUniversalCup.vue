@@ -19,23 +19,17 @@ const header = computed(() =>
 
 <style scoped>
 .header-universal-cup__view {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-weight: 800;
   font-size: 1.5rem;
 }
 
 .header-universal-cup__logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.25em;
+  font-size: 7.5vw;
   color: var(--dark-color);
 }
 
 .header-universal-cup__logo > h1:hover {
-  color: var(--accent-color);
+  color: var(--accent-color-light);
   transition: var(--transition);
   cursor: pointer;
 }

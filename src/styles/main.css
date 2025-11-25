@@ -23,8 +23,9 @@ p {
   --header-bg: rgba(255, 255, 255, 0.6);
   --header-border: rgba(0, 0, 0, 0.1);
 
-  --accent-color: #334cdb;
-  --accent-color-hover: #2539b3;
+  --accent-color-light: #334cdc;
+  --accent-color-dark: #182da8;
+  --accent-color-hover: #1c35c2;
 
   --light-color: #fafafa;
   --dark-color: #252732;

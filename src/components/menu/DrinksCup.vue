@@ -48,7 +48,7 @@ const localeImage = (drink) => {
   grid-auto-flow: row;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 4.5em 9.5em;
-  align-items: center;
+  justify-items: center;
   width: 100%;
 }
 

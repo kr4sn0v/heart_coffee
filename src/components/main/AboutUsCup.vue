@@ -40,7 +40,7 @@ const currentLines = computed(() => lines.value['about-us'])
 }
 
 .about-us-cup__header:hover {
-  color: var(--accent-color);
+  color: var(--accent-color-light);
   transition: var(--transition);
   cursor: pointer;
 }

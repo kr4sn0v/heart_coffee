@@ -55,7 +55,7 @@ main {
   display: flex;
   flex-direction: column;
   margin-top: auto;
-  background: var(--accent-color);
+  background: var(--accent-color-light);
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
 }

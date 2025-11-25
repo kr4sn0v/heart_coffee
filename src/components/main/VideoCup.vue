@@ -46,6 +46,6 @@
 }
 
 .video-cup__title span {
-  color: var(--accent-color);
+  color: var(--accent-color-light);
 }
 </style>

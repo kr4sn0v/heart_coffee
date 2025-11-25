@@ -194,19 +194,24 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   height: 3.35em;
   border: none;
   border-radius: var(--border-radius);
-  background: var(--light-color);
-  color: var(--accent-color);
+  background: var(--accent-color-dark);
+  color: var(--light-color);
   font-weight: 700;
   font-size: 1.55em;
   cursor: pointer;
   white-space: nowrap;
 }
 
+.sign-up-form-cup__button:hover {
+  background: var(--accent-color-hover);
+  transition: var(--transition);
+}
+
 .loader {
   width: 60px;
   aspect-ratio: 4;
-  background: radial-gradient(circle closest-side, var(--accent-color) 90%, #0000) 0 /
-    calc(100% / 3) 100% space;
+  background: radial-gradient(circle closest-side, var(--light-color) 90%, #0000) 0 / calc(100% / 3)
+    100% space;
   clip-path: inset(0 100% 0 0);
   animation: l1 1s steps(4) infinite;
 }

@@ -90,7 +90,7 @@ main {
 }
 
 .mulled-wine-cup__header h1:hover {
-  color: var(--accent-color);
+  color: var(--accent-color-light);
   transition: var(--transition);
   cursor: pointer;
 }
@@ -118,18 +118,18 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-color);
+  background: var(--accent-color-light);
   width: 45%;
   padding: 2.15rem;
   border-radius: 20px;
   margin: 10.5rem 0 7.5rem 0;
   border-radius: 20px;
   box-shadow:
-    0 0 0 10px var(--accent-color),
+    0 0 0 10px var(--accent-color-light),
     0 0 0 20px var(--color-text-light),
-    0 0 0 30px var(--accent-color),
+    0 0 0 30px var(--accent-color-light),
     0 0 0 40px var(--color-text-light),
-    0 0 0 50px var(--accent-color);
+    0 0 0 50px var(--accent-color-light);
 }
 
 .mulled-wine-cup__info-description p {
@@ -160,12 +160,12 @@ main {
   transform: scale(1.05);
   transition: var(--transition);
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--accent-color-light);
 }
 
 .mulled-wine-cup__info--active {
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--accent-color-light);
 }
 
 .mulled-wine-cup__price {

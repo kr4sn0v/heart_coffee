@@ -120,7 +120,7 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
 }
 
 .drink-cup__name:hover {
-  color: var(--accent-color);
+  color: var(--accent-color-light);
   transform: scale(1.05);
   transition: var(--transition);
 }
@@ -148,12 +148,12 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
   transform: scale(1.05);
   transition: var(--transition);
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--accent-color-light);
 }
 
 .drink-cup__info-container--active {
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--accent-color-light);
 }
 
 .drink-cup__price {
@@ -170,7 +170,7 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
 .drink-cup__button {
   width: 100%;
   height: 3.25em;
-  background: var(--accent-color);
+  background: var(--accent-color-light);
   color: var(--light-color);
   border: none;
   border-radius: 50px;
@@ -181,7 +181,7 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
 }
 
 .drink-cup__button:hover {
-  background: var(--accent-color-hover);
+  background: var(--accent-color-dark);
   transform: scale(1.05);
   transition: var(--transition);
 }

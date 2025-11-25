@@ -46,7 +46,7 @@ const emit = defineEmits(['clear-cart'])
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: var(--accent-color);
+  background: var(--accent-color-light);
   width: 100%;
   padding: 3em 0;
   gap: 3em;
@@ -71,7 +71,7 @@ const emit = defineEmits(['clear-cart'])
   background: var(--light-color);
   border: none;
   border-radius: var(--border-radius);
-  color: var(--accent-color);
+  color: var(--accent-color-light);
   font-weight: 600;
   font-size: 1.15em;
   cursor: pointer;

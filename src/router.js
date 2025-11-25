@@ -55,6 +55,7 @@ const routes = [
         name: 'drink-info',
         component: DrinkInfoCup,
         meta: { isHide: true },
+        props: true,
       },
       {
         path: 'cart',

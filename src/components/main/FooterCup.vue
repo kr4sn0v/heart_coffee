@@ -18,7 +18,7 @@ footer {
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
-  background: var(--accent-color);
+  background: var(--accent-color-light);
   color: var(--color-text-light);
 
   font-weight: 400;

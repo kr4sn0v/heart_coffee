@@ -73,7 +73,7 @@ main {
 }
 
 .drink-info-cup__header h1:hover {
-  color: var(--accent-color);
+  color: var(--accent-color-light);
   transition: var(--transition);
   cursor: pointer;
 }
