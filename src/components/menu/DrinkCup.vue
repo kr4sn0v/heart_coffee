@@ -164,7 +164,7 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
 
 .drink-cup__volume {
   font-weight: 300;
-  font-size: 1em;
+  font-size: 0.85em;
 }
 
 .drink-cup__button {

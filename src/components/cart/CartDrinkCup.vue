@@ -136,7 +136,7 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
 
 .cart-drink-cup__volume {
   font-weight: 300;
-  font-size: 1em;
+  font-size: 0.85em;
 }
 
 .cart-drink-cup__input-container {

@@ -28,7 +28,7 @@
 
 .footer-logo-cup__subheader {
   text-align: start;
-  margin-left: 0.85em;
+  margin-left: 1vw;
 }
 
 .footer-logo-cup__subheader p {
