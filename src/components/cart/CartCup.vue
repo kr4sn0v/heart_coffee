@@ -2,7 +2,7 @@
   <section class="cart-cup__view">
     <HeaderCup />
     <section class="cart-cup__header">
-      <HeaderUniversalCup />
+      <HeaderUniversalCup font-size="11.5vw" />
     </section>
     <main class="cart-cup__page">
       <section class="cart-cup__drinks-view">

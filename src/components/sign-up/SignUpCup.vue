@@ -2,7 +2,7 @@
   <section class="sign-up-cup__view" v-if="!$route.meta.isHideChild">
     <HeaderCup />
     <section class="sign-up-cup__header">
-      <HeaderUniversalCup />
+      <HeaderUniversalCup font-size="6.5vw" />
     </section>
     <main class="sign-up-cup__page">
       <section class="sign-up-cup__section">

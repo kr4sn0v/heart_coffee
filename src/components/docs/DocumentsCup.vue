@@ -3,7 +3,7 @@
     <HeaderCup />
 
     <section class="documents-cup__header">
-      <HeaderUniversalCup />
+      <HeaderUniversalCup font-size="3.5vw" />
     </section>
 
     <main class="documents-cup__container" v-if="!loading">

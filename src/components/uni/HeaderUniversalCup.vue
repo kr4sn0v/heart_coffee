@@ -1,7 +1,7 @@
 <template>
   <section class="header-universal-cup__view">
     <div class="header-universal-cup__logo">
-      <h1 v-for="line in header" :key="line">{{ line }}</h1>
+      <h1 v-for="line in header" :key="line" :style="{ fontSize: props.fontSize }">{{ line }}</h1>
     </div>
   </section>
 </template>
@@ -15,6 +15,13 @@ const route = useRoute()
 const header = computed(() =>
   getHeader(route.params.type ? route.name + '/' + route.params.type : route.name),
 )
+
+const props = defineProps({
+  fontSize: {
+    type: String,
+    required: false,
+  },
+})
 </script>
 
 <style scoped>
@@ -24,8 +31,8 @@ const header = computed(() =>
 }
 
 .header-universal-cup__logo {
-  font-size: 7.5vw;
   color: var(--dark-color);
+  text-align: center;
 }
 
 .header-universal-cup__logo > h1:hover {
