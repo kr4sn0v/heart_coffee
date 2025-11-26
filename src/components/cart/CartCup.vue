@@ -1,11 +1,13 @@
 <template>
   <main class="cart-cup__page">
     <HeaderCup />
+
     <section class="cart-cup__header">
       <TitleCup font-size="11.5vw" />
     </section>
+
     <section class="cart-cup__view">
-      <section class="cart-cup__drinks-view">
+      <section class="cart-cup__drinks-view" v-if="totalItems > 0">
         <CartListCup
           :get-image="getImage"
           :active-drink-key="activeDrinkKey"
@@ -17,6 +19,14 @@
           @clear-cart="clearCart"
         />
       </section>
+
+      <section v-if="totalItems === 0" class="cart-cup__empty-view">
+        <p>Ваша корзина пуста и грустит :(</p>
+        <p>Не дайте корзине грустить - пополните ее любым напитком из нашего меню</p>
+      </section>
+    </section>
+
+    <section class="cart-cup__footer-view" v-if="totalItems > 0">
       <CartFooterCup
         :items="items"
         :total-items="totalItems"
@@ -46,16 +56,20 @@ const { items, totalItems, totalPrice, removeItem, updateQuantity, clearCart } =
   display: grid;
   grid-auto-flow: column;
   height: 100dvh;
-  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-areas: 'section' 'main';
+  grid-template-rows: 1fr 1fr auto auto;
+  grid-template-areas: 'section' 'section' 'section';
 }
 
 section {
   grid-area: 'section';
 }
 
-main {
-  grid-area: 'main';
+section {
+  grid-area: 'section';
+}
+
+section {
+  grid-area: 'section';
 }
 
 .cart-cup__header {
@@ -68,11 +82,26 @@ main {
 .cart-cup__view {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
 }
 
 .cart-cup__drinks-view {
   display: flex;
   margin: 3em 0;
+}
+
+.cart-cup__empty-view {
+  text-align: center;
+  font-size: 2em;
+  color: var(--dark-color);
+}
+
+.cart-cup__footer-view {
+  margin-top: auto;
+}
+
+.cart-cup__footer-logo-view {
+  color: var(--dark-color);
 }
 </style>
