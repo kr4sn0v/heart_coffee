@@ -1,9 +1,9 @@
 <template>
-  <section class="header-universal-cup__view">
-    <div class="header-universal-cup__logo">
+  <main class="title-cup__page">
+    <div class="title-cup__logo-container">
       <h1 v-for="line in header" :key="line" :style="{ fontSize: props.fontSize }">{{ line }}</h1>
     </div>
-  </section>
+  </main>
 </template>
 
 <script setup>
@@ -25,17 +25,17 @@ const props = defineProps({
 </script>
 
 <style scoped>
-.header-universal-cup__view {
+.title-cup__page {
   font-weight: 800;
   font-size: 1.5rem;
 }
 
-.header-universal-cup__logo {
+.title-cup__logo-container {
   color: var(--dark-color);
   text-align: center;
 }
 
-.header-universal-cup__logo > h1:hover {
+.title-cup__logo-container > h1:hover {
   color: var(--accent-color-light);
   transition: var(--transition);
   cursor: pointer;

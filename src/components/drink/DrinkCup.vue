@@ -1,36 +1,38 @@
 <template>
-  <HeaderCup />
-  <section class="drink-info-cup__view">
-    <section class="drink-info-cup__header">
-      <img class="drink-info-cup__image" :src="getImage(routeId)" alt="Icon Drink" />
+  <main class="drink-cup__page">
+    <HeaderCup />
+    <section class="drink-cup__header-view">
+      <img class="drink-cup__image" :src="getImage(routeId)" alt="Icon Drink" />
       <h1>{{ drink.name }}</h1>
     </section>
 
-    <main class="drink-info-cup__main">
-      <DrinkInfoMainCup
+    <section class="drink-cup__view">
+      <DrinkDetailsCup
         :drink="drink"
         :active-drink-key="activeDrinkKey"
         @selectDrink="(...args) => selectDrink(args)"
         @add-to-cart="(...args) => addToCart(args)"
       />
+    </section>
 
-      <FooterCup class="drink-info-cup__footer" />
-    </main>
-  </section>
+    <section class="drink-cup__footer-view">
+      <LogoCup />
+    </section>
+  </main>
 </template>
 
 <script setup>
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
-import HeaderCup from '../main/HeaderCup.vue'
-import FooterCup from '../main/FooterCup.vue'
-import DrinkInfoMainCup from './DrinkInfoMainCup.vue'
+import HeaderCup from '../universal/HeaderCup.vue'
+import DrinkDetailsCup from './DrinkDetailsCup.vue'
 
 import { useCart } from '../../composables/useCart'
 import { drinks } from '../../composables/useDrinks'
 import { getImage } from '../../composables/useGetImage'
 import { activeDrinkKey, selectDrink } from '../../composables/useSelectDrink'
+import LogoCup from '../universal/LogoCup.vue'
 
 const route = useRoute()
 const routeId = computed(() => route.params.id)
@@ -40,58 +42,60 @@ const { addItem: addToCart } = useCart()
 </script>
 
 <style scoped>
-.drink-info-cup__view {
+.drink-cup__page {
   font-size: 1.5rem;
-  height: 100dvh;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas: 'section' 'main';
+  grid-template-rows: 1fr 1fr auto;
+  grid-template-areas: 'section' 'section' 'section';
 }
 
 section {
   grid-area: 'section';
 }
 
-main {
+section {
   grid-area: 'main';
 }
 
-.drink-info-cup__header {
+section {
+  grid-area: 'footer';
+}
+
+.drink-cup__header-view {
   display: flex;
+  height: 45vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--header-border);
-  gap: 1.5em;
-  height: 25dvh;
   color: var(--dark-color);
 }
 
-.drink-info-cup__header h1 {
+.drink-cup__header h1 {
   font-weight: 800;
   font-size: 2.15em;
 }
 
-.drink-info-cup__header h1:hover {
+.drink-cup__header h1:hover {
   color: var(--accent-color-light);
   transition: var(--transition);
   cursor: pointer;
 }
 
-.drink-info-cup__image {
+.drink-cup__image {
   width: 100%;
   max-width: 30em;
   min-width: 15em;
   height: auto;
 }
 
-.drink-info-cup__main {
+.drink-cup__view {
   display: flex;
-  flex-direction: column;
-  gap: 4.5em;
+  justify-content: center;
+  align-items: center;
 }
 
-.drink-info-cup__footer {
-  margin-top: auto;
+.drink-cup__footer-view {
+  color: var(--dark-color);
 }
 </style>

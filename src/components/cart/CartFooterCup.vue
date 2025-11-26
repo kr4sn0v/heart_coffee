@@ -1,20 +1,16 @@
 <template>
-  <footer class="cart-footer-cup__footer" v-if="props.items.length > 0">
-    <section class="cart-footer-cup__bottom-section">
-      <div class="cart-footer-cup__info-bottom">
+  <footer class="cart-footer-cup__view" v-if="props.items.length > 0">
+    <section class="cart-footer-cup__container">
+      <div class="cart-footer-cup__info">
         К оплате: {{ props.totalPrice }}
         <span>₽</span>
       </div>
-      <div class="cart-footer-cup__info-bottom">Позиций: {{ props.totalItems }}</div>
+      <div class="cart-footer-cup__info">Позиций: {{ props.totalItems }}</div>
     </section>
 
-    <section class="cart-footer-cup__bottom-section">
-      <button class="cart-footer-cup__button-bottom" @click="emit('clear-cart')">
-        Оплатить заказ
-      </button>
-      <button class="cart-footer-cup__button-bottom" @click="emit('clear-cart')">
-        Удалить все
-      </button>
+    <section class="cart-footer-cup__container">
+      <button class="cart-footer-cup__button" @click="emit('clear-cart')">Оплатить заказ</button>
+      <button class="cart-footer-cup__button" @click="emit('clear-cart')">Удалить все</button>
     </section>
   </footer>
 </template>
@@ -39,7 +35,7 @@ const emit = defineEmits(['clear-cart'])
 </script>
 
 <style scoped>
-.cart-footer-cup__footer {
+.cart-footer-cup__view {
   border-top-left-radius: var(--border-radius);
   border-top-right-radius: var(--border-radius);
   display: flex;
@@ -52,20 +48,20 @@ const emit = defineEmits(['clear-cart'])
   gap: 3em;
 }
 
-.cart-footer-cup__bottom-section {
+.cart-footer-cup__container {
   display: flex;
   justify-content: center;
   gap: 5em;
 }
 
-.cart-footer-cup__info-bottom {
+.cart-footer-cup__info {
   display: flex;
   color: var(--light-color);
   font-weight: 400;
   font-size: 1.55em;
 }
 
-.cart-footer-cup__button-bottom {
+.cart-footer-cup__button {
   width: 15em;
   height: 3.5em;
   background: var(--light-color);
@@ -78,7 +74,7 @@ const emit = defineEmits(['clear-cart'])
   white-space: nowrap;
 }
 
-.cart-footer-cup__button-bottom:hover {
+.cart-footer-cup__button:hover {
   transform: scale(1.05);
   transition: var(--transition);
 }

@@ -1,23 +1,26 @@
 <template>
-  <section class="menu-cup__view" id="menu">
+  <main class="menu-cup__page" id="menu">
     <HeaderCup />
-    <section class="menu-cup__header">
-      <HeaderUniversalCup font-size="11.5vw" />
+    <section class="menu-cup__header-view">
+      <TitleCup font-size="11.5vw" />
     </section>
-    <main class="menu-cup__page">
+
+    <section class="menu-cup__view">
       <section>
         <section class="menu-cup__drinks-view">
           <div class="menu-cup__stroke">
             <p class="menu-cup__stroke-item">
               кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе
-              кофе кофе кофе кофе кофе кофе кофе &nbsp;
+              кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе
+              кофе &nbsp;
             </p>
             <p class="menu-cup__stroke-item">
               кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе
-              кофе кофе кофе кофе кофе кофе кофе &nbsp;
+              кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе
+              кофе &nbsp;
             </p>
           </div>
-          <DrinksCup
+          <MenuListCup
             :get-image="getImage"
             :drinks="coffeeDrinks"
             :active-drink-key="activeDrinkKey"
@@ -38,7 +41,7 @@
               не кофе не кофе &nbsp;
             </p>
           </div>
-          <DrinksCup
+          <MenuListCup
             :get-image="getImage"
             :drinks="noCoffeeDrinks"
             :active-drink-key="activeDrinkKey"
@@ -47,16 +50,19 @@
           />
         </section>
       </section>
-      <FooterLogoCup class="menu-cup__footer" />
-    </main>
-  </section>
+
+      <section class="menu-cup__footer-view">
+        <LogoCup />
+      </section>
+    </section>
+  </main>
 </template>
 
 <script setup>
-import HeaderCup from '../main/HeaderCup.vue'
-import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
-import DrinksCup from './DrinksCup.vue'
-import FooterLogoCup from '../main/FooterLogoCup.vue'
+import HeaderCup from '../universal/HeaderCup.vue'
+import MenuListCup from './MenuListCup.vue'
+import LogoCup from '../universal/LogoCup.vue'
+import TitleCup from '../universal/TitleCup.vue'
 
 import { computed, onMounted } from 'vue'
 import { useCart } from '../../composables/useCart.js'
@@ -75,7 +81,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.menu-cup__view {
+.menu-cup__page {
   font-size: 1.5rem;
   display: grid;
   grid-auto-flow: column;
@@ -92,14 +98,14 @@ main {
   grid-area: 'main';
 }
 
-.menu-cup__header {
+.menu-cup__header-view {
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--header-border);
 }
 
-.menu-cup__page {
+.menu-cup__view {
   display: flex;
   flex-direction: column;
   gap: 4.5em;
@@ -146,7 +152,7 @@ main {
   }
 }
 
-.menu-cup__footer {
+.menu-cup__footer-view {
   color: var(--dark-color);
 }
 </style>

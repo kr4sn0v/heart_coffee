@@ -1,10 +1,10 @@
 <template>
-  <main class="about-us-cup__view" v-if="!loading">
-    <div v-for="line in currentLines" :key="line" class="about-us-cup__container">
-      <h1 class="about-us-cup__header">{{ line.title }}</h1>
+  <main class="main-about-cup__page" v-if="!loading">
+    <div v-for="line in currentLines" :key="line" class="main-about-cup__container">
+      <h1 class="main-about-cup__header">{{ line.title }}</h1>
 
       <div v-for="item in line.items" :key="item">
-        <p class="about-us-cup__subtitle-text">{{ item }}</p>
+        <p class="main-about-cup__subtitle">{{ item }}</p>
       </div>
     </div>
   </main>
@@ -21,31 +21,31 @@ const currentLines = computed(() => lines.value['about-us'])
 </script>
 
 <style scoped>
-.about-us-cup__view {
+.main-about-cup__page {
   font-size: 1.5rem;
   margin: 7.5em;
   font-weight: 800;
   color: var(--dark-color);
 }
 
-.about-us-cup__container {
+.main-about-cup__container {
   display: flex;
   flex-direction: column;
   gap: 3rem;
 }
 
-.about-us-cup__header {
+.main-about-cup__header {
   text-align: center;
   font-size: 2em;
 }
 
-.about-us-cup__header:hover {
+.main-about-cup__header:hover {
   color: var(--accent-color-light);
   transition: var(--transition);
   cursor: pointer;
 }
 
-.about-us-cup__subtitle-text {
+.main-about-cup__subtitle {
   font-size: 1.25em;
   font-weight: 300;
 }

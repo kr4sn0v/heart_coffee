@@ -4,9 +4,8 @@ const MainCup = () => import('./components/main/MainCup.vue')
 const MenuCup = () => import('./components/menu/MenuCup.vue')
 const SignInCup = () => import('./components/sign-in/SignInCup.vue')
 const SignUpCup = () => import('./components/sign-up/SignUpCup.vue')
-const DrinkInfoCup = () => import('./components/drinks/DrinkInfoCup.vue')
-const DocumentsCup = () => import('./components/docs/DocumentsCup.vue')
-const MulledWineCup = () => import('./components/drinks/MulledWineCup.vue')
+const DrinkCup = () => import('./components/drink/DrinkCup.vue')
+const DocumentsCup = () => import('./components/documents/DocumentsCup.vue')
 const CartCup = () => import('./components/cart/CartCup.vue')
 
 const routes = [
@@ -26,14 +25,6 @@ const routes = [
         name: 'sign-in',
         component: SignInCup,
         meta: { isHide: true },
-        children: [
-          {
-            path: 'mulled-wine',
-            name: 'mulled-wine',
-            component: MulledWineCup,
-            meta: { isHideChild: true },
-          },
-        ],
       },
       {
         path: 'sign-up',
@@ -51,9 +42,9 @@ const routes = [
         ],
       },
       {
-        path: 'drink-info/:id',
-        name: 'drink-info',
-        component: DrinkInfoCup,
+        path: 'drink/:id',
+        name: 'drink',
+        component: DrinkCup,
         meta: { isHide: true },
         props: true,
       },

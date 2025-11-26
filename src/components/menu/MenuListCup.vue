@@ -1,7 +1,7 @@
 <template>
-  <section class="drinks-cup__view">
-    <div class="drinks-cup__drinks" v-for="drink in props.drinks" :key="drink.id">
-      <DrinkCup
+  <section class="menu-list-cup__view">
+    <div class="menu-list-cup__drinks" v-for="drink in props.drinks" :key="drink.id">
+      <MenuListCup
         :drink="drink"
         :get-image="localeImage(drink)"
         :active-drink-key="activeDrinkKey"
@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import DrinkCup from './DrinkCup.vue'
+import MenuListCup from './MenuDrinkCup.vue'
 
 const props = defineProps({
   drinks: {
@@ -42,7 +42,7 @@ const localeImage = (drink) => {
 </script>
 
 <style scoped>
-.drinks-cup__view {
+.menu-list-cup__view {
   font-size: 1.5rem;
   display: grid;
   grid-auto-flow: row;
@@ -52,7 +52,7 @@ const localeImage = (drink) => {
   width: 100%;
 }
 
-.drinks-cup__drinks {
+.menu-list-cup__drinks {
   display: flex;
   flex-direction: column;
 }

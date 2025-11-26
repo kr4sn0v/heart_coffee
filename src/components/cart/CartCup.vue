@@ -1,10 +1,10 @@
 <template>
-  <section class="cart-cup__view">
+  <main class="cart-cup__page">
     <HeaderCup />
     <section class="cart-cup__header">
-      <HeaderUniversalCup font-size="11.5vw" />
+      <TitleCup font-size="11.5vw" />
     </section>
-    <main class="cart-cup__page">
+    <section class="cart-cup__view">
       <section class="cart-cup__drinks-view">
         <CartListCup
           :get-image="getImage"
@@ -23,15 +23,15 @@
         :total-price="totalPrice"
         @clear-cart="clearCart"
       />
-    </main>
-  </section>
+    </section>
+  </main>
 </template>
 
 <script setup>
-import HeaderCup from '../main/HeaderCup.vue'
+import HeaderCup from '../universal/HeaderCup.vue'
 import CartListCup from './CartListCup.vue'
-import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
 import CartFooterCup from './CartFooterCup.vue'
+import TitleCup from '../universal/TitleCup.vue'
 
 import { getImage } from '@/composables/useGetImage'
 import { activeDrinkKey } from '@/composables/useSelectDrink'
@@ -41,7 +41,7 @@ const { items, totalItems, totalPrice, removeItem, updateQuantity, clearCart } =
 </script>
 
 <style scoped>
-.cart-cup__view {
+.cart-cup__page {
   font-size: 1.5rem;
   display: grid;
   grid-auto-flow: column;
@@ -65,7 +65,7 @@ main {
   border-bottom: 1px solid var(--header-border);
 }
 
-.cart-cup__page {
+.cart-cup__view {
   display: flex;
   flex-direction: column;
   width: 100%;

@@ -1,49 +1,45 @@
 <template>
-  <section class="documents-cup__view">
+  <main class="documents-cup__page">
     <HeaderCup />
 
-    <section class="documents-cup__header">
-      <HeaderUniversalCup font-size="3.5vw" />
+    <section class="documents-cup__header-view">
+      <TitleCup font-size="3.5vw" />
     </section>
 
-    <main class="documents-cup__container" v-if="!loading">
+    <section class="documents-cup__view" v-if="!loading">
       <div v-for="document in currentDocument" :key="document.num">
-        <h2 class="documents-cup__header-section">{{ document.num }}. {{ document.title }}</h2>
+        <h2 class="documents-cup__header">{{ document.num }}. {{ document.title }}</h2>
 
         <div v-for="(item, index) in document.items" :key="index">
-          <p class="documents-cup__subtitle-text" v-if="typeof item === 'string'">
+          <p class="documents-cup__subtitle" v-if="typeof item === 'string'">
             {{ document.num }}.{{ index + 1 }} {{ item }}
           </p>
 
-          <div v-else class="documents-cup__subtitles-container">
-            <h3 class="documents-cup__subtitle-section">{{ item.subtitle }}</h3>
+          <div v-else class="documents-cup__subsection-container">
+            <h3 class="documents-cup__subtitle">{{ item.subtitle }}</h3>
             <ul>
-              <li
-                class="documents-cup__subtitle-text"
-                v-for="(row, index) in item.list"
-                :key="index"
-              >
+              <li class="documents-cup__subtitle" v-for="(row, index) in item.list" :key="index">
                 {{ row }}
               </li>
             </ul>
           </div>
         </div>
       </div>
-    </main>
+    </section>
     <footer>
       <FooterCup />
     </footer>
-  </section>
+  </main>
 </template>
 
 <script setup>
-import HeaderCup from '../main/HeaderCup.vue'
-import FooterCup from '../main/FooterCup.vue'
-import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
+import HeaderCup from '../universal/HeaderCup.vue'
+import FooterCup from '../universal/FooterCup.vue'
 import { useFetch } from '../../composables/useFetch.js'
 
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
+import TitleCup from '../universal/TitleCup.vue'
 
 const url = ref('http://localhost:3000/documents')
 const { data: documents, loading } = useFetch(url)
@@ -54,7 +50,7 @@ const currentDocument = computed(() => documents.value[currentType.value])
 </script>
 
 <style scoped>
-.documents-cup__view {
+.documents-cup__page {
   font-size: 1.5rem;
   display: grid;
   grid-auto-flow: column;
@@ -74,7 +70,7 @@ footer {
   grid-area: 'footer';
 }
 
-.documents-cup__header {
+.documents-cup__header-view {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,7 +84,7 @@ footer {
   cursor: pointer;
 }
 
-.documents-cup__container {
+.documents-cup__view {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -98,27 +94,22 @@ footer {
   color: var(--dark-color);
 }
 
-.documents-cup__header-section {
+.documents-cup__header {
   font-size: 1.85em;
   font-weight: 600;
   margin-bottom: 0.85em;
 }
 
-.documents-cup__subtitle-text {
+.documents-cup__subtitle {
   font-size: 1.25em;
   font-weight: 300;
   margin-bottom: 0.5em;
 }
 
-.documents-cup__subtitles-container {
+.documents-cup__subsection-container {
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
-}
-
-.documents-cup__subtitle-section {
-  font-size: 1.5em;
-  font-weight: 600;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <section class="cart-drink-cup__view">
+  <main class="cart-drink-cup__page">
     <img class="cart-drink-cup__image" :src="props.getImage" alt="Icon Drink" />
     <h3 class="cart-drink-cup__name">
       <router-link class="cart-drink-cup__router-link" :to="'/drink-info/' + props.item.callsign">
@@ -7,28 +7,26 @@
       >
     </h3>
 
-    <section class="cart-drink-cup__info-view">
-      <div class="card-drink-cup__info-container">
-        <div class="cart-drink-cup__info">
-          <p class="cart-drink-cup__price">
-            {{ props.item.price }}
-            <span>₽</span>
-          </p>
-          <p class="cart-drink-cup__volume">
-            {{ props.item.volume }}
-            <span>мл</span>
-          </p>
-        </div>
+    <section class="cart-drink-cup__view">
+      <div class="cart-drink-cup__info-container">
+        <p class="cart-drink-cup__price">
+          {{ props.item.price }}
+          <span>₽</span>
+        </p>
+        <p class="cart-drink-cup__volume">
+          {{ props.item.volume }}
+          <span>мл</span>
+        </p>
+      </div>
 
-        <div class="cart-drink-cup__input-container">
-          <input
-            class="cart-drink-cup__input"
-            type="number"
-            :value="localeQuantity"
-            @input="localeInput"
-            min="1"
-          />
-        </div>
+      <div class="cart-drink-cup__input-container">
+        <input
+          class="cart-drink-cup__input"
+          type="number"
+          :value="localeQuantity"
+          @input="localeInput"
+          min="1"
+        />
       </div>
     </section>
 
@@ -38,7 +36,7 @@
     >
       Удалить
     </button>
-  </section>
+  </main>
 </template>
 
 <script setup>
@@ -70,7 +68,7 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
 </script>
 
 <style scoped>
-.cart-drink-cup__view {
+.cart-drink-cup__page {
   font-size: 1.5rem;
   width: 100%;
   max-width: 20em;
@@ -109,14 +107,15 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
   transition: var(--transition);
 }
 
-.cart-drink-cup__info-view {
+.cart-drink-cup__view {
   gap: 1em;
   display: flex;
   width: 100%;
-  justify-content: start;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.card-drink-cup__info-container {
+.cart-drink-cup__info-container {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -142,7 +141,6 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
 .cart-drink-cup__input-container {
   display: flex;
   flex-direction: column;
-  align-items: end;
 }
 
 .cart-drink-cup__input {
@@ -153,7 +151,7 @@ const emit = defineEmits(['update-quantity', 'remove-item'])
   border-radius: var(--border-radius);
   font-size: 1em;
   max-width: 8.5em;
-  height: 2.5em;
+  height: 2.25em;
 }
 
 .cart-drink-cup__input:focus {

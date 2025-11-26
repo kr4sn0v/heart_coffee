@@ -1,20 +1,20 @@
 <template>
-  <footer>
+  <footer class="footer-cup__page">
     <section class="footer-cup__view">
       <p>Если у вас есть вопросы, предложения или</p>
       <p>что-либо ещё — обращаться к нам по адресу:</p>
       <a>franchise_heart_coffee@heart_group.io</a>
     </section>
-    <FooterLogoCup />
+    <LogoCup />
   </footer>
 </template>
 
 <script setup>
-import FooterLogoCup from './FooterLogoCup.vue'
+import LogoCup from './LogoCup.vue'
 </script>
 
 <style scoped>
-footer {
+.footer-cup__page {
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;

@@ -1,5 +1,5 @@
 <template>
-  <section class="cart-list-cup__form">
+  <main class="cart-list-cup__page">
     <div class="cart-list-cup__drinks" v-for="item in props.items" :key="item.id">
       <CartDrinkCup
         :item="item"
@@ -9,7 +9,7 @@
         @remove-item="(...args) => emit('remove-item', args)"
       />
     </div>
-  </section>
+  </main>
 </template>
 
 <script setup>
@@ -42,7 +42,7 @@ const localeImage = (item) => {
 </script>
 
 <style scoped>
-.cart-list-cup__form {
+.cart-list-cup__page {
   font-size: 1.5rem;
   display: grid;
   grid-auto-flow: row;

@@ -1,34 +1,38 @@
 <template>
-  <section class="sign-in-cup__view" v-if="!$route.meta.isHideChild">
+  <main class="sign-in-cup__page" v-if="!$route.meta.isHideChild">
     <HeaderCup />
-    <section class="sign-in-cup__header">
-      <HeaderUniversalCup font-size="6.5vw" />
+    <section class="sign-in-cup__header-view">
+      <TitleCup font-size="6.5vw" />
     </section>
-    <main class="sign-in-cup__page">
-      <section class="sign-in-cup__section">
+    <section class="sign-in-cup__view">
+      <div class="sign-in-cup__container">
         <p>С 1 декабря — возвращение легенды :)</p>
         <p>
           Тот самый
-          <router-link to="/sign-in/mulled-wine" class="sign-in__router-link">глинтвейн</router-link
-          >, который все ждут
+          <router-link class="sign-in__router-link">глинтвейн</router-link>, который все ждут
         </p>
-      </section>
-      <SignInFormCup class="sign-in-cup__form" />
-      <FooterLogoCup class="sign-in-cup__footer" />
-    </main>
-  </section>
+      </div>
+      <div class="sign-in-cup__form-container">
+        <SignInFormCup />
+      </div>
+
+      <div class="sign-in-cup__footer-container">
+        <LogoCup />
+      </div>
+    </section>
+  </main>
   <router-view></router-view>
 </template>
 
 <script setup>
-import FooterLogoCup from '../main/FooterLogoCup.vue'
-import HeaderCup from '../main/HeaderCup.vue'
-import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
+import HeaderCup from '../universal/HeaderCup.vue'
 import SignInFormCup from './SignInFormCup.vue'
+import TitleCup from '../universal/TitleCup.vue'
+import LogoCup from '../universal/LogoCup.vue'
 </script>
 
 <style scoped>
-.sign-in-cup__view {
+.sign-in-cup__page {
   font-size: 1.5rem;
   display: grid;
   grid-auto-flow: column;
@@ -45,13 +49,13 @@ main {
   grid-area: 'main';
 }
 
-.sign-in-cup__header {
+.sign-in-cup__header-view {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.sign-in-cup__page {
+.sign-in-cup__view {
   display: flex;
   flex-direction: column;
   margin-top: auto;
@@ -60,7 +64,7 @@ main {
   border-top-right-radius: var(--border-radius);
 }
 
-.sign-in-cup__section {
+.sign-in-cup__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -69,7 +73,7 @@ main {
   gap: 1em;
 }
 
-.sign-in-cup__section p {
+.sign-in-cup__container p {
   font-weight: 600;
   font-size: 1.55em;
 }
@@ -92,11 +96,11 @@ main {
   transition: var(--transition);
 }
 
-.sign-in-cup__form {
+.sign-in-cup__form-container {
   margin-bottom: 2.5em;
 }
 
-.sign-in-cup__footer {
+.sign-in-cup__footer-container {
   margin-top: auto;
 }
 </style>

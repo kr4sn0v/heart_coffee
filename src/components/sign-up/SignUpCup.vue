@@ -1,11 +1,11 @@
 <template>
-  <section class="sign-up-cup__view" v-if="!$route.meta.isHideChild">
+  <main class="sign-up-cup__page" v-if="!$route.meta.isHideChild">
     <HeaderCup />
-    <section class="sign-up-cup__header">
-      <HeaderUniversalCup font-size="6.5vw" />
+    <section class="sign-up-cup__header-view">
+      <TitleCup font-size="6.5vw" />
     </section>
-    <main class="sign-up-cup__page">
-      <section class="sign-up-cup__section">
+    <main class="sign-up-cup__view">
+      <div class="sign-up-cup__container">
         <p>
           Введите почту и получите
           <router-link to="/sign-up/documents/promo" class="sign-up__router-link"
@@ -13,23 +13,28 @@
           >
         </p>
         <p>Спамить не будем, честное слово ^-^</p>
-      </section>
-      <SignUpFormCup class="sign-up-cup__form" />
-      <FooterLogoCup class="sign-up-cup__footer" />
+      </div>
+      <div class="sign-up-cup__form-container">
+        <SignUpFormCup />
+      </div>
+
+      <div class="sign-up-cup__footer-container">
+        <LogoCup />
+      </div>
     </main>
-  </section>
+  </main>
   <router-view></router-view>
 </template>
 
 <script setup>
-import HeaderCup from '../main/HeaderCup.vue'
-import FooterLogoCup from '../main/FooterLogoCup.vue'
-import HeaderUniversalCup from '../uni/HeaderUniversalCup.vue'
+import HeaderCup from '../universal/HeaderCup.vue'
 import SignUpFormCup from './SignUpFormCup.vue'
+import TitleCup from '../universal/TitleCup.vue'
+import LogoCup from '../universal/LogoCup.vue'
 </script>
 
 <style scoped>
-.sign-up-cup__view {
+.sign-up-cup__page {
   font-size: 1.5rem;
   display: grid;
   grid-auto-flow: column;
@@ -46,7 +51,13 @@ main {
   grid-area: 'main';
 }
 
-.sign-up-cup__page {
+.sign-up-cup__header-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-up-cup__view {
   display: flex;
   flex-direction: column;
   margin-top: auto;
@@ -56,13 +67,7 @@ main {
   border-top-right-radius: var(--border-radius);
 }
 
-.sign-up-cup__header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sign-up-cup__section {
+.sign-up-cup__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +76,7 @@ main {
   gap: 1em;
 }
 
-.sign-up-cup__section p {
+.sign-up-cup__container p {
   font-weight: 600;
   font-size: 1.55em;
 }
@@ -94,11 +99,11 @@ main {
   transition: var(--transition);
 }
 
-.sign-up-cup__form {
+.sign-up-cup__form-container {
   margin-bottom: 2.5em;
 }
 
-.sign-up-cup__footer {
+.sign-up-cup__footer-container {
   margin-top: auto;
 }
 </style>

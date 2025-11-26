@@ -1,7 +1,7 @@
 <template>
-  <header class="header-cup__view">
-    <section class="header-cup__container">
-      <div class="header-cup__logo">
+  <header class="header-cup__page">
+    <section class="header-cup__view">
+      <div class="header-cup__logo-container">
         <router-link to="/" class="header-cup__router-link">
           <h1>HEART COFFEE</h1>
         </router-link>
@@ -27,7 +27,7 @@
 </template>
 
 <style scoped>
-.header-cup__view {
+.header-cup__page {
   position: fixed;
   font-size: 1.5rem;
   top: 0;
@@ -46,7 +46,7 @@
   color: var(--dark-color);
 }
 
-.header-cup__container {
+.header-cup__view {
   width: 100%;
   margin-inline: 2.5em;
   display: flex;
@@ -54,14 +54,14 @@
   align-items: center;
 }
 
-.header-cup__logo h1 {
+.header-cup__logo-container h1 {
   font-weight: 800;
   font-size: 2em;
   white-space: nowrap;
   margin-right: 3em;
 }
 
-.header-cup__logo h1:hover {
+.header-cup__logo-container h1:hover {
   cursor: pointer;
   color: var(--accent-color-light);
   transition: var(--transition);
