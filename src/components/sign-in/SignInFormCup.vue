@@ -24,9 +24,7 @@
       <div v-show="loading" class="loader"></div>
     </button>
 
-    <div class="sign-in-form-cup__error-bottom" v-if="error">
-      Произошли технические шоколадки: {{ error }}
-    </div>
+    <div class="sign-in-form-cup__error-bottom" v-if="error">Упс: {{ error }}</div>
   </Form>
 </template>
 
@@ -117,8 +115,8 @@ import { login, error, loading } from '../../composables/useSignIn.js'
 .loader {
   width: 60px;
   aspect-ratio: 4;
-  background: radial-gradient(circle closest-side, var(--accent-color-light) 90%, #0000) 0 /
-    calc(100% / 3) 100% space;
+  background: radial-gradient(circle closest-side, var(--light-color) 90%, #0000) 0 / calc(100% / 3)
+    100% space;
   clip-path: inset(0 100% 0 0);
   animation: l1 1s steps(4) infinite;
 }

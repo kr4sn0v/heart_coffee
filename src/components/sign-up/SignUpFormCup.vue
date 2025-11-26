@@ -55,13 +55,11 @@
       <ErrorMessage class="sign-up-form-cup__error" name="checkbox" />
     </section>
 
-    <button class="sign-up-form-cup__button" type="submit" v-show="!loading">
-      Зарегистрироваться
+    <button class="sign-up-form-cup__button" type="submit">
+      <p v-show="!loading">Зарегистрироваться</p>
       <div v-show="loading" class="loader"></div>
     </button>
-    <div class="sign-up-form-cup__error-bottom" v-if="error">
-      Произошли технические шоколадки: {{ error }}
-    </div>
+    <div class="sign-up-form-cup__error-bottom" v-if="error">Упс: {{ error }}</div>
   </Form>
 </template>
 
@@ -215,6 +213,7 @@ import { register, error, loading } from '../../composables/useSignUp.js'
   clip-path: inset(0 100% 0 0);
   animation: l1 1s steps(4) infinite;
 }
+
 @keyframes l1 {
   to {
     clip-path: inset(0 -34% 0 0);

@@ -103,8 +103,8 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
   background: var(--accent-color-light);
   width: 55vw;
   padding: 2.5vw;
-  border-radius: var(--border-radius);
-  border-radius: var(--border-radius);
+  border-radius: 20px;
+  border-radius: 20px;
   box-shadow:
     0 0 0 10px var(--accent-color-light),
     0 0 0 20px var(--light-color),

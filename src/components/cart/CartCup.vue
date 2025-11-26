@@ -6,8 +6,13 @@
       <TitleCup font-size="11.5vw" />
     </section>
 
-    <section class="cart-cup__view">
-      <section class="cart-cup__drinks-view" v-if="totalItems > 0">
+    <section class="cart-cup__empty-view" v-if="totalItems === 0">
+      <p>Ваша корзина пуста и грустит :(</p>
+      <p>Не дайте корзине грустить - пополните ее любым напитком из нашего меню</p>
+    </section>
+
+    <section class="cart-cup__view" v-if="totalItems > 0">
+      <section class="cart-cup__drinks-view">
         <CartListCup
           :get-image="getImage"
           :active-drink-key="activeDrinkKey"
@@ -20,12 +25,7 @@
         />
       </section>
 
-      <section v-if="totalItems === 0" class="cart-cup__empty-view">
-        <p>Ваша корзина пуста и грустит :(</p>
-        <p>Не дайте корзине грустить - пополните ее любым напитком из нашего меню</p>
-      </section>
-
-      <section class="cart-cup__footer-view" v-if="totalItems > 0">
+      <section class="cart-cup__footer-view">
         <CartFooterCup
           :items="items"
           :total-items="totalItems"
@@ -76,9 +76,6 @@ section {
 }
 
 .cart-cup__view {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   width: 100%;
 }
 
@@ -88,9 +85,16 @@ section {
 }
 
 .cart-cup__empty-view {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   font-size: 2em;
   color: var(--dark-color);
+}
+
+.cart-cup__empty-view p {
+  text-align: center;
 }
 
 .cart-cup__footer-view {

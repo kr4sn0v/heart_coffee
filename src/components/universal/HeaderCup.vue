@@ -13,7 +13,7 @@
           </router-link>
           <router-link to="/cart" class="header-cup__router-link header-cup__cart-counter">
             <li>корзина</li>
-            <p>{{ totalItems }}</p>
+            <p v-if="totalItems > 0">{{ totalItems }}</p>
           </router-link>
           <router-link to="/sign-up" class="header-cup__router-link">
             <li>регистрация</li>

@@ -22,8 +22,11 @@ const register = async (values) => {
     if (exitingUser) {
       throw new Error('Данный email уже используется другим пользователем')
     } else {
-      const userRef = doc(db, 'users', newUser.id)
-      setDoc(userRef, newUser)
+      setTimeout(() => {
+        const userRef = doc(db, 'users', newUser.id)
+        setDoc(userRef, newUser)
+        alert('Добро пожаловать!')
+      }, 5000)
     }
   } catch (err) {
     error.value = err.message

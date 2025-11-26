@@ -10,16 +10,8 @@
       <section>
         <section class="menu-cup__drinks-view">
           <div class="menu-cup__stroke">
-            <p class="menu-cup__stroke-item">
-              кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе
-              кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе
-              кофе &nbsp;
-            </p>
-            <p class="menu-cup__stroke-item">
-              кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе
-              кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе кофе
-              кофе &nbsp;
-            </p>
+            <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">кофе &nbsp;</p>
+            <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">кофе &nbsp;</p>
           </div>
           <MenuListCup
             :get-image="getImage"
@@ -31,16 +23,8 @@
         </section>
         <section class="menu-cup__drinks-view">
           <div class="menu-cup__stroke">
-            <p class="menu-cup__stroke-item">
-              не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не
-              кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе
-              не кофе не кофе &nbsp;
-            </p>
-            <p class="menu-cup__stroke-item">
-              не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не
-              кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе не кофе
-              не кофе не кофе &nbsp;
-            </p>
+            <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">не кофе &nbsp;</p>
+            <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">не кофе &nbsp;</p>
           </div>
           <MenuListCup
             :get-image="getImage"
@@ -138,7 +122,7 @@ section {
   line-height: 1.5;
   font-weight: 900;
   text-transform: uppercase;
-  animation: running-animation 55s linear infinite;
+  animation: running-animation 5s linear infinite;
   white-space: nowrap;
   color: var(--dark-color);
 }
