@@ -14,6 +14,9 @@
           <router-link to="/cart" class="header-cup__router-link">
             <li>корзина</li>
           </router-link>
+        </ul>
+        <p class="header-cup__cart-counter">{{ totalItems }}</p>
+        <ul>
           <router-link to="/sign-up" class="header-cup__router-link">
             <li>регистрация</li>
           </router-link>
@@ -25,6 +28,12 @@
     </section>
   </header>
 </template>
+
+<script setup>
+import { useCart } from '@/composables/useCart'
+
+const { totalItems } = useCart()
+</script>
 
 <style scoped>
 .header-cup__page {
@@ -70,6 +79,20 @@
 .header-cup__router-link {
   color: inherit;
   text-decoration: none;
+}
+
+.header-cup__cart-counter {
+  background-color: var(--accent-color-light);
+  color: var(--light-color);
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875em;
+  font-weight: 700;
+  margin-right: 3em;
 }
 
 .header-cup__navigation {
