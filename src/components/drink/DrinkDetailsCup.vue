@@ -91,7 +91,7 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
 <style scoped>
 .drink-details-cup__page {
   font-size: 1.5rem;
-  padding: 5em;
+  padding: 7.5em 2.5em 2em 2.5em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -113,11 +113,10 @@ const largeVolume = computed(() => props.drink?.prices?.large?.volume ?? 0)
     0 0 0 50px var(--accent-color-light);
 }
 
-.drink-details-cup__description p {
+.drink-details-cup__description-view p {
   color: var(--light-color);
   font-weight: 400;
-  font-size: 1.75rem;
-
+  font-size: 1.25em;
   box-shadow: offset-x offset-y blur-radius spread-radius color;
 }
 

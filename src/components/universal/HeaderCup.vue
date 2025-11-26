@@ -11,12 +11,10 @@
           <router-link to="/menu" class="header-cup__router-link">
             <li>меню</li>
           </router-link>
-          <router-link to="/cart" class="header-cup__router-link">
+          <router-link to="/cart" class="header-cup__router-link header-cup__cart-counter">
             <li>корзина</li>
+            <p>{{ totalItems }}</p>
           </router-link>
-        </ul>
-        <p class="header-cup__cart-counter">{{ totalItems }}</p>
-        <ul>
           <router-link to="/sign-up" class="header-cup__router-link">
             <li>регистрация</li>
           </router-link>
@@ -82,6 +80,13 @@ const { totalItems } = useCart()
 }
 
 .header-cup__cart-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.header-cup__cart-counter p {
   background-color: var(--accent-color-light);
   color: var(--light-color);
   border-radius: 50%;
@@ -92,7 +97,6 @@ const { totalItems } = useCart()
   justify-content: center;
   font-size: 0.875em;
   font-weight: 700;
-  margin-right: 3em;
 }
 
 .header-cup__navigation {
@@ -107,6 +111,9 @@ const { totalItems } = useCart()
   display: flex;
   flex-wrap: wrap;
   gap: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-cup__navigation li {

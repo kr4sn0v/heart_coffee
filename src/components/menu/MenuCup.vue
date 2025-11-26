@@ -1,6 +1,7 @@
 <template>
   <main class="menu-cup__page" id="menu">
     <HeaderCup />
+
     <section class="menu-cup__header-view">
       <TitleCup font-size="11.5vw" />
     </section>
@@ -87,15 +88,15 @@ onMounted(() => {
   grid-auto-flow: column;
   height: 100dvh;
   grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-areas: 'section' 'main';
+  grid-template-areas: 'section' 'section';
 }
 
 section {
   grid-area: 'section';
 }
 
-main {
-  grid-area: 'main';
+section {
+  grid-area: 'section';
 }
 
 .menu-cup__header-view {

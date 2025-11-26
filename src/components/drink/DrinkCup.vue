@@ -13,10 +13,10 @@
         @selectDrink="(...args) => selectDrink(args)"
         @add-to-cart="(...args) => addToCart(args)"
       />
-    </section>
 
-    <section class="drink-cup__footer-view">
-      <LogoCup />
+      <section class="drink-cup__footer-view">
+        <LogoCup />
+      </section>
     </section>
   </main>
 </template>
@@ -45,8 +45,8 @@ const { addItem: addToCart } = useCart()
 .drink-cup__page {
   font-size: 1.5rem;
   display: grid;
-  grid-template-rows: 1fr 1fr auto;
-  grid-template-areas: 'section' 'section' 'section';
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-areas: 'section' 'section';
 }
 
 section {
@@ -54,11 +54,7 @@ section {
 }
 
 section {
-  grid-area: 'main';
-}
-
-section {
-  grid-area: 'footer';
+  grid-area: 'section';
 }
 
 .drink-cup__header-view {
@@ -91,8 +87,7 @@ section {
 
 .drink-cup__view {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
 .drink-cup__footer-view {

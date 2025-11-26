@@ -24,15 +24,15 @@
         <p>Ваша корзина пуста и грустит :(</p>
         <p>Не дайте корзине грустить - пополните ее любым напитком из нашего меню</p>
       </section>
-    </section>
 
-    <section class="cart-cup__footer-view" v-if="totalItems > 0">
-      <CartFooterCup
-        :items="items"
-        :total-items="totalItems"
-        :total-price="totalPrice"
-        @clear-cart="clearCart"
-      />
+      <section class="cart-cup__footer-view" v-if="totalItems > 0">
+        <CartFooterCup
+          :items="items"
+          :total-items="totalItems"
+          :total-price="totalPrice"
+          @clear-cart="clearCart"
+        />
+      </section>
     </section>
   </main>
 </template>
@@ -56,12 +56,8 @@ const { items, totalItems, totalPrice, removeItem, updateQuantity, clearCart } =
   display: grid;
   grid-auto-flow: column;
   height: 100dvh;
-  grid-template-rows: 1fr 1fr auto auto;
-  grid-template-areas: 'section' 'section' 'section';
-}
-
-section {
-  grid-area: 'section';
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-areas: 'section' 'section';
 }
 
 section {
