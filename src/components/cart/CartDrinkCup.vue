@@ -2,7 +2,7 @@
   <main class="cart-drink-cup__page">
     <img class="cart-drink-cup__image" :src="props.getImage" alt="Icon Drink" />
     <h3 class="cart-drink-cup__name">
-      <router-link class="cart-drink-cup__router-link" :to="'/drink-info/' + props.item.callsign">
+      <router-link class="cart-drink-cup__router-link" :to="'/drink/' + props.item.callsign">
         {{ props.item.name }}</router-link
       >
     </h3>

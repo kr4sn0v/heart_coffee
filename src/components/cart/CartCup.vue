@@ -54,7 +54,6 @@ const { items, totalItems, totalPrice, removeItem, updateQuantity, clearCart } =
 .cart-cup__page {
   font-size: 1.5rem;
   display: grid;
-  grid-auto-flow: column;
   height: 100dvh;
   grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-areas: 'section' 'section';

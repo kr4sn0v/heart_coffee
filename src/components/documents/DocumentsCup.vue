@@ -53,17 +53,16 @@ const { data: documents, loading } = useFetch(url)
 .documents-cup__page {
   font-size: 1.5rem;
   display: grid;
-  grid-auto-flow: column;
   grid-template-rows: repeat(auto-fit, minmax(350px, 1fr));
-  grid-template-areas: 'section' 'main' 'footer';
+  grid-template-areas: 'section' 'section' 'footer';
 }
 
 section {
   grid-area: 'section';
 }
 
-main {
-  grid-area: 'main';
+section {
+  grid-area: 'section';
 }
 
 footer {
