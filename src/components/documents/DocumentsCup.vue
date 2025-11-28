@@ -7,19 +7,19 @@
     </section>
 
     <section class="documents-cup__view" v-if="!loading">
-      <div v-for="document in currentDocument" :key="document.num">
-        <h2 class="documents-cup__header">{{ document.num }}. {{ document.title }}</h2>
+      <div v-for="document in documents" :key="document.id">
+        <h2 class="documents-cup__header">{{ document.id }}. {{ document.title }}</h2>
 
         <div v-for="(item, index) in document.items" :key="index">
-          <p class="documents-cup__subtitle" v-if="typeof item === 'string'">
-            {{ document.num }}.{{ index + 1 }} {{ item }}
+          <p class="documents-cup__subtitle" v-if="item.text">
+            {{ document.id }}.{{ index + 1 }} {{ item.text }}
           </p>
 
           <div v-else class="documents-cup__subsection-container">
             <h3 class="documents-cup__subtitle">{{ item.subtitle }}</h3>
             <ul>
               <li class="documents-cup__subtitle" v-for="(row, index) in item.list" :key="index">
-                {{ row }}
+                {{ row.text }}
               </li>
             </ul>
           </div>
@@ -41,12 +41,12 @@ import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import TitleCup from '../universal/TitleCup.vue'
 
-const url = ref('http://localhost:3000/documents')
+const route = useRoute()
+const currentRoute = computed(() => route.params.type)
+
+const url = ref(`http://localhost:3000/${currentRoute.value}`)
 const { data: documents, loading } = useFetch(url)
 
-const route = useRoute()
-const currentType = computed(() => route.params.type)
-const currentDocument = computed(() => documents.value[currentType.value])
 </script>
 
 <style scoped>

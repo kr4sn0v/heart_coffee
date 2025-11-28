@@ -1,10 +1,10 @@
 <template>
   <main class="main-about-cup__page" v-if="!loading">
-    <div v-for="line in currentLines" :key="line" class="main-about-cup__container">
+    <div v-for="line in lines" :key="line" class="main-about-cup__container">
       <h1 class="main-about-cup__header">{{ line.title }}</h1>
 
       <div v-for="item in line.items" :key="item">
-        <p class="main-about-cup__subtitle">{{ item }}</p>
+        <p class="main-about-cup__subtitle">{{ item.text }}</p>
       </div>
     </div>
   </main>
@@ -12,12 +12,10 @@
 
 <script setup>
 import { useFetch } from '../../composables/useFetch.js'
-import { computed, ref } from 'vue'
+import {  ref } from 'vue'
 
-const url = ref('http://localhost:3000/documents')
+const url = ref('http://localhost:3000/about-us')
 const { data: lines, loading } = useFetch(url)
-
-const currentLines = computed(() => lines.value['about-us'])
 </script>
 
 <style scoped>
