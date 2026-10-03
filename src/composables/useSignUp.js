@@ -1,9 +1,11 @@
 import { collection, getDocs, setDoc, doc } from 'firebase/firestore'
 import { db } from '@/firebase'
 import { ref } from 'vue'
+import { useUserStore } from '@/stores/user'
 
 const loading = ref(false)
 const error = ref('')
+const userStore = useUserStore()
 
 const register = async (values) => {
   try {
@@ -26,6 +28,7 @@ const register = async (values) => {
         const userRef = doc(db, 'users', newUser.id)
         setDoc(userRef, newUser)
         alert('Добро пожаловать!')
+        userStore.login(newUser)
       }, 5000)
     }
   } catch (err) {

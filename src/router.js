@@ -7,6 +7,8 @@ const SignUpCup = () => import('./components/sign-up/SignUpCup.vue')
 const DrinkCup = () => import('./components/drink/DrinkCup.vue')
 const DocumentsCup = () => import('./components/documents/DocumentsCup.vue')
 const CartCup = () => import('./components/cart/CartCup.vue')
+const AccountCup = () => import('./components/account/AccountCup.vue')
+const PromoCup = () => import('./components/promo/PromoCup.vue')
 
 const routes = [
   {
@@ -25,6 +27,14 @@ const routes = [
         name: 'sign-in',
         component: SignInCup,
         meta: { isHide: true },
+        children: [
+          {
+            path: 'promo',
+            name: 'promo',
+            component: PromoCup,
+            meta: { isHideChild: true },
+          },
+        ],
       },
       {
         path: 'sign-up',
@@ -52,6 +62,12 @@ const routes = [
         path: 'cart',
         name: 'cart',
         component: CartCup,
+        meta: { isHide: true },
+      },
+      {
+        path: 'account',
+        name: 'account',
+        component: AccountCup,
         meta: { isHide: true },
       },
     ],

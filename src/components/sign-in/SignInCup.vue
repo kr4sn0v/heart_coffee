@@ -9,7 +9,8 @@
         <p>С 1 декабря — возвращение легенды :)</p>
         <p>
           Тот самый
-          <router-link class="sign-in__router-link">глинтвейн</router-link>, который все ждут
+          <router-link to="/sign-in/promo" class="sign-in__router-link">глинтвейн</router-link>,
+          который все ждут
         </p>
       </div>
       <div class="sign-in-cup__form-container">

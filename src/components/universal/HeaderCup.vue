@@ -15,12 +15,19 @@
             <li>корзина</li>
             <p v-if="totalItems > 0">{{ totalItems }}</p>
           </router-link>
-          <router-link to="/sign-up" class="header-cup__router-link">
-            <li>регистрация</li>
-          </router-link>
-          <router-link to="/sign-in" class="header-cup__router-link">
-            <li>войти</li>
-          </router-link>
+          <div v-if="isAuthenticated == false" class="header-cup__router-links">
+            <router-link to="/sign-up" class="header-cup__router-link">
+              <li>регистрация</li>
+            </router-link>
+            <router-link to="/sign-in" class="header-cup__router-link">
+              <li>войти</li>
+            </router-link>
+          </div>
+          <div v-if="isAuthenticated == true" class="header-cup__router-links">
+            <router-link to="/account" class="header-cup__router-link">
+              <li>аккаунт</li>
+            </router-link>
+          </div>
         </ul>
       </nav>
     </section>
@@ -28,9 +35,14 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { useUserStore } from '@/stores/user'
 import { useCart } from '@/composables/useCart'
 
+const userStore = useUserStore()
 const { totalItems } = useCart()
+
+const isAuthenticated = computed(() => userStore.isAuthenticated)
 </script>
 
 <style scoped>
@@ -72,6 +84,12 @@ const { totalItems } = useCart()
   cursor: pointer;
   color: var(--accent-color-light);
   transition: var(--transition);
+}
+
+.header-cup__router-links {
+  display: flex;
+  align-items: center;
+  gap: 3em;
 }
 
 .header-cup__router-link {

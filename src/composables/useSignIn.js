@@ -1,9 +1,11 @@
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '@/firebase'
 import { ref } from 'vue'
+import { useUserStore } from '@/stores/user'
 
 const loading = ref(false)
 const error = ref('')
+const userStore = useUserStore()
 
 const login = async (values) => {
   try {
@@ -23,6 +25,7 @@ const login = async (values) => {
     } else {
       setTimeout(() => {
         alert('Добро пожаловать!')
+        userStore.login(user)
       }, 5000)
     }
   } catch (err) {
