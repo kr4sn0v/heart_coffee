@@ -34,7 +34,7 @@
 
 <script setup>
 import HeaderCup from '../universal/HeaderCup.vue'
-import FooterCup from '../universal/FooterCup.vue'
+import FooterCup from '../universal/FooterBlueCup.vue/index.js'
 import { useFetch } from '../../composables/useFetch.js'
 
 import { computed, ref } from 'vue'
@@ -46,7 +46,6 @@ const currentRoute = computed(() => route.params.type)
 
 const url = ref(`http://localhost:3000/${currentRoute.value}`)
 const { data: documents, loading } = useFetch(url)
-
 </script>
 
 <style scoped>

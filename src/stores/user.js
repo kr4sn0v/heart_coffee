@@ -10,6 +10,12 @@ export const useUserStore = defineStore('user', () => {
     user.value = userData
   }
 
+  const getUserData = (userData) => {
+    let name = userData.name || ''
+    let email = userData.email || ''
+    return { name, email }
+  }
+
   const logout = () => {
     user.value = null
   }
@@ -18,6 +24,7 @@ export const useUserStore = defineStore('user', () => {
     user,
     isAuthenticated,
     login,
+    getUserData,
     logout,
   }
 })

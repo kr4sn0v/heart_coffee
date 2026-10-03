@@ -1,6 +1,6 @@
 <template>
-  <footer class="footer-cup__page">
-    <section class="footer-cup__view">
+  <footer class="footer-blue-cup__page">
+    <section class="footer-blue-cup__view">
       <p>Если у вас есть вопросы, предложения или</p>
       <p>что-либо ещё — обращаться к нам по адресу:</p>
       <a @click="copyText">franchise_heart_coffee@heart_group.io</a>
@@ -19,7 +19,7 @@ const copyText = () => {
 </script>
 
 <style scoped>
-.footer-cup__page {
+.footer-blue-cup__page {
   font-size: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -31,7 +31,7 @@ const copyText = () => {
   border-top-right-radius: var(--border-radius);
 }
 
-.footer-cup__view {
+.footer-blue-cup__view {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,12 +41,12 @@ const copyText = () => {
   gap: 0.5rem;
 }
 
-.footer-cup__view p {
+.footer-blue-cup__view p {
   font-weight: 400;
   font-size: 1.55em;
 }
 
-.footer-cup__view a {
+.footer-blue-cup__view a {
   font-weight: 800;
   font-size: 1.55em;
   text-decoration: none;
@@ -58,7 +58,7 @@ const copyText = () => {
   cursor: pointer;
 }
 
-.footer-cup__view a:hover {
+.footer-blue-cup__view a:hover {
   opacity: 1;
   background-size: 100% 2px;
   transition: var(--transition);

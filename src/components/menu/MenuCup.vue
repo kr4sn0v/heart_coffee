@@ -1,7 +1,5 @@
 <template>
-  <main class="menu-cup__page" id="menu">
-    <HeaderCup />
-
+  <LayoutCup>
     <section class="menu-cup__header-view">
       <TitleCup font-size="11.5vw" />
     </section>
@@ -21,6 +19,7 @@
             @add-to-cart="addToCart"
           />
         </section>
+
         <section class="menu-cup__drinks-view">
           <div class="menu-cup__stroke">
             <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">не кофе &nbsp;</p>
@@ -36,17 +35,17 @@
         </section>
       </section>
 
-      <section class="menu-cup__footer-view">
-        <LogoCup />
+      <section>
+        <FooterBlackCup />
       </section>
     </section>
-  </main>
+  </LayoutCup>
 </template>
 
 <script setup>
-import HeaderCup from '../universal/HeaderCup.vue'
+import LayoutCup from '../universal/LayoutCup.vue'
 import MenuListCup from './MenuListCup.vue'
-import LogoCup from '../universal/LogoCup.vue'
+import FooterBlackCup from '../universal/FooterBlackCup.vue'
 import TitleCup from '../universal/TitleCup.vue'
 
 import { computed, onMounted } from 'vue'
@@ -66,19 +65,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.menu-cup__page {
-  font-size: 1.5rem;
-  display: grid;
-  grid-auto-flow: column;
-  height: 100dvh;
-  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
-  grid-template-areas: 'section' 'section';
-}
-
-section {
-  grid-area: 'section';
-}
-
 section {
   grid-area: 'section';
 }
@@ -88,6 +74,7 @@ section {
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid var(--header-border);
+  margin-top: 5em;
 }
 
 .menu-cup__view {
@@ -135,9 +122,5 @@ section {
   100% {
     transform: translate3d(-100%, 0, 0);
   }
-}
-
-.menu-cup__footer-view {
-  color: var(--dark-color);
 }
 </style>
