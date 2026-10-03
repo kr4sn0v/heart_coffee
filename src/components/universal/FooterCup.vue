@@ -3,7 +3,7 @@
     <section class="footer-cup__view">
       <p>Если у вас есть вопросы, предложения или</p>
       <p>что-либо ещё — обращаться к нам по адресу:</p>
-      <a>franchise_heart_coffee@heart_group.io</a>
+      <a @click="copyText">franchise_heart_coffee@heart_group.io</a>
     </section>
     <LogoCup />
   </footer>
@@ -11,6 +11,11 @@
 
 <script setup>
 import LogoCup from './LogoCup.vue'
+
+const copyText = () => {
+  const text = 'franchise_heart_coffee@heart_group.io'
+  navigator.clipboard.writeText(text)
+}
 </script>
 
 <style scoped>
