@@ -42,7 +42,7 @@
             'drink-details-cup--active': activeDrinkKey === `${drink.id}-${largePrice}`,
           }"
           v-if="largePrice > 0"
-          @click="$emit('select-drink', drinkInfo.id, largePrice)"
+          @click="$emit('select-drink', drink.id, largePrice)"
         >
           <p class="drink-details-cup__price">
             {{ largePrice }}
