@@ -1,10 +1,10 @@
 <template>
   <section class="menu-list-cup__view">
     <div class="menu-list-cup__drinks" v-for="drink in props.drinks" :key="drink.id">
-      <MenuListCup
+      <MenuDrinkCup
         :drink="drink"
-        :get-image="localeImage(drink)"
-        :active-drink-key="activeDrinkKey"
+        :active-drink-key="props.activeDrinkKey"
+        :get-image="props.getImage"
         @select-drink="(...args) => emit('select-drink', args)"
         @add-to-cart="(...args) => emit('add-to-cart', args)"
       />
@@ -13,15 +13,15 @@
 </template>
 
 <script setup>
-import MenuListCup from './MenuDrinkCup.vue'
+import MenuDrinkCup from './MenuDrinkCup.vue'
 
 const props = defineProps({
-  drinks: {
-    type: Array,
-    required: true,
-  },
   getImage: {
     type: Function,
+    required: true,
+  },
+  drinks: {
+    type: Array,
     required: true,
   },
   activeDrinkKey: {
@@ -31,14 +31,6 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['select-drink', 'add-to-cart'])
-
-const localeImage = (drink) => {
-  try {
-    return props.getImage(drink.id)
-  } catch (err) {
-    console.error('Ошибка при получении картинки:', drink.id, err)
-  }
-}
 </script>
 
 <style scoped>

@@ -1,21 +1,13 @@
 <template>
   <LayoutCup>
-    <section>
-      <DrinkHeaderCup :routeId="routeId" :drink="drink" />
-    </section>
-
-    <section>
-      <DrinkDetailsCup
-        :drink="drink"
-        :active-drink-key="activeDrinkKey"
-        @selectDrink="(...args) => selectDrink(args)"
-        @add-to-cart="(...args) => addToCart(args)"
-      />
-    </section>
-
-    <section>
-      <FooterBlackCup />
-    </section>
+    <DrinkHeaderCup :routeId="routeId" :drink="drink" />
+    <DrinkDetailsCup
+      :drink="drink"
+      :active-drink-key="activeDrinkKey"
+      @selectDrink="(...args) => selectDrink(args)"
+      @add-to-cart="(...args) => addToCart(args)"
+    />
+    <FooterBlackCup />
   </LayoutCup>
 </template>
 
@@ -38,9 +30,3 @@ const drink = computed(() => drinks.value[routeId.value - 1])
 
 const { addItem: addToCart } = useCart()
 </script>
-
-<style scoped>
-section {
-  grid-area: 'section';
-}
-</style>

@@ -1,13 +1,8 @@
 <template>
   <LayoutCup v-if="!$route.meta.isHide">
-    <main>
-      <MainVideoCup />
-      <MainAboutCup />
-    </main>
-
-    <footer>
-      <FooterBlueCup />
-    </footer>
+    <MainVideoCup />
+    <MainAboutCup />
+    <FooterBlueCup />
   </LayoutCup>
 
   <router-view></router-view>

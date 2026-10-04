@@ -1,9 +1,17 @@
 <template>
-  <main class="title-cup__page">
+  <header class="title-cup__page">
     <div class="title-cup__logo-container">
-      <h1 v-for="line in header" :key="line" :style="{ fontSize: props.fontSize }">{{ line }}</h1>
+      <h1
+        v-for="line in header"
+        :key="line"
+        :style="{
+          fontSize: props.fontSize,
+        }"
+      >
+        {{ line }}
+      </h1>
     </div>
-  </main>
+  </header>
 </template>
 
 <script setup>

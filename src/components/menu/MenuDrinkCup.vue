@@ -1,6 +1,6 @@
 <template>
-  <section class="menu-drink-cup__view" v-if="drink">
-    <img class="menu-drink-cup__image" :src="props.getImage" alt="Icon Drink" />
+  <main class="menu-drink-cup__view" v-if="drink">
+    <img class="menu-drink-cup__image" :src="props.getImage(drink.id)" alt="Icon Drink" />
     <h3 class="menu-drink-cup__name">
       <router-link :to="'/drink/' + props.drink.id" class="menu-drink-cup__router-link">{{
         props.drink.name
@@ -63,7 +63,7 @@
     >
       В корзину
     </button>
-  </section>
+  </main>
 </template>
 
 <script setup>
@@ -75,7 +75,7 @@ const props = defineProps({
     required: true,
   },
   getImage: {
-    type: String,
+    type: Function,
     required: true,
   },
   activeDrinkKey: {

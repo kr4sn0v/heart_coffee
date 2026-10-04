@@ -1,5 +1,5 @@
 <template>
-  <section class="drink-cup__header-view">
+  <header class="drink-cup__header-view">
     <img class="drink-cup__image" :src="getImage(props.routeId)" alt="Icon Drink" />
     <div class="drink-cup__stroke">
       <p class="drink-cup__stroke-item" v-for="item in 10" :key="item">
@@ -9,7 +9,7 @@
         {{ props.drink.name }} &nbsp;
       </p>
     </div>
-  </section>
+  </header>
 </template>
 
 <script setup>

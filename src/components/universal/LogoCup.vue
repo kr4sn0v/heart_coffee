@@ -4,7 +4,7 @@
       <h1>HEART COFFEE</h1>
     </div>
     <div class="logo-cup__subheader-container">
-      <p>© 2025 HEART Group International DMCC</p>
+      <p>© 2026 HEART Group International DMCC</p>
     </div>
   </main>
 </template>
