@@ -1,17 +1,15 @@
 <template>
   <LayoutCup v-if="!$route.meta.isHide">
-    <section>
+    <main>
       <MainVideoCup />
-    </section>
-
-    <section>
       <MainAboutCup />
-    </section>
+    </main>
 
-    <section>
+    <footer>
       <FooterBlueCup />
-    </section>
+    </footer>
   </LayoutCup>
+
   <router-view></router-view>
 </template>
 
@@ -21,9 +19,3 @@ import FooterBlueCup from '../universal/FooterBlueCup.vue'
 import MainVideoCup from './MainVideoCup.vue'
 import MainAboutCup from './MainAboutCup.vue'
 </script>
-
-<style scoped>
-section {
-  grid-area: 'section';
-}
-</style>

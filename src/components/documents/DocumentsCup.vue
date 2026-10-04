@@ -27,14 +27,14 @@
       </div>
     </section>
     <footer>
-      <FooterCup />
+      <FooterBlueCup />
     </footer>
   </main>
 </template>
 
 <script setup>
 import HeaderCup from '../universal/HeaderCup.vue'
-import FooterCup from '../universal/FooterBlueCup.vue/index.js'
+import FooterBlueCup from '../universal/FooterBlueCup.vue'
 import { useFetch } from '../../composables/useFetch.js'
 
 import { computed, ref } from 'vue'

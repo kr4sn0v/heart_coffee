@@ -1,44 +1,42 @@
 <template>
   <LayoutCup>
-    <section class="menu-cup__header-view">
+    <header class="menu-cup__header-view">
       <TitleCup font-size="11.5vw" />
-    </section>
+    </header>
 
-    <section class="menu-cup__view">
-      <section>
-        <section class="menu-cup__drinks-view">
-          <div class="menu-cup__stroke">
-            <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">кофе &nbsp;</p>
-            <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">кофе &nbsp;</p>
-          </div>
-          <MenuListCup
-            :get-image="getImage"
-            :drinks="coffeeDrinks"
-            :active-drink-key="activeDrinkKey"
-            @select-drink="selectDrink"
-            @add-to-cart="addToCart"
-          />
-        </section>
-
-        <section class="menu-cup__drinks-view">
-          <div class="menu-cup__stroke">
-            <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">не кофе &nbsp;</p>
-            <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">не кофе &nbsp;</p>
-          </div>
-          <MenuListCup
-            :get-image="getImage"
-            :drinks="noCoffeeDrinks"
-            :active-drink-key="activeDrinkKey"
-            @select-drink="selectDrink"
-            @add-to-cart="addToCart"
-          />
-        </section>
+    <main class="menu-cup__view">
+      <section class="menu-cup__drinks-view">
+        <div class="menu-cup__stroke">
+          <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">кофе &nbsp;</p>
+          <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">кофе &nbsp;</p>
+        </div>
+        <MenuListCup
+          :get-image="getImage"
+          :drinks="coffeeDrinks"
+          :active-drink-key="activeDrinkKey"
+          @select-drink="selectDrink"
+          @add-to-cart="addToCart"
+        />
       </section>
 
-      <section>
-        <FooterBlackCup />
+      <section class="menu-cup__drinks-view">
+        <div class="menu-cup__stroke">
+          <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">не кофе &nbsp;</p>
+          <p class="menu-cup__stroke-item" v-for="item in 10" :key="item">не кофе &nbsp;</p>
+        </div>
+        <MenuListCup
+          :get-image="getImage"
+          :drinks="noCoffeeDrinks"
+          :active-drink-key="activeDrinkKey"
+          @select-drink="selectDrink"
+          @add-to-cart="addToCart"
+        />
       </section>
-    </section>
+    </main>
+
+    <footer>
+      <FooterBlackCup />
+    </footer>
   </LayoutCup>
 </template>
 
@@ -65,10 +63,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-section {
-  grid-area: 'section';
-}
-
 .menu-cup__header-view {
   display: flex;
   align-items: center;
